@@ -23,7 +23,7 @@
   <entry>
     <title></title>
     <url>%2F2018%2F03%2F29%2F%E6%96%B0%E6%96%87%E6%A1%A31%2F</url>
-    <content type="text"><![CDATA[vue 2.0 学习之旅Vue实例每个Vue应用都是通过用 Vue 函数创建一个新的 Vue 实例开始的： 123var vm=new Vue(&#123; //选项&#125;) 当创建一个 Vue 实例对象之后，你可以传入一个选项对象。一个 Vue 应用由一个通过 new Vue 创建的根 Vue 实例，以及可嵌套的、可复用的组件树构成。当一个 Vue 实例被创建时，它向 Vue 的响应式系统中加入了其 data 对象中能找到的所有属性。当这些属性的值发生改变时，视图将会产生“响应”，即匹配更新为新的值。 举例：`]]></content>
+    <content type="text"><![CDATA[vue 2.0 学习之旅Vue实例每个Vue应用都是通过用 Vue 函数创建一个新的 Vue 实例开始的： 123var vm=new Vue(&#123; //选项&#125;) 当创建一个 Vue 实例对象之后，你可以传入一个选项对象。一个 Vue 应用由一个通过 new Vue 创建的根 Vue 实例，以及可嵌套的、可复用的组件树构成。当一个 Vue 实例被创建时，它向 Vue 的响应式系统中加入了其 data 对象中能找到的所有属性。当这些属性的值发生改变时，视图将会产生“响应”，即匹配更新为新的值。 举例：]]></content>
   </entry>
   <entry>
     <title><![CDATA[Hello World]]></title>
