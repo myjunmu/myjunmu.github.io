@@ -86,10 +86,18 @@
 <meta property="og:site_name" content="JUN的博客">
 <meta property="og:description" content="指令（Directives）是带有 v- 前缀的特殊属性。指令属性的值预期是单个 Javascript 表达式（v-for 是例外情况）。指令的职责是，当表达式的值改变时，将其产生的连带影响，响应式地作用于DOM。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-29T13:26:51.539Z">
+<meta property="og:image" content="https://wx4.sinaimg.cn/mw690/3cc821ffgy1fpu12uufk6j20pr0gaaaf.jpg">
+<meta property="og:image" content="https://wx4.sinaimg.cn/mw690/3cc821ffgy1fpu1ctt11bj20sw0h03zm.jpg">
+<meta property="og:image" content="https://wx1.sinaimg.cn/mw690/3cc821ffgy1fpu12k4e0sj20ss0geq3d.jpg">
+<meta property="og:image" content="https://wx4.sinaimg.cn/mw690/3cc821ffgy1fpu0qpf4l1j20sy0h73z6.jpg">
+<meta property="og:image" content="https://wx3.sinaimg.cn/mw690/3cc821ffgy1fpu12oj0zuj20sy0loq95.jpg">
+<meta property="og:image" content="https://wx2.sinaimg.cn/mw690/3cc821ffgy1fpu12m4polj20sp0gst95.jpg">
+<meta property="og:image" content="https://wx1.sinaimg.cn/mw690/3cc821ffgy1fpu12stad6j20sr0h2q3e.jpg">
+<meta property="og:updated_time" content="2018-03-29T14:03:04.304Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue 2.0 学习之旅（三）--指令">
 <meta name="twitter:description" content="指令（Directives）是带有 v- 前缀的特殊属性。指令属性的值预期是单个 Javascript 表达式（v-for 是例外情况）。指令的职责是，当表达式的值改变时，将其产生的连带影响，响应式地作用于DOM。">
+<meta name="twitter:image" content="https://wx4.sinaimg.cn/mw690/3cc821ffgy1fpu12uufk6j20pr0gaaaf.jpg">
 
 
 
@@ -365,11 +373,11 @@
 
       
         <p>指令（Directives）是带有 v- 前缀的特殊属性。指令属性的值预期是单个 Javascript 表达式（v-for 是例外情况）。指令的职责是，当表达式的值改变时，将其产生的连带影响，响应式地作用于DOM。<br><a id="more"></a></p>
-<h3 id="v-text指令"><a href="#v-text指令" class="headerlink" title="v-text指令"></a>v-text指令</h3><p>v-text指令用于操作元素当中的文本，其实际作用与“Mustache”语法(双大括号)的效果是一致的。<br>但是注意，使用v-text会替换掉元素内的所有文本内容，如果只想替换掉其中的部分文本，需要使用“Mustache”语法(双大括号)。</p>
-<h3 id="v-html指令"><a href="#v-html指令" class="headerlink" title="v-html指令"></a>v-html指令</h3><p>v-html指令和v-text指令的区别在于，v-text将HTML的标签当做纯文本进行输出，而v-html会将HTML的标签解析后再输出。注意下面代码的输出结果的区别：</p>
-<h3 id="v-once指令"><a href="#v-once指令" class="headerlink" title="v-once指令"></a>v-once指令</h3><p>v-once指令用于执行一次性的插值，当数据改变时，插值处的内容不会更新。该指令会影响到该节点上的所有数据绑定：</p>
-<h3 id="v-if指令"><a href="#v-if指令" class="headerlink" title="v-if指令"></a>v-if指令</h3><p>v-if指令用于控制一个元素的显示与否，当表达式的值为真，则显示该元素；当表达式的值为假，则不显示该元素：<br>`</p><p v-if="seen"></p>
-<h3 id="v-show"><a href="#v-show" class="headerlink" title="v-show"></a>v-show</h3><p>v-show指令和v-if指令一样，都是用来控制一个元素的显示与否，当表达式的值为真，则显示该元素；当表达式的值为假，则不显示该元素。<br>v-if和v-show的区别在于，v-if在表达式为假的时候，将该元素节点从DOM树上删除；而v-show在表达式为假的时候，是为该元素追加display：none，的属性。</p>
+<h3 id="v-text指令"><a href="#v-text指令" class="headerlink" title="v-text指令"></a>v-text指令</h3><p>v-text指令用于操作元素当中的文本，其实际作用与“Mustache”语法(双大括号)的效果是一致的。<br><img src="https://wx4.sinaimg.cn/mw690/3cc821ffgy1fpu12uufk6j20pr0gaaaf.jpg" alt=""><br>但是注意，使用v-text会替换掉元素内的所有文本内容，如果只想替换掉其中的部分文本，需要使用“Mustache”语法(双大括号)。<br><img src="https://wx4.sinaimg.cn/mw690/3cc821ffgy1fpu1ctt11bj20sw0h03zm.jpg" alt=""></p>
+<h3 id="v-html指令"><a href="#v-html指令" class="headerlink" title="v-html指令"></a>v-html指令</h3><p>v-html指令和v-text指令的区别在于，v-text将HTML的标签当做纯文本进行输出，而v-html会将HTML的标签解析后再输出。注意下面代码的输出结果的区别：<br><img src="https://wx1.sinaimg.cn/mw690/3cc821ffgy1fpu12k4e0sj20ss0geq3d.jpg" alt=""></p>
+<h3 id="v-once指令"><a href="#v-once指令" class="headerlink" title="v-once指令"></a>v-once指令</h3><p>v-once指令用于执行一次性的插值，当数据改变时，插值处的内容不会更新。该指令会影响到该节点上的所有数据绑定：<br><img src="https://wx4.sinaimg.cn/mw690/3cc821ffgy1fpu0qpf4l1j20sy0h73z6.jpg" alt=""><br><img src="https://wx3.sinaimg.cn/mw690/3cc821ffgy1fpu12oj0zuj20sy0loq95.jpg" alt=""></p>
+<h3 id="v-if指令"><a href="#v-if指令" class="headerlink" title="v-if指令"></a>v-if指令</h3><p>v-if指令用于控制一个元素的显示与否，当表达式的值为真，则显示该元素；当表达式的值为假，则不显示该元素：<br><img src="https://wx2.sinaimg.cn/mw690/3cc821ffgy1fpu12m4polj20sp0gst95.jpg" alt=""></p>
+<h3 id="v-show"><a href="#v-show" class="headerlink" title="v-show"></a>v-show</h3><p>v-show指令和v-if指令一样，都是用来控制一个元素的显示与否，当表达式的值为真，则显示该元素；当表达式的值为假，则不显示该元素。<br><img src="https://wx1.sinaimg.cn/mw690/3cc821ffgy1fpu12stad6j20sr0h2q3e.jpg" alt=""><br>v-if和v-show的区别在于，v-if在表达式为假的时候，将该元素节点从DOM树上删除；而v-show在表达式为假的时候，是为该元素追加display：none，的属性。</p>
 
       
     </div>
