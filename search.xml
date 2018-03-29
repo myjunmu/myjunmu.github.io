@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[Vue 2.0 学习之旅（一）--安装]]></title>
+    <url>%2F2018%2F03%2F29%2Ffirst%2F</url>
+    <content type="text"><![CDATA[从今天开始学习前端框架 Vue，该系列的文章主要记录自己在 Vue 的学习过程中所了解到的一些基础知识。由于是刚开始接触，所以内容可能会有一些小错误。 兼容性Vue不支持 IE8 及以下版本。 辅助工具在使用 Vue 时推荐在浏览器上安装 Vue Devtools。它允许你在一个更友好的界面中审查和调试 Vue 应用。 Vue.js 安装教程直接下载直接下载vue.js文件，然后通过&lt;script>标签引用。&lt;script src=&quot;/地址/vue.js&quot;&gt;&lt;/script&gt; CDN 方法 BootCDN（国内） :&lt;script src=&quot;https://cdn.bootcss.com/2.5.16/vue.js&quot;&gt;&lt;/script&gt; 其它（国外）：&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js&quot;&gt;&lt;/script&gt;&lt;script src=&quot;https:/unpkg.com/vue@2.5.16/dist/vue.js&quot;&gt;&lt;/script&gt;&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js&quot;&gt;&lt;/script&gt;改变&lt;script>标签内的数字就可以手动选择 Vue.js 的不同版本。关于 Vue.js 的版本情况你可以登录 http://www.bootcdn.cn/ 或者其他网址查看。 版本说明开发版本 vue.js 包含完整的警告和调试模式（建议学习过程中使用该版本）生产版本 vue.min.js 是一个更小的构建，可以获得比开发环境下更快的速度体验。（建议在实际项目中使用该版本）]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>%2F2018%2F03%2F29%2F%E6%96%B0%E6%96%87%E6%A1%A32%2F</url>
+    <content type="text"><![CDATA[github与hexo关联1.在电脑任意位置处新建一个文件夹 2.进入文件夹，鼠标右键选择gitbash 3.输入命令hexo init]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>%2F2018%2F03%2F29%2F%E6%96%B0%E6%96%87%E6%A1%A3%2F</url>
+    <content type="text"><![CDATA[github文件管理##1.在电脑的任意位置处新建一个文件夹 2.进入文件夹，鼠标右键选择 git-bash-here 3.输入命令 git init 4.输入命令 git clone （你的仓库地址） 5.输入命令 git rm -r 6.输入命令 git rm 7.输入命令 git commit -m 8.输入命令 git push origin master]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>%2F2018%2F03%2F29%2F%E6%96%B0%E6%96%87%E6%A1%A31%2F</url>
+    <content type="text"><![CDATA[vue 2.0 学习之旅Vue实例每个Vue应用都是通过用 Vue 函数创建一个新的 Vue 实例开始的： 123var vm=new Vue(&#123; //选项&#125;) 当创建一个 Vue 实例对象之后，你可以传入一个选项对象。一个 Vue 应用由一个通过 new Vue 创建的根 Vue 实例，以及可嵌套的、可复用的组件树构成。当一个 Vue 实例被创建时，它向 Vue 的响应式系统中加入了其 data 对象中能找到的所有属性。当这些属性的值发生改变时，视图将会产生“响应”，即匹配更新为新的值。 举例：`]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2018%2F03%2F29%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>
