@@ -28,7 +28,7 @@
   <entry>
     <title></title>
     <url>%2F2018%2F03%2F30%2Fseven%2F</url>
-    <content type="text"><![CDATA[title： Vue 2.0 学习之旅（）–指令date： 2018-03-30tag： [列表渲染，v-for] category：[ Vue,Vue 指令]v-for 指令主要用于迭代，迭代的目标可以是数组、对象、值和组件。 数组的 v-forv-for 指令根据一组数组的选项列表进行渲染。v-for 指令需要使用 item in items 形式的特殊语法，items 是源数据数组，item是数组元素迭代的别名。在 v-for块 中，我们拥有对父作用域属性的完全访问权限。v-for 还支持一个可选的第二个参数作为当前的索引。你可以用 of 代替 in 作为分隔符。 对象的 v-for你可以用 v-for 通过一个对象的属性来迭代。你也可以提供第二个参数为键名。你还可以提供第三个参数为索引。key、数组更新检测、对象更新检测、显示过滤/排序结果此处暂不作说明。 值的 v-forv-for 也可以是整数。v-for on a &lt;template> 暂不作说明。v-for with v-if当 v-for 和 v-if 处于同一节点的时候，v-for 的优先级比 v-if 的更高，这意味着 v-if 将分别重复运行于每个 v-for 循环中。而如果你的目的是有条件的跳过循环的执行，那么可以将 v-if 置于外层元素上。 组件的 v-for关于组件的 v-for 暂时不作说明，等学完组件之后再来更新。]]></content>
+    <content type="text"><![CDATA[title： Vue 2.0 学习之旅（）–指令 date： 2018-03-30 tag： [列表渲染，v-for] category：[ Vue,Vue 指令]v-for 指令主要用于迭代，迭代的目标可以是数组、对象、值和组件。 数组的 v-forv-for 指令根据一组数组的选项列表进行渲染。v-for 指令需要使用 item in items 形式的特殊语法，items 是源数据数组，item是数组元素迭代的别名。在 v-for块 中，我们拥有对父作用域属性的完全访问权限。v-for 还支持一个可选的第二个参数作为当前的索引。你可以用 of 代替 in 作为分隔符。 对象的 v-for你可以用 v-for 通过一个对象的属性来迭代。你也可以提供第二个参数为键名。你还可以提供第三个参数为索引。key、数组更新检测、对象更新检测、显示过滤/排序结果此处暂不作说明。 值的 v-forv-for 也可以是整数。v-for on a &lt;template> 暂不作说明。v-for with v-if当 v-for 和 v-if 处于同一节点的时候，v-for 的优先级比 v-if 的更高，这意味着 v-if 将分别重复运行于每个 v-for 循环中。而如果你的目的是有条件的跳过循环的执行，那么可以将 v-if 置于外层元素上。 组件的 v-for关于组件的 v-for 暂时不作说明，等学完组件之后再来更新。]]></content>
   </entry>
   <entry>
     <title></title>
