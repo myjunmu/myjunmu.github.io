@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="title： Vue 2.0 学习之旅–Vue 实例date： 2018-3-29 01:00:00tag： Vue实例 category： [ Vue，Vue 实例]Vue实例每个Vue应用都是通过用 Vue 函数创建一个新的 Vue 实例开始的：123var vm=new Vue(&amp;#123;    //选项&amp;#125;) 当创建一个 Vue 实例对象之后，你可以传入一个选项对象。一个 Vu">
+<meta name="description" content="title： Vue 2.0 学习之旅–Vue 实例 date： 2018-3-29 01:00:00 tag： Vue实例  category： [Vue，Vue 实例]Vue实例每个Vue应用都是通过用 Vue 函数创建一个新的 Vue 实例开始的：123var vm=new Vue(&amp;#123;    //选项&amp;#125;)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JUN的博客">
 <meta property="og:url" content="http://myjunmu.top/2018/03/29/vue实例/index.html">
 <meta property="og:site_name" content="JUN的博客">
-<meta property="og:description" content="title： Vue 2.0 学习之旅–Vue 实例date： 2018-3-29 01:00:00tag： Vue实例 category： [ Vue，Vue 实例]Vue实例每个Vue应用都是通过用 Vue 函数创建一个新的 Vue 实例开始的：123var vm=new Vue(&amp;#123;    //选项&amp;#125;) 当创建一个 Vue 实例对象之后，你可以传入一个选项对象。一个 Vu">
+<meta property="og:description" content="title： Vue 2.0 学习之旅–Vue 实例 date： 2018-3-29 01:00:00 tag： Vue实例  category： [Vue，Vue 实例]Vue实例每个Vue应用都是通过用 Vue 函数创建一个新的 Vue 实例开始的：123var vm=new Vue(&amp;#123;    //选项&amp;#125;)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-01T02:42:33.697Z">
+<meta property="og:updated_time" content="2018-04-01T02:47:38.200Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JUN的博客">
-<meta name="twitter:description" content="title： Vue 2.0 学习之旅–Vue 实例date： 2018-3-29 01:00:00tag： Vue实例 category： [ Vue，Vue 实例]Vue实例每个Vue应用都是通过用 Vue 函数创建一个新的 Vue 实例开始的：123var vm=new Vue(&amp;#123;    //选项&amp;#125;) 当创建一个 Vue 实例对象之后，你可以传入一个选项对象。一个 Vu">
+<meta name="twitter:description" content="title： Vue 2.0 学习之旅–Vue 实例 date： 2018-3-29 01:00:00 tag： Vue实例  category： [Vue，Vue 实例]Vue实例每个Vue应用都是通过用 Vue 函数创建一个新的 Vue 实例开始的：123var vm=new Vue(&amp;#123;    //选项&amp;#125;)">
 
 
 
@@ -395,8 +395,9 @@
 
       
         <hr>
-<p>title： Vue 2.0 学习之旅–Vue 实例<br>date： 2018-3-29 01:00:00<br>tag： Vue实例</p>
-<h2 id="category：-Vue，Vue-实例"><a href="#category：-Vue，Vue-实例" class="headerlink" title="category： [ Vue，Vue 实例]"></a>category： [ Vue，Vue 实例]</h2><h3 id="Vue实例"><a href="#Vue实例" class="headerlink" title="Vue实例"></a>Vue实例</h3><p>每个Vue应用都是通过用 Vue 函数创建一个新的 Vue 实例开始的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var vm=new Vue(&#123;</span><br><span class="line">    //选项</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p> title： Vue 2.0 学习之旅–Vue 实例<br> date： 2018-3-29 01:00:00<br> tag： Vue实例</p>
+<h2 id="category：-Vue，Vue-实例"><a href="#category：-Vue，Vue-实例" class="headerlink" title=" category： [Vue，Vue 实例]"></a> category： [Vue，Vue 实例]</h2><h3 id="Vue实例"><a href="#Vue实例" class="headerlink" title="Vue实例"></a>Vue实例</h3><p>每个Vue应用都是通过用 Vue 函数创建一个新的 Vue 实例开始的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var vm=new Vue(&#123;</span><br><span class="line">    //选项</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <p>当创建一个 Vue 实例对象之后，你可以传入一个<strong>选项对象</strong>。<br>一个 Vue 应用由一个通过 new Vue 创建的<strong>根 Vue 实例</strong>，以及可嵌套的、可复用的组件树构成。</p>
 <h4 id="数据与方法"><a href="#数据与方法" class="headerlink" title="数据与方法"></a>数据与方法</h4><p>当一个 Vue 实例被创建时，它向 Vue 的响应式系统中加入了其<strong> data 对象</strong>中能找到的所有属性。当这些属性的值发生改变时，视图将会产生“响应”，即匹配更新为新的值。<br>当这些数据改变时，视图会重新渲染。但是只有在实例被创建时 data 中存在的属性才是响应式的。也就是说如果你添加一个新的属性，随后对b的改动将不会触发任何视图的更新。<br>如果你知道你会在晚些时候需要一个属性，但是一开始它为空或不存在，那么你可以设置一些初始值。<br>唯一的例外是使用 object.freeze(),这会阻止修改现有的属性，也意味着响应系统无法再追踪变化。<br>除了数据属性，Vue 实例还暴露了一些有用的实例属性与方法。它们都有前缀 $ ,以便和用户定义的属性区分开来。</p>
 
@@ -582,7 +583,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#category：-Vue，Vue-实例"><span class="nav-number">1.</span> <span class="nav-text">category： [ Vue，Vue 实例]</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Vue实例"><span class="nav-number">1.1.</span> <span class="nav-text">Vue实例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据与方法"><span class="nav-number">1.1.1.</span> <span class="nav-text">数据与方法</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#category：-Vue，Vue-实例"><span class="nav-number">1.</span> <span class="nav-text"> category： [Vue，Vue 实例]</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Vue实例"><span class="nav-number">1.1.</span> <span class="nav-text">Vue实例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据与方法"><span class="nav-number">1.1.1.</span> <span class="nav-text">数据与方法</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
