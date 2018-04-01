@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="列表渲染，v-for," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,28 +79,17 @@
 
 
 
-<meta name="description" content="v-for 指令主要用于迭代，迭代的目标可以是数组、对象、值和组件。">
-<meta name="keywords" content="列表渲染，v-for">
+<meta name="description" content="title： Vue 2.0 学习之旅（）– 组件(二)date： 2018-03-30tag： [组件组合，Prop] category：[Vue,Vue组件]组件设计初衷就是配合使用的，最常见的就是形成父子组件的关系。在A组件之中使用组件B，两者之间就必然需要相互通信：父组件可能要给子组件下发数据，子组件则可能要将它内部发生的事情告诉父组件。然而，通过一个良好定义的接口来尽可能将父子组件解耦">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue 2.0 学习之旅--指令">
-<meta property="og:url" content="http://myjunmu.top/2018/03/29/seven/index.html">
+<meta property="og:title" content="JUN的博客">
+<meta property="og:url" content="http://myjunmu.top/2018/03/30/prop/index.html">
 <meta property="og:site_name" content="JUN的博客">
-<meta property="og:description" content="v-for 指令主要用于迭代，迭代的目标可以是数组、对象、值和组件。">
+<meta property="og:description" content="title： Vue 2.0 学习之旅（）– 组件(二)date： 2018-03-30tag： [组件组合，Prop] category：[Vue,Vue组件]组件设计初衷就是配合使用的，最常见的就是形成父子组件的关系。在A组件之中使用组件B，两者之间就必然需要相互通信：父组件可能要给子组件下发数据，子组件则可能要将它内部发生的事情告诉父组件。然而，通过一个良好定义的接口来尽可能将父子组件解耦">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://wx1.sinaimg.cn/mw690/3cc821ffgy1fpuszn0yeej20ss0jegmn.jpg">
-<meta property="og:image" content="https://wx4.sinaimg.cn/mw690/3cc821ffgy1fpuszp90g6j20rq0i6my9.jpg">
-<meta property="og:image" content="https://wx1.sinaimg.cn/mw690/3cc821ffgy1fpuszr3vg7j20sy0igjsn.jpg">
-<meta property="og:image" content="https://wx2.sinaimg.cn/mw690/3cc821ffgy1fpuszt4w49j20t40j675i.jpg">
-<meta property="og:image" content="https://wx1.sinaimg.cn/mw690/3cc821ffgy1fpuszv5ts6j20t40jk3zs.jpg">
-<meta property="og:image" content="https://wx3.sinaimg.cn/mw690/3cc821ffgy1fpuszwr8avj20st0ic74n.jpg">
-<meta property="og:image" content="https://wx2.sinaimg.cn/mw690/3cc821ffgy1fpuszylk1pj20pr0kugly.jpg">
-<meta property="og:image" content="https://wx1.sinaimg.cn/mw690/3cc821ffgy1fput00clgaj20tj0ixq48.jpg">
-<meta property="og:image" content="https://wx1.sinaimg.cn/mw690/3cc821ffgy1fput049y9nj20sb0jc0tz.jpg">
-<meta property="og:updated_time" content="2018-03-30T06:23:15.627Z">
+<meta property="og:updated_time" content="2018-03-31T12:51:41.325Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vue 2.0 学习之旅--指令">
-<meta name="twitter:description" content="v-for 指令主要用于迭代，迭代的目标可以是数组、对象、值和组件。">
-<meta name="twitter:image" content="https://wx1.sinaimg.cn/mw690/3cc821ffgy1fpuszn0yeej20ss0jegmn.jpg">
+<meta name="twitter:title" content="JUN的博客">
+<meta name="twitter:description" content="title： Vue 2.0 学习之旅（）– 组件(二)date： 2018-03-30tag： [组件组合，Prop] category：[Vue,Vue组件]组件设计初衷就是配合使用的，最常见的就是形成父子组件的关系。在A组件之中使用组件B，两者之间就必然需要相互通信：父组件可能要给子组件下发数据，子组件则可能要将它内部发生的事情告诉父组件。然而，通过一个良好定义的接口来尽可能将父子组件解耦">
 
 
 
@@ -130,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://myjunmu.top/2018/03/29/seven/"/>
+  <link rel="canonical" href="http://myjunmu.top/2018/03/30/prop/"/>
 
 
 
 
 
-  <title>Vue 2.0 学习之旅--指令 | JUN的博客</title>
+  <title> | JUN的博客</title>
   
 
 
@@ -307,7 +296,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://myjunmu.top/2018/03/29/seven/">
+    <link itemprop="mainEntityOfPage" href="http://myjunmu.top/2018/03/30/prop/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Joe">
@@ -324,7 +313,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Vue 2.0 学习之旅--指令</h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -336,8 +325,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-29T00:00:00+08:00">
-                2018-03-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-30T18:25:30+08:00">
+                2018-03-30
               </time>
             
 
@@ -346,39 +335,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Vue/" itemprop="url" rel="index">
-                    <span itemprop="name">Vue</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Vue/Vue指令/" itemprop="url" rel="index">
-                    <span itemprop="name">Vue指令</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -401,7 +357,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  360
+                  395
                 </span>
               
 
@@ -438,11 +394,13 @@
       
 
       
-        <p>v-for 指令主要用于迭代，迭代的目标可以是数组、对象、值和组件。<br><a id="more"></a></p>
-<h3 id="数组的-v-for"><a href="#数组的-v-for" class="headerlink" title="数组的 v-for"></a>数组的 v-for</h3><p>v-for 指令根据一组数组的选项列表进行渲染。v-for 指令需要使用 item in items 形式的特殊语法，items 是源数据数组，item是数组元素迭代的别名。<br><img src="https://wx1.sinaimg.cn/mw690/3cc821ffgy1fpuszn0yeej20ss0jegmn.jpg" alt=""><br>在 v-for块 中，我们拥有对父作用域属性的完全访问权限。<br><img src="https://wx4.sinaimg.cn/mw690/3cc821ffgy1fpuszp90g6j20rq0i6my9.jpg" alt=""><br>v-for 还支持一个可选的第二个参数作为当前的索引。<br><img src="https://wx1.sinaimg.cn/mw690/3cc821ffgy1fpuszr3vg7j20sy0igjsn.jpg" alt=""><br>你可以用 of 代替 in 作为分隔符。</p>
-<h3 id="对象的-v-for"><a href="#对象的-v-for" class="headerlink" title="对象的 v-for"></a>对象的 v-for</h3><p>你可以用 v-for 通过一个对象的属性来迭代。<br><img src="https://wx2.sinaimg.cn/mw690/3cc821ffgy1fpuszt4w49j20t40j675i.jpg" alt=""><br>你也可以提供第二个参数为键名。<br><img src="https://wx1.sinaimg.cn/mw690/3cc821ffgy1fpuszv5ts6j20t40jk3zs.jpg" alt=""><br>你还可以提供第三个参数为索引。<br><img src="https://wx3.sinaimg.cn/mw690/3cc821ffgy1fpuszwr8avj20st0ic74n.jpg" alt=""><br>key、数组更新检测、对象更新检测、显示过滤/排序结果此处暂不作说明。</p>
-<h3 id="值的-v-for"><a href="#值的-v-for" class="headerlink" title="值的 v-for"></a>值的 v-for</h3><p>v-for 也可以是整数。<br><img src="https://wx2.sinaimg.cn/mw690/3cc821ffgy1fpuszylk1pj20pr0kugly.jpg" alt=""><br>v-for on a &lt;template> 暂不作说明。<br><strong>v-for with v-if</strong><br>当 v-for 和 v-if 处于同一节点的时候，v-for 的优先级比 v-if 的更高，这意味着 v-if 将分别重复运行于每个 v-for 循环中。<br><img src="https://wx1.sinaimg.cn/mw690/3cc821ffgy1fput00clgaj20tj0ixq48.jpg" alt=""><br>而如果你的目的是有条件的跳过循环的执行，那么可以将 v-if 置于外层元素上。<br><img src="https://wx1.sinaimg.cn/mw690/3cc821ffgy1fput049y9nj20sb0jc0tz.jpg" alt=""></p>
-<h3 id="组件的-v-for"><a href="#组件的-v-for" class="headerlink" title="组件的 v-for"></a>组件的 v-for</h3><p>关于组件的 v-for 暂时不作说明，等学完组件之后再来更新。</p>
+        <hr>
+<p>title： Vue 2.0 学习之旅（）– 组件(二)<br>date： 2018-03-30<br>tag： [组件组合，Prop]</p>
+<h2 id="category：-Vue-Vue组件"><a href="#category：-Vue-Vue组件" class="headerlink" title="category：[Vue,Vue组件]"></a>category：[Vue,Vue组件]</h2><p>组件设计初衷就是配合使用的，最常见的就是形成父子组件的关系。在A组件之中使用组件B，两者之间就必然需要相互通信：父组件可能要给子组件下发数据，子组件则可能要将它内部发生的事情告诉父组件。然而，通过一个良好定义的接口来尽可能将父子组件解耦也是很重要的。这保证了每个组件的代码可以在相互隔离的环境中书写和理解，从而提高了其可维护性和复用性。<br><a id="more"></a><br>在 Vue 中，父子组件的关系可以总结为 prop 向下传递，事件向上传递。父组件通过事 prop 给子组件下发数据，子组件通过事件给父组件发送消息。</p>
+<h3 id="Prop"><a href="#Prop" class="headerlink" title="Prop"></a>Prop</h3><ul>
+<li>类型：数组或对象</li>
+<li>props 可以是数组或对象，用于接收来自父组件的数据。props 可以是简单的数组，或者使用对象作为替代，对象允许配置高级选项，如类型检测、自定义校验和设置默认值。<h4 id="使用Prop传递数据"><a href="#使用Prop传递数据" class="headerlink" title="使用Prop传递数据"></a>使用Prop传递数据</h4>组件实例的作用域是孤立的。这意味着不能在子组件的模块内直接引用父组件的数据，父组件的数据需要通过prop才能下发到子组件中。<br>子组件要显式地用 props 选项声明它预期的数据：</li>
+</ul>
 
       
     </div>
@@ -458,12 +416,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/列表渲染，v-for/" rel="tag"># 列表渲染，v-for</a>
-          
-        </div>
-      
 
       
       
@@ -473,8 +425,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/29/second/" rel="next" title="Vue 2.0 学习之旅（三）--指令">
-                <i class="fa fa-chevron-left"></i> Vue 2.0 学习之旅（三）--指令
+              <a href="/2018/03/30/组件注册/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
               </a>
             
           </div>
@@ -483,8 +435,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/03/29/hello-world/" rel="prev" title="Hello World">
-                Hello World <i class="fa fa-chevron-right"></i>
+              <a href="/2018/03/30/新文档tem/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -632,7 +584,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数组的-v-for"><span class="nav-number">1.</span> <span class="nav-text">数组的 v-for</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象的-v-for"><span class="nav-number">2.</span> <span class="nav-text">对象的 v-for</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#值的-v-for"><span class="nav-number">3.</span> <span class="nav-text">值的 v-for</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件的-v-for"><span class="nav-number">4.</span> <span class="nav-text">组件的 v-for</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#category：-Vue-Vue组件"><span class="nav-number">1.</span> <span class="nav-text">category：[Vue,Vue组件]</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Prop"><span class="nav-number">1.1.</span> <span class="nav-text">Prop</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用Prop传递数据"><span class="nav-number">1.1.1.</span> <span class="nav-text">使用Prop传递数据</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -666,7 +618,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">3.4k</span>
+    <span title="Site words total count">3.7k</span>
   
 </div>
 

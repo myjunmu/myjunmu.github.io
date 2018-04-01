@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="title： Vue 2.0 学习之旅（）–指令date： 2018-03-30tag： [Class 与 Style绑定，v:bind] category：[ Vue,Vue 指令]操作元素的 class 列表和内联样式是数据绑定的一个常见需求。因为它们都是属性，所以我们可以用 v-bind 处理它们：只需要通过表达式计算出字符串结果即可。不过，字符串拼接麻烦且容易出错。因此，在 v-bind">
+<meta name="description" content="title： Vue 2.0 学习之旅–组件（一）date： 2018-03-30tag： [组件注册，全局注册，局部注册] category：[Vue,Vue组件]组件(compone)是 Vue.js 最强大的功能之一。组件可以扩展 HTML 元素，封装可重用的代码。在较高层面上，组件是自定义元素，Vue.js的编译器为它添加特殊功能。在有些情况下，组件也可以表现为用 is 特性进行了扩展的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JUN的博客">
-<meta property="og:url" content="http://myjunmu.top/2018/03/30/six/index.html">
+<meta property="og:url" content="http://myjunmu.top/2018/03/30/组件注册/index.html">
 <meta property="og:site_name" content="JUN的博客">
-<meta property="og:description" content="title： Vue 2.0 学习之旅（）–指令date： 2018-03-30tag： [Class 与 Style绑定，v:bind] category：[ Vue,Vue 指令]操作元素的 class 列表和内联样式是数据绑定的一个常见需求。因为它们都是属性，所以我们可以用 v-bind 处理它们：只需要通过表达式计算出字符串结果即可。不过，字符串拼接麻烦且容易出错。因此，在 v-bind">
+<meta property="og:description" content="title： Vue 2.0 学习之旅–组件（一）date： 2018-03-30tag： [组件注册，全局注册，局部注册] category：[Vue,Vue组件]组件(compone)是 Vue.js 最强大的功能之一。组件可以扩展 HTML 元素，封装可重用的代码。在较高层面上，组件是自定义元素，Vue.js的编译器为它添加特殊功能。在有些情况下，组件也可以表现为用 is 特性进行了扩展的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-30T15:14:13.897Z">
+<meta property="og:updated_time" content="2018-03-30T12:28:33.314Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JUN的博客">
-<meta name="twitter:description" content="title： Vue 2.0 学习之旅（）–指令date： 2018-03-30tag： [Class 与 Style绑定，v:bind] category：[ Vue,Vue 指令]操作元素的 class 列表和内联样式是数据绑定的一个常见需求。因为它们都是属性，所以我们可以用 v-bind 处理它们：只需要通过表达式计算出字符串结果即可。不过，字符串拼接麻烦且容易出错。因此，在 v-bind">
+<meta name="twitter:description" content="title： Vue 2.0 学习之旅–组件（一）date： 2018-03-30tag： [组件注册，全局注册，局部注册] category：[Vue,Vue组件]组件(compone)是 Vue.js 最强大的功能之一。组件可以扩展 HTML 元素，封装可重用的代码。在较高层面上，组件是自定义元素，Vue.js的编译器为它添加特殊功能。在有些情况下，组件也可以表现为用 is 特性进行了扩展的">
 
 
 
@@ -119,7 +119,7 @@
 
 
 
-  <link rel="canonical" href="http://myjunmu.top/2018/03/30/six/"/>
+  <link rel="canonical" href="http://myjunmu.top/2018/03/30/组件注册/"/>
 
 
 
@@ -296,7 +296,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://myjunmu.top/2018/03/30/six/">
+    <link itemprop="mainEntityOfPage" href="http://myjunmu.top/2018/03/30/组件注册/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Joe">
@@ -325,7 +325,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-30T11:50:59+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-30T12:36:43+08:00">
                 2018-03-30
               </time>
             
@@ -357,7 +357,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  416
+                  676
                 </span>
               
 
@@ -395,12 +395,22 @@
 
       
         <hr>
-<p>title： Vue 2.0 学习之旅（）–指令<br>date： 2018-03-30<br>tag： [Class 与 Style绑定，v:bind]</p>
-<h2 id="category：-Vue-Vue-指令"><a href="#category：-Vue-Vue-指令" class="headerlink" title="category：[ Vue,Vue 指令]"></a>category：[ Vue,Vue 指令]</h2><p>操作元素的 class 列表和内联样式是数据绑定的一个常见需求。因为它们都是属性，所以我们可以用 v-bind 处理它们：只需要通过表达式计算出字符串结果即可。不过，字符串拼接麻烦且容易出错。因此，在 v-bind 用于 class 和 style 时，Vue.js 做了专门的增强。表达式结果的类型除了字符串类型之外，还可以是对象或者数组。</p>
-<h3 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind"></a>v-bind</h3><h4 id="绑定HTML-Class"><a href="#绑定HTML-Class" class="headerlink" title="绑定HTML Class"></a>绑定HTML Class</h4><h5 id="对象语法"><a href="#对象语法" class="headerlink" title="对象语法"></a>对象语法</h5><p>我们可以传给 v-bind：class 一个对象，以动态地切换class：<br><code>&lt;div v-bind:class=&quot;{active:isActive}&quot;&gt;</code><br>上面的语法表示 active 这个class 存在与否取决于数据属性 isActive<br>的真假。<br>你可以在属性中传入更多地属性来动态的切换多个class。<br>v-bind：class 指令也可以与普通的 class 属性共存。<br>绑定的数据对象不必定义在模板里：<br>我们也可以在这里绑定一个返回对象的计算属性。</p>
-<h5 id="数组语法"><a href="#数组语法" class="headerlink" title="数组语法"></a>数组语法</h5><p>我们也可以传给 v-bind：class 一个数组，以应用一个 class 列表：<br>如果你想根据条件切换列表中的class，可以用三元表达式：</p>
-<h5 id="用在组件上"><a href="#用在组件上" class="headerlink" title="用在组件上"></a>用在组件上</h5><p>当在一个自定义组件上使用 class 属性时，这些类将被添加到该组件的根元素上面。这个元素上已经存在的类不会被覆盖。</p>
-<h4 id="绑定内联样式"><a href="#绑定内联样式" class="headerlink" title="绑定内联样式"></a>绑定内联样式</h4><h5 id="对象语法-1"><a href="#对象语法-1" class="headerlink" title="对象语法"></a>对象语法</h5><h5 id="数组语法-1"><a href="#数组语法-1" class="headerlink" title="数组语法"></a>数组语法</h5><h5 id="自动添加前缀"><a href="#自动添加前缀" class="headerlink" title="自动添加前缀"></a>自动添加前缀</h5><h5 id="多重值"><a href="#多重值" class="headerlink" title="多重值"></a>多重值</h5>
+<p>title： Vue 2.0 学习之旅–组件（一）<br>date： 2018-03-30<br>tag： [组件注册，全局注册，局部注册]</p>
+<h2 id="category：-Vue-Vue组件"><a href="#category：-Vue-Vue组件" class="headerlink" title="category：[Vue,Vue组件]"></a>category：[Vue,Vue组件]</h2><p>组件(compone)是 Vue.js 最强大的功能之一。组件可以扩展 HTML 元素，封装可重用的代码。在较高层面上，组件是自定义元素，Vue.js的编译器为它添加特殊功能。在有些情况下，组件也可以表现为用 is 特性进行了扩展的原生 HTML 元素。<br>所有的 Vue 组件同时也都是 Vue 的实例，所以可接受相同的选项对象（除了一些根级特有的选项）并提供相同的生命钩子。<br><a id="more"></a></p>
+<h3 id="使用组件"><a href="#使用组件" class="headerlink" title="使用组件"></a>使用组件</h3><h4 id="全局注册"><a href="#全局注册" class="headerlink" title="全局注册"></a>全局注册</h4><p>要注册一个全局组件，可以使用：Vue.component(tagname,option)。例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&apos;myname&apos;,&#123;</span><br><span class="line">  //选项</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>注意：</p>
+<blockquote>
+<p>对于自定义标签的命名，Vue.js 不强制遵循 W3C 规则（小写，并且包含一个短杠），尽管这被认为是最佳实践。</p>
+</blockquote>
+<p>组件在注册之后，就可以作为自定义元素使用。<br>注意确保在初始化根实例之前注册组件。如果未在初始化根实例之前注册组件，程序会报错。<br>就算是全局注册，也是有范围限制的。</p>
+<h4 id="局部注册"><a href="#局部注册" class="headerlink" title="局部注册"></a>局部注册</h4><p>不必要将每个组件都注册到全局。可以通过某个 Vue 实例/组件的实例选项 components 注册仅在其作用域中可用的组件：</p>
+<h4 id="DOM模板解析注意事项"><a href="#DOM模板解析注意事项" class="headerlink" title="DOM模板解析注意事项"></a>DOM模板解析注意事项</h4><p>当使用 DOM 作为模板时（例如，使用 el 选项来把 Vue 实例挂载到一个已有内容的元素上），你会受到 HTML 本身的一些限制，因为 Vue 只有在浏览器解析、规范化模板之后才能获取其内容。尤其要注意，像 &lt;ul>、&lt;ol> 、&lt;table>、&lt;select> 这样的元素里允许包含的元素有限制，而另外一些像&lt;option> 这样的元素只能出现在某些特定元素的内部。在自定义组件中使用这些受限制的元素时会导致一些问题，例如：<br>自定义组件会被当作无效的内容，因此会导致错误的渲染结果。(但是不会报错)<br>变通的方案是使用特殊的 is 特性。(暂时不作说明）<br>注意：如果是使用以下来源之一的字符串模板，则没有这些限制：</p>
+<ul>
+<li>&lt;script type=”text/x-template”></li>
+<li>Javascript 内联模板字符串</li>
+<li>.Vue 组件<br>（此处内容待补充）<h4 id="data-必须是函数"><a href="#data-必须是函数" class="headerlink" title="data 必须是函数"></a>data 必须是函数</h4>构造Vue实例时传入的各种选项大多都可以在组件使用。只有一个例外：data 必须是函数，否则程序会报错。</li>
+</ul>
+
       
     </div>
     
@@ -424,7 +434,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/30/five/" rel="next" title="">
+              <a href="/2018/03/30/v-model/" rel="next" title="">
                 <i class="fa fa-chevron-left"></i> 
               </a>
             
@@ -434,7 +444,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/03/30/ten/" rel="prev" title="">
+              <a href="/2018/03/30/prop/" rel="prev" title="">
                  <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -583,7 +593,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#category：-Vue-Vue-指令"><span class="nav-number">1.</span> <span class="nav-text">category：[ Vue,Vue 指令]</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#v-bind"><span class="nav-number">1.1.</span> <span class="nav-text">v-bind</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#绑定HTML-Class"><span class="nav-number">1.1.1.</span> <span class="nav-text">绑定HTML Class</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#对象语法"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">对象语法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数组语法"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">数组语法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#用在组件上"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">用在组件上</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#绑定内联样式"><span class="nav-number">1.1.2.</span> <span class="nav-text">绑定内联样式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#对象语法-1"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">对象语法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数组语法-1"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">数组语法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#自动添加前缀"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">自动添加前缀</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#多重值"><span class="nav-number">1.1.2.4.</span> <span class="nav-text">多重值</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#category：-Vue-Vue组件"><span class="nav-number">1.</span> <span class="nav-text">category：[Vue,Vue组件]</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用组件"><span class="nav-number">1.1.</span> <span class="nav-text">使用组件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#全局注册"><span class="nav-number">1.1.1.</span> <span class="nav-text">全局注册</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#局部注册"><span class="nav-number">1.1.2.</span> <span class="nav-text">局部注册</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DOM模板解析注意事项"><span class="nav-number">1.1.3.</span> <span class="nav-text">DOM模板解析注意事项</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#data-必须是函数"><span class="nav-number">1.1.4.</span> <span class="nav-text">data 必须是函数</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -617,7 +627,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">3.4k</span>
+    <span title="Site words total count">3.7k</span>
   
 </div>
 

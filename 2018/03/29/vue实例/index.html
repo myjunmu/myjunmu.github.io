@@ -79,25 +79,17 @@
 
 
 
-<meta name="description" content="指令（Directives）是带有 v- 前缀的特殊属性。指令属性的值预期是单个 Javascript 表达式（v-for 是例外情况）。指令的职责是，当表达式的值改变时，将其产生的连带影响，响应式地作用于DOM。">
+<meta name="description" content="title： Vue 2.0 学习之旅–Vue 实例date： 2018-3-29 01:00:00tag： Vue实例 category： [ Vue，Vue 实例]Vue实例每个Vue应用都是通过用 Vue 函数创建一个新的 Vue 实例开始的：123var vm=new Vue(&amp;#123;    //选项&amp;#125;) 当创建一个 Vue 实例对象之后，你可以传入一个选项对象。一个 Vu">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue 2.0 学习之旅（三）--指令">
-<meta property="og:url" content="http://myjunmu.top/2018/03/29/second/index.html">
+<meta property="og:title" content="JUN的博客">
+<meta property="og:url" content="http://myjunmu.top/2018/03/29/vue实例/index.html">
 <meta property="og:site_name" content="JUN的博客">
-<meta property="og:description" content="指令（Directives）是带有 v- 前缀的特殊属性。指令属性的值预期是单个 Javascript 表达式（v-for 是例外情况）。指令的职责是，当表达式的值改变时，将其产生的连带影响，响应式地作用于DOM。">
+<meta property="og:description" content="title： Vue 2.0 学习之旅–Vue 实例date： 2018-3-29 01:00:00tag： Vue实例 category： [ Vue，Vue 实例]Vue实例每个Vue应用都是通过用 Vue 函数创建一个新的 Vue 实例开始的：123var vm=new Vue(&amp;#123;    //选项&amp;#125;) 当创建一个 Vue 实例对象之后，你可以传入一个选项对象。一个 Vu">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://wx4.sinaimg.cn/mw690/3cc821ffgy1fpu12uufk6j20pr0gaaaf.jpg">
-<meta property="og:image" content="https://wx4.sinaimg.cn/mw690/3cc821ffgy1fpu1ctt11bj20sw0h03zm.jpg">
-<meta property="og:image" content="https://wx1.sinaimg.cn/mw690/3cc821ffgy1fpu12k4e0sj20ss0geq3d.jpg">
-<meta property="og:image" content="https://wx4.sinaimg.cn/mw690/3cc821ffgy1fpu0qpf4l1j20sy0h73z6.jpg">
-<meta property="og:image" content="https://wx3.sinaimg.cn/mw690/3cc821ffgy1fpu12oj0zuj20sy0loq95.jpg">
-<meta property="og:image" content="https://wx2.sinaimg.cn/mw690/3cc821ffgy1fpu12m4polj20sp0gst95.jpg">
-<meta property="og:image" content="https://wx1.sinaimg.cn/mw690/3cc821ffgy1fpu12stad6j20sr0h2q3e.jpg">
-<meta property="og:updated_time" content="2018-03-30T03:54:05.887Z">
+<meta property="og:updated_time" content="2018-04-01T02:42:33.697Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vue 2.0 学习之旅（三）--指令">
-<meta name="twitter:description" content="指令（Directives）是带有 v- 前缀的特殊属性。指令属性的值预期是单个 Javascript 表达式（v-for 是例外情况）。指令的职责是，当表达式的值改变时，将其产生的连带影响，响应式地作用于DOM。">
-<meta name="twitter:image" content="https://wx4.sinaimg.cn/mw690/3cc821ffgy1fpu12uufk6j20pr0gaaaf.jpg">
+<meta name="twitter:title" content="JUN的博客">
+<meta name="twitter:description" content="title： Vue 2.0 学习之旅–Vue 实例date： 2018-3-29 01:00:00tag： Vue实例 category： [ Vue，Vue 实例]Vue实例每个Vue应用都是通过用 Vue 函数创建一个新的 Vue 实例开始的：123var vm=new Vue(&amp;#123;    //选项&amp;#125;) 当创建一个 Vue 实例对象之后，你可以传入一个选项对象。一个 Vu">
 
 
 
@@ -127,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://myjunmu.top/2018/03/29/second/"/>
+  <link rel="canonical" href="http://myjunmu.top/2018/03/29/vue实例/"/>
 
 
 
 
 
-  <title>Vue 2.0 学习之旅（三）--指令 | JUN的博客</title>
+  <title> | JUN的博客</title>
   
 
 
@@ -304,7 +296,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://myjunmu.top/2018/03/29/second/">
+    <link itemprop="mainEntityOfPage" href="http://myjunmu.top/2018/03/29/vue实例/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Joe">
@@ -321,7 +313,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Vue 2.0 学习之旅（三）--指令</h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -333,7 +325,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-29T00:00:00+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-29T10:34:55+08:00">
                 2018-03-29
               </time>
             
@@ -365,7 +357,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  428
+                  387
                 </span>
               
 
@@ -381,7 +373,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  1
                 </span>
               
             </div>
@@ -402,12 +394,11 @@
       
 
       
-        <p>指令（Directives）是带有 v- 前缀的特殊属性。指令属性的值预期是单个 Javascript 表达式（v-for 是例外情况）。指令的职责是，当表达式的值改变时，将其产生的连带影响，响应式地作用于DOM。<br><a id="more"></a></p>
-<h3 id="v-text指令"><a href="#v-text指令" class="headerlink" title="v-text指令"></a>v-text指令</h3><p>v-text指令用于操作元素当中的文本，其实际作用与“Mustache”语法(双大括号)的效果是一致的。<br><img src="https://wx4.sinaimg.cn/mw690/3cc821ffgy1fpu12uufk6j20pr0gaaaf.jpg" alt=""><br>但是注意，使用v-text会替换掉元素内的所有文本内容，如果只想替换掉其中的部分文本，需要使用“Mustache”语法(双大括号)。<br><img src="https://wx4.sinaimg.cn/mw690/3cc821ffgy1fpu1ctt11bj20sw0h03zm.jpg" alt=""></p>
-<h3 id="v-html指令"><a href="#v-html指令" class="headerlink" title="v-html指令"></a>v-html指令</h3><p>v-html指令和v-text指令的区别在于，v-text将HTML的标签当做纯文本进行输出，而v-html会将HTML的标签解析后再输出。注意下面代码的输出结果的区别：<br><img src="https://wx1.sinaimg.cn/mw690/3cc821ffgy1fpu12k4e0sj20ss0geq3d.jpg" alt=""></p>
-<h3 id="v-once指令"><a href="#v-once指令" class="headerlink" title="v-once指令"></a>v-once指令</h3><p>v-once指令用于执行一次性的插值，当数据改变时，插值处的内容不会更新。该指令会影响到该节点上的所有数据绑定：<br><img src="https://wx4.sinaimg.cn/mw690/3cc821ffgy1fpu0qpf4l1j20sy0h73z6.jpg" alt=""><br><img src="https://wx3.sinaimg.cn/mw690/3cc821ffgy1fpu12oj0zuj20sy0loq95.jpg" alt=""></p>
-<h3 id="v-if指令"><a href="#v-if指令" class="headerlink" title="v-if指令"></a>v-if指令</h3><p>v-if指令用于控制一个元素的显示与否，当表达式的值为真，则显示该元素；当表达式的值为假，则不显示该元素：<br><img src="https://wx2.sinaimg.cn/mw690/3cc821ffgy1fpu12m4polj20sp0gst95.jpg" alt=""></p>
-<h3 id="v-show"><a href="#v-show" class="headerlink" title="v-show"></a>v-show</h3><p>v-show指令和v-if指令一样，都是用来控制一个元素的显示与否，当表达式的值为真，则显示该元素；当表达式的值为假，则不显示该元素。<br><img src="https://wx1.sinaimg.cn/mw690/3cc821ffgy1fpu12stad6j20sr0h2q3e.jpg" alt=""><br>v-if和v-show的区别在于，v-if在表达式为假的时候，将该元素节点从DOM树上删除；而v-show在表达式为假的时候，是为该元素追加display：none，的属性。</p>
+        <hr>
+<p>title： Vue 2.0 学习之旅–Vue 实例<br>date： 2018-3-29 01:00:00<br>tag： Vue实例</p>
+<h2 id="category：-Vue，Vue-实例"><a href="#category：-Vue，Vue-实例" class="headerlink" title="category： [ Vue，Vue 实例]"></a>category： [ Vue，Vue 实例]</h2><h3 id="Vue实例"><a href="#Vue实例" class="headerlink" title="Vue实例"></a>Vue实例</h3><p>每个Vue应用都是通过用 Vue 函数创建一个新的 Vue 实例开始的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var vm=new Vue(&#123;</span><br><span class="line">    //选项</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>当创建一个 Vue 实例对象之后，你可以传入一个<strong>选项对象</strong>。<br>一个 Vue 应用由一个通过 new Vue 创建的<strong>根 Vue 实例</strong>，以及可嵌套的、可复用的组件树构成。</p>
+<h4 id="数据与方法"><a href="#数据与方法" class="headerlink" title="数据与方法"></a>数据与方法</h4><p>当一个 Vue 实例被创建时，它向 Vue 的响应式系统中加入了其<strong> data 对象</strong>中能找到的所有属性。当这些属性的值发生改变时，视图将会产生“响应”，即匹配更新为新的值。<br>当这些数据改变时，视图会重新渲染。但是只有在实例被创建时 data 中存在的属性才是响应式的。也就是说如果你添加一个新的属性，随后对b的改动将不会触发任何视图的更新。<br>如果你知道你会在晚些时候需要一个属性，但是一开始它为空或不存在，那么你可以设置一些初始值。<br>唯一的例外是使用 object.freeze(),这会阻止修改现有的属性，也意味着响应系统无法再追踪变化。<br>除了数据属性，Vue 实例还暴露了一些有用的实例属性与方法。它们都有前缀 $ ,以便和用户定义的属性区分开来。</p>
 
       
     </div>
@@ -432,14 +423,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/03/29/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/03/29/seven/" rel="prev" title="Vue 2.0 学习之旅--指令">
-                Vue 2.0 学习之旅--指令 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/03/29/hexo/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -587,7 +582,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#v-text指令"><span class="nav-number">1.</span> <span class="nav-text">v-text指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-html指令"><span class="nav-number">2.</span> <span class="nav-text">v-html指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-once指令"><span class="nav-number">3.</span> <span class="nav-text">v-once指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-if指令"><span class="nav-number">4.</span> <span class="nav-text">v-if指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-show"><span class="nav-number">5.</span> <span class="nav-text">v-show</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#category：-Vue，Vue-实例"><span class="nav-number">1.</span> <span class="nav-text">category： [ Vue，Vue 实例]</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Vue实例"><span class="nav-number">1.1.</span> <span class="nav-text">Vue实例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据与方法"><span class="nav-number">1.1.1.</span> <span class="nav-text">数据与方法</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -621,7 +616,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">3.4k</span>
+    <span title="Site words total count">3.7k</span>
   
 </div>
 

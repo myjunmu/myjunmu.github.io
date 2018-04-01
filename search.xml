@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title><![CDATA[Vue 2.0 学习之旅（一）--安装]]></title>
-    <url>%2F2018%2F09%2F29%2Ffirst%2F</url>
+    <url>%2F2018%2F09%2F29%2Fvue%20%E5%AE%89%E8%A3%85%2F</url>
     <content type="text"><![CDATA[从今天开始学习前端框架 Vue，该系列的文章主要记录自己在 Vue 的学习过程中所了解到的一些基础知识。 兼容性Vue不支持 IE8 及以下版本。 辅助工具在使用 Vue 时推荐在浏览器上安装 Vue Devtools。它允许你在一个更友好的界面中审查和调试 Vue 应用。 Vue.js 安装教程直接下载直接下载vue.js文件，然后通过&lt;script>标签引用。&lt;script src=&quot;/地址/vue.js&quot;&gt;&lt;/script&gt; CDN 方法 BootCDN（国内） :&lt;script src=&quot;https://cdn.bootcss.com/2.5.16/vue.js&quot;&gt;&lt;/script&gt; 其它（国外）：&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js&quot;&gt;&lt;/script&gt;&lt;script src=&quot;https:/unpkg.com/vue@2.5.16/dist/vue.js&quot;&gt;&lt;/script&gt;&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js&quot;&gt;&lt;/script&gt;改变&lt;script>标签内的数字就可以手动选择 Vue.js 的不同版本。关于 Vue.js 的版本情况你可以登录 http://www.bootcdn.cn/ 或者其他网址查看。版本说明开发版本 vue.js 包含完整的警告和调试模式（建议学习过程中使用该版本）生产版本 vue.min.js 是一个更小的构建，可以获得比开发环境下更快的速度体验。（建议在实际项目中使用该版本）下面附上一张第一次成功运行的图片：]]></content>
   </entry>
   <entry>
@@ -12,37 +12,37 @@
   </entry>
   <entry>
     <title></title>
-    <url>%2F2018%2F03%2F30%2F%E6%96%B0%E6%96%87%E6%A1%A322%2F</url>
-    <content type="text"><![CDATA[title： Vue 2.0 学习之旅（）– 组件(二)date： 2018-03-30tag： [组件组合，Prop] category：[Vue,Vue组件]组件设计初衷就是配合使用的，最常见的就是形成父子组件的关系。在A组件之中使用组件B，两者之间就必然需要相互通信：父组件可能要给子组件下发数据，子组件则可能要将它内部发生的事情告诉父组件。然而，通过一个良好定义的接口来尽可能将父子组件解耦也是很重要的。这保证了每个组件的代码可以在相互隔离的环境中书写和理解，从而提高了其可维护性和复用性。 Prop使用Prop传递数据组件实例的作用域是孤立的。这意味着不能在子组件的模块内直接引用父组件的数据，父组件的数据需要通过prop才能下发到子组件中。prop是父组件用来传递数据的一个自定义属性。子组件要显式地用 props 选项声明它预期的数据：]]></content>
+    <url>%2F2018%2F03%2F30%2Fprop%2F</url>
+    <content type="text"><![CDATA[title： Vue 2.0 学习之旅（）– 组件(二)date： 2018-03-30tag： [组件组合，Prop] category：[Vue,Vue组件]组件设计初衷就是配合使用的，最常见的就是形成父子组件的关系。在A组件之中使用组件B，两者之间就必然需要相互通信：父组件可能要给子组件下发数据，子组件则可能要将它内部发生的事情告诉父组件。然而，通过一个良好定义的接口来尽可能将父子组件解耦也是很重要的。这保证了每个组件的代码可以在相互隔离的环境中书写和理解，从而提高了其可维护性和复用性。在 Vue 中，父子组件的关系可以总结为 prop 向下传递，事件向上传递。父组件通过事 prop 给子组件下发数据，子组件通过事件给父组件发送消息。 Prop 类型：数组或对象 props 可以是数组或对象，用于接收来自父组件的数据。props 可以是简单的数组，或者使用对象作为替代，对象允许配置高级选项，如类型检测、自定义校验和设置默认值。使用Prop传递数据组件实例的作用域是孤立的。这意味着不能在子组件的模块内直接引用父组件的数据，父组件的数据需要通过prop才能下发到子组件中。子组件要显式地用 props 选项声明它预期的数据：]]></content>
   </entry>
   <entry>
     <title></title>
-    <url>%2F2018%2F03%2F30%2Feleven%2F</url>
+    <url>%2F2018%2F03%2F30%2F%E7%BB%84%E4%BB%B6%E6%B3%A8%E5%86%8C%2F</url>
     <content type="text"><![CDATA[title： Vue 2.0 学习之旅–组件（一）date： 2018-03-30tag： [组件注册，全局注册，局部注册] category：[Vue,Vue组件]组件(compone)是 Vue.js 最强大的功能之一。组件可以扩展 HTML 元素，封装可重用的代码。在较高层面上，组件是自定义元素，Vue.js的编译器为它添加特殊功能。在有些情况下，组件也可以表现为用 is 特性进行了扩展的原生 HTML 元素。所有的 Vue 组件同时也都是 Vue 的实例，所以可接受相同的选项对象（除了一些根级特有的选项）并提供相同的生命钩子。 使用组件全局注册要注册一个全局组件，可以使用：Vue.component(tagname,option)。例如：123Vue.component(&apos;myname&apos;,&#123; //选项&#125;) 注意： 对于自定义标签的命名，Vue.js 不强制遵循 W3C 规则（小写，并且包含一个短杠），尽管这被认为是最佳实践。 组件在注册之后，就可以作为自定义元素使用。注意确保在初始化根实例之前注册组件。如果未在初始化根实例之前注册组件，程序会报错。就算是全局注册，也是有范围限制的。 局部注册不必要将每个组件都注册到全局。可以通过某个 Vue 实例/组件的实例选项 components 注册仅在其作用域中可用的组件： DOM模板解析注意事项当使用 DOM 作为模板时（例如，使用 el 选项来把 Vue 实例挂载到一个已有内容的元素上），你会受到 HTML 本身的一些限制，因为 Vue 只有在浏览器解析、规范化模板之后才能获取其内容。尤其要注意，像 &lt;ul>、&lt;ol> 、&lt;table>、&lt;select> 这样的元素里允许包含的元素有限制，而另外一些像&lt;option> 这样的元素只能出现在某些特定元素的内部。在自定义组件中使用这些受限制的元素时会导致一些问题，例如：自定义组件会被当作无效的内容，因此会导致错误的渲染结果。(但是不会报错)变通的方案是使用特殊的 is 特性。(暂时不作说明）注意：如果是使用以下来源之一的字符串模板，则没有这些限制： &lt;script type=”text/x-template”> Javascript 内联模板字符串 .Vue 组件（此处内容待补充）data 必须是函数构造Vue实例时传入的各种选项大多都可以在组件使用。只有一个例外：data 必须是函数，否则程序会报错。]]></content>
   </entry>
   <entry>
     <title></title>
-    <url>%2F2018%2F03%2F30%2Feight%2F</url>
+    <url>%2F2018%2F03%2F30%2Fv-model%2F</url>
     <content type="text"><![CDATA[title： Vue 2.0 学习之旅–指令(六)date： 2018-03-30tag： [表单输入相关，v-model] category：[ Vue,Vue 指令]v-model 指令可以用于在 &lt;input> 和 &lt;textarea> 元素上创建双向数据绑定。它会根据控件类型自动选取正确的方法来更新元素。注意： v-model会忽略所有表单元素的 value 、checked 、selected 特性的初始值，而总是将 Vue 实例的数据作为数据来源。应该通过 Javascript 在组件的 data 选项中声明初始值。 对于需要使用输入法（如中文、日文、韩文等）的语言，v-model 不会在输入法组合文字过程中得到更新。如果要处理这个过程，可以使用 input 事件。 v-model文本多行文本复选框单选按钮选择框]]></content>
   </entry>
   <entry>
     <title></title>
-    <url>%2F2018%2F03%2F30%2Ften%2F</url>
+    <url>%2F2018%2F03%2F30%2Fv-on%2F</url>
     <content type="text"><![CDATA[title： Vue 2.0 学习之旅（）–指令date： 2018-03-30tag： [事件处理，v-on] category：[Vue,Vue指令]可以用 v-on 指令监听 DOM 事件，并在触发时运行一些 Javascript 代码。如果事件处理的逻辑很复杂，直接将 Javascript 代码写在 v-on 指令中是不可行的。v-on 指令还可以接收一个需要调用的方法名称。(在 methods 对象中定义方法)在绑定到一个方法的时候，我们也可以直接在内联 Javascript 语句中调用方法。 v-on事件修饰符修饰符是以点开头的指令后缀来表示的。Vue.js 为 v-on 提供了事件修饰符。 .stop .prevent .capture .self .once]]></content>
   </entry>
   <entry>
     <title></title>
-    <url>%2F2018%2F03%2F30%2Fsix%2F</url>
+    <url>%2F2018%2F03%2F30%2Fv-bind%2F</url>
     <content type="text"><![CDATA[title： Vue 2.0 学习之旅（）–指令date： 2018-03-30tag： [Class 与 Style绑定，v:bind] category：[ Vue,Vue 指令]操作元素的 class 列表和内联样式是数据绑定的一个常见需求。因为它们都是属性，所以我们可以用 v-bind 处理它们：只需要通过表达式计算出字符串结果即可。不过，字符串拼接麻烦且容易出错。因此，在 v-bind 用于 class 和 style 时，Vue.js 做了专门的增强。表达式结果的类型除了字符串类型之外，还可以是对象或者数组。 v-bind绑定HTML Class对象语法我们可以传给 v-bind：class 一个对象，以动态地切换class：&lt;div v-bind:class=&quot;{active:isActive}&quot;&gt;上面的语法表示 active 这个class 存在与否取决于数据属性 isActive的真假。你可以在属性中传入更多地属性来动态的切换多个class。v-bind：class 指令也可以与普通的 class 属性共存。绑定的数据对象不必定义在模板里：我们也可以在这里绑定一个返回对象的计算属性。 数组语法我们也可以传给 v-bind：class 一个数组，以应用一个 class 列表：如果你想根据条件切换列表中的class，可以用三元表达式： 用在组件上当在一个自定义组件上使用 class 属性时，这些类将被添加到该组件的根元素上面。这个元素上已经存在的类不会被覆盖。 绑定内联样式对象语法数组语法自动添加前缀多重值]]></content>
   </entry>
   <entry>
     <title></title>
-    <url>%2F2018%2F03%2F30%2Ffive%2F</url>
+    <url>%2F2018%2F03%2F30%2Fvtexthtml%2F</url>
     <content type="text"><![CDATA[title： Vue 2.0 学习之旅（）–指令date： 2018-03-30tag： [v-text,v-html,v-pre,v-once,v-cloak] category：[ Vue,Vue 指令]v-textv-htmlv-prev-oncev-cloak]]></content>
   </entry>
   <entry>
     <title><![CDATA[github 文件管理]]></title>
-    <url>%2F2018%2F03%2F30%2F%E6%96%B0%E6%96%87%E6%A1%A3%2F</url>
+    <url>%2F2018%2F03%2F30%2Fgithub%2F</url>
     <content type="text"><![CDATA[github文件管理##1.在电脑的任意位置处新建一个文件夹 2.进入文件夹，鼠标右键选择 git-bash-here 3.输入命令 git init 4.输入命令 git clone （你的仓库地址） 5.输入命令 git rm -r 6.输入命令 git rm 7.输入命令 git commit -m 8.输入命令 git push origin master]]></content>
       <categories>
         <category>github</category>
@@ -53,13 +53,13 @@
   </entry>
   <entry>
     <title></title>
-    <url>%2F2018%2F03%2F29%2F%E6%96%B0%E6%96%87%E6%A1%A32%2F</url>
+    <url>%2F2018%2F03%2F29%2Fhexo%2F</url>
     <content type="text"><![CDATA[github与hexo关联1.在电脑任意位置处新建一个文件夹 2.进入文件夹，鼠标右键选择gitbash 3.输入命令hexo init]]></content>
   </entry>
   <entry>
     <title></title>
-    <url>%2F2018%2F03%2F29%2F%E6%96%B0%E6%96%87%E6%A1%A31%2F</url>
-    <content type="text"><![CDATA[title： Vue 2.0 学习之旅–Vue 实例date： 2018-3-29tag： Vue实例 category： [ Vue，Vue 实例]vue 2.0 学习之旅Vue实例每个Vue应用都是通过用 Vue 函数创建一个新的 Vue 实例开始的： 123var vm=new Vue(&#123; //选项&#125;) 当创建一个 Vue 实例对象之后，你可以传入一个选项对象。一个 Vue 应用由一个通过 new Vue 创建的根 Vue 实例，以及可嵌套的、可复用的组件树构成。当一个 Vue 实例被创建时，它向 Vue 的响应式系统中加入了其 data 对象中能找到的所有属性。当这些属性的值发生改变时，视图将会产生“响应”，即匹配更新为新的值。 举例：]]></content>
+    <url>%2F2018%2F03%2F29%2Fvue%E5%AE%9E%E4%BE%8B%2F</url>
+    <content type="text"><![CDATA[title： Vue 2.0 学习之旅–Vue 实例date： 2018-3-29 01:00:00tag： Vue实例 category： [ Vue，Vue 实例]Vue实例每个Vue应用都是通过用 Vue 函数创建一个新的 Vue 实例开始的：123var vm=new Vue(&#123; //选项&#125;) 当创建一个 Vue 实例对象之后，你可以传入一个选项对象。一个 Vue 应用由一个通过 new Vue 创建的根 Vue 实例，以及可嵌套的、可复用的组件树构成。 数据与方法当一个 Vue 实例被创建时，它向 Vue 的响应式系统中加入了其 data 对象中能找到的所有属性。当这些属性的值发生改变时，视图将会产生“响应”，即匹配更新为新的值。当这些数据改变时，视图会重新渲染。但是只有在实例被创建时 data 中存在的属性才是响应式的。也就是说如果你添加一个新的属性，随后对b的改动将不会触发任何视图的更新。如果你知道你会在晚些时候需要一个属性，但是一开始它为空或不存在，那么你可以设置一些初始值。唯一的例外是使用 object.freeze(),这会阻止修改现有的属性，也意味着响应系统无法再追踪变化。除了数据属性，Vue 实例还暴露了一些有用的实例属性与方法。它们都有前缀 $ ,以便和用户定义的属性区分开来。]]></content>
   </entry>
   <entry>
     <title><![CDATA[Hello World]]></title>
@@ -67,8 +67,13 @@
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
   </entry>
   <entry>
+    <title><![CDATA[Vue 2.0 学习之旅（三）--指令]]></title>
+    <url>%2F2018%2F03%2F29%2F%E6%8C%87%E4%BB%A4%2F</url>
+    <content type="text"><![CDATA[指令（Directives）是带有 v- 前缀的特殊属性。指令属性的值预期是单个 Javascript 表达式（v-for 是例外情况）。指令的职责是，当表达式的值改变时，将其产生的连带影响，响应式地作用于DOM。 v-text指令v-text指令用于操作元素当中的文本，其实际作用与“Mustache”语法(双大括号)的效果是一致的。但是注意，使用v-text会替换掉元素内的所有文本内容，如果只想替换掉其中的部分文本，需要使用“Mustache”语法(双大括号)。 v-html指令v-html指令和v-text指令的区别在于，v-text将HTML的标签当做纯文本进行输出，而v-html会将HTML的标签解析后再输出。注意下面代码的输出结果的区别： v-once指令v-once指令用于执行一次性的插值，当数据改变时，插值处的内容不会更新。该指令会影响到该节点上的所有数据绑定： v-if指令v-if指令用于控制一个元素的显示与否，当表达式的值为真，则显示该元素；当表达式的值为假，则不显示该元素： v-showv-show指令和v-if指令一样，都是用来控制一个元素的显示与否，当表达式的值为真，则显示该元素；当表达式的值为假，则不显示该元素。v-if和v-show的区别在于，v-if在表达式为假的时候，将该元素节点从DOM树上删除；而v-show在表达式为假的时候，是为该元素追加display：none，的属性。]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[Vue 2.0 学习之旅--指令]]></title>
-    <url>%2F2018%2F03%2F29%2Fseven%2F</url>
+    <url>%2F2018%2F03%2F29%2Fv-for%2F</url>
     <content type="text"><![CDATA[v-for 指令主要用于迭代，迭代的目标可以是数组、对象、值和组件。 数组的 v-forv-for 指令根据一组数组的选项列表进行渲染。v-for 指令需要使用 item in items 形式的特殊语法，items 是源数据数组，item是数组元素迭代的别名。在 v-for块 中，我们拥有对父作用域属性的完全访问权限。v-for 还支持一个可选的第二个参数作为当前的索引。你可以用 of 代替 in 作为分隔符。 对象的 v-for你可以用 v-for 通过一个对象的属性来迭代。你也可以提供第二个参数为键名。你还可以提供第三个参数为索引。key、数组更新检测、对象更新检测、显示过滤/排序结果此处暂不作说明。 值的 v-forv-for 也可以是整数。v-for on a &lt;template> 暂不作说明。v-for with v-if当 v-for 和 v-if 处于同一节点的时候，v-for 的优先级比 v-if 的更高，这意味着 v-if 将分别重复运行于每个 v-for 循环中。而如果你的目的是有条件的跳过循环的执行，那么可以将 v-if 置于外层元素上。 组件的 v-for关于组件的 v-for 暂时不作说明，等学完组件之后再来更新。]]></content>
       <categories>
         <category>Vue</category>
@@ -77,10 +82,5 @@
       <tags>
         <tag>列表渲染，v-for</tag>
       </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Vue 2.0 学习之旅（三）--指令]]></title>
-    <url>%2F2018%2F03%2F29%2Fsecond%2F</url>
-    <content type="text"><![CDATA[指令（Directives）是带有 v- 前缀的特殊属性。指令属性的值预期是单个 Javascript 表达式（v-for 是例外情况）。指令的职责是，当表达式的值改变时，将其产生的连带影响，响应式地作用于DOM。 v-text指令v-text指令用于操作元素当中的文本，其实际作用与“Mustache”语法(双大括号)的效果是一致的。但是注意，使用v-text会替换掉元素内的所有文本内容，如果只想替换掉其中的部分文本，需要使用“Mustache”语法(双大括号)。 v-html指令v-html指令和v-text指令的区别在于，v-text将HTML的标签当做纯文本进行输出，而v-html会将HTML的标签解析后再输出。注意下面代码的输出结果的区别： v-once指令v-once指令用于执行一次性的插值，当数据改变时，插值处的内容不会更新。该指令会影响到该节点上的所有数据绑定： v-if指令v-if指令用于控制一个元素的显示与否，当表达式的值为真，则显示该元素；当表达式的值为假，则不显示该元素： v-showv-show指令和v-if指令一样，都是用来控制一个元素的显示与否，当表达式的值为真，则显示该元素；当表达式的值为假，则不显示该元素。v-if和v-show的区别在于，v-if在表达式为假的时候，将该元素节点从DOM树上删除；而v-show在表达式为假的时候，是为该元素追加display：none，的属性。]]></content>
   </entry>
 </search>
