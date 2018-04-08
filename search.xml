@@ -18,6 +18,17 @@
     <content type="text"><![CDATA[从今天开始学习前端框架 Vue，该系列的文章主要记录自己在 Vue 的学习过程中所了解到的一些基础知识。 兼容性Vue不支持 IE8 及以下版本。 辅助工具在使用 Vue 时推荐在浏览器上安装 Vue Devtools。它允许你在一个更友好的界面中审查和调试 Vue 应用。 Vue.js 安装教程直接下载直接下载vue.js文件，然后通过&lt;script>标签引用。&lt;script src=&quot;/地址/vue.js&quot;&gt;&lt;/script&gt; CDN 方法 BootCDN（国内） :&lt;script src=&quot;https://cdn.bootcss.com/2.5.16/vue.js&quot;&gt;&lt;/script&gt; 其它（国外）：&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js&quot;&gt;&lt;/script&gt;&lt;script src=&quot;https:/unpkg.com/vue@2.5.16/dist/vue.js&quot;&gt;&lt;/script&gt;&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js&quot;&gt;&lt;/script&gt;改变&lt;script>标签内的数字就可以手动选择 Vue.js 的不同版本。关于 Vue.js 的版本情况你可以登录 http://www.bootcdn.cn/ 或者其他网址查看。版本说明开发版本 vue.js 包含完整的警告和调试模式（建议学习过程中使用该版本）生产版本 vue.min.js 是一个更小的构建，可以获得比开发环境下更快的速度体验。（建议在实际项目中使用该版本）下面附上一张第一次成功运行的图片：]]></content>
   </entry>
   <entry>
+    <title><![CDATA[Javascript 基础]]></title>
+    <url>%2F2018%2F04%2F08%2Fjs%2F</url>
+    <content type="text"><![CDATA[Javascript 是面向 Web 的编程语言，并获得了所有网页浏览器的支持，是目前应用最广泛的编程语言之一，也是网页设计和 Web 应用必须掌握的基本工具。 Javascipt的发展历史1995年2月Netscape公司发布]]></content>
+      <categories>
+        <category>Javascript</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title></title>
     <url>%2F2018%2F03%2F30%2F%E6%96%B0%E6%96%87%E6%A1%A3tem%2F</url>
     <content type="text"><![CDATA[title： Vue 2.0 学习之旅 – Templatedate： 2018-03-30tag： [Template] category：[Vue]模板会替换挂载元素，挂载元素内部的内容不会显示。]]></content>
