@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Vue 2.0 学习之旅（一）--安装]]></title>
+    <url>%2F2018%2F09%2F29%2Fvue%20%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[从今天开始学习前端框架 Vue，该系列的文章主要记录自己在 Vue 的学习过程中所了解到的一些基础知识。 兼容性Vue不支持 IE8 及以下版本。 辅助工具在使用 Vue 时推荐在浏览器上安装 Vue Devtools。它允许你在一个更友好的界面中审查和调试 Vue 应用。 Vue.js 安装教程直接下载直接下载vue.js文件，然后通过&lt;script>标签引用。&lt;script src=&quot;/地址/vue.js&quot;&gt;&lt;/script&gt; CDN 方法 BootCDN（国内） :&lt;script src=&quot;https://cdn.bootcss.com/2.5.16/vue.js&quot;&gt;&lt;/script&gt; 其它（国外）：&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js&quot;&gt;&lt;/script&gt;&lt;script src=&quot;https:/unpkg.com/vue@2.5.16/dist/vue.js&quot;&gt;&lt;/script&gt;&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js&quot;&gt;&lt;/script&gt;改变&lt;script>标签内的数字就可以手动选择 Vue.js 的不同版本。关于 Vue.js 的版本情况你可以登录 http://www.bootcdn.cn/ 或者其他网址查看。版本说明开发版本 vue.js 包含完整的警告和调试模式（建议学习过程中使用该版本）生产版本 vue.min.js 是一个更小的构建，可以获得比开发环境下更快的速度体验。（建议在实际项目中使用该版本）下面附上一张第一次成功运行的图片：]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[Vue 2.0 学习之 -- Vue 实例]]></title>
     <url>%2F2018%2F09%2F29%2Fvue%E5%AE%9E%E4%BE%8B%2F</url>
     <content type="text"><![CDATA[Vue实例每个Vue应用都是通过用 Vue 函数创建一个新的 Vue 实例开始的：123var vm=new Vue(&#123; //选项&#125;) 当创建一个 Vue 实例对象之后，你可以传入一个选项对象。一个 Vue 应用由一个通过 new Vue 创建的根 Vue 实例，以及可嵌套的、可复用的组件树构成。 数据与方法当一个 Vue 实例被创建时，它向 Vue 的响应式系统中加入了其 data 对象中能找到的所有属性。当这些属性的值发生改变时，视图将会产生“响应”，即匹配更新为新的值。当这些数据改变时，视图会重新渲染。但是只有在实例被创建时 data 中存在的属性才是响应式的。也就是说如果你添加一个新的属性，随后对b的改动将不会触发任何视图的更新。如果你知道你会在晚些时候需要一个属性，但是一开始它为空或不存在，那么你可以设置一些初始值。唯一的例外是使用 object.freeze(),这会阻止修改现有的属性，也意味着响应系统无法再追踪变化。除了数据属性，Vue 实例还暴露了一些有用的实例属性与方法。它们都有前缀 $ ,以便和用户定义的属性区分开来。]]></content>
@@ -13,9 +18,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Vue 2.0 学习之旅（一）--安装]]></title>
-    <url>%2F2018%2F09%2F29%2Fvue%20%E5%AE%89%E8%A3%85%2F</url>
-    <content type="text"><![CDATA[从今天开始学习前端框架 Vue，该系列的文章主要记录自己在 Vue 的学习过程中所了解到的一些基础知识。 兼容性Vue不支持 IE8 及以下版本。 辅助工具在使用 Vue 时推荐在浏览器上安装 Vue Devtools。它允许你在一个更友好的界面中审查和调试 Vue 应用。 Vue.js 安装教程直接下载直接下载vue.js文件，然后通过&lt;script>标签引用。&lt;script src=&quot;/地址/vue.js&quot;&gt;&lt;/script&gt; CDN 方法 BootCDN（国内） :&lt;script src=&quot;https://cdn.bootcss.com/2.5.16/vue.js&quot;&gt;&lt;/script&gt; 其它（国外）：&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js&quot;&gt;&lt;/script&gt;&lt;script src=&quot;https:/unpkg.com/vue@2.5.16/dist/vue.js&quot;&gt;&lt;/script&gt;&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js&quot;&gt;&lt;/script&gt;改变&lt;script>标签内的数字就可以手动选择 Vue.js 的不同版本。关于 Vue.js 的版本情况你可以登录 http://www.bootcdn.cn/ 或者其他网址查看。版本说明开发版本 vue.js 包含完整的警告和调试模式（建议学习过程中使用该版本）生产版本 vue.min.js 是一个更小的构建，可以获得比开发环境下更快的速度体验。（建议在实际项目中使用该版本）下面附上一张第一次成功运行的图片：]]></content>
+    <title></title>
+    <url>%2F2018%2F04%2F10%2Fnavbar%2F</url>
+    <content type="text"><![CDATA[title：Bootstrap–导航条 date：2018-04-10 00:00:00 tag： navbar category： Bootstrap导航条是在应用或者网站中作为导航页头的响应式基础组件。他们在移动设备上可以折叠，且在视口宽度增加时逐渐变为水平展开模式。 定义导航条导航条是一个长方形区块，其中可以包含导航或按钮，以方便用户执行导航操作。Bootstrap 3.0 使用 navbar 类定义导航条包含框。&lt;nav class=&quot;navbar&quot;&gt;&lt;/nav&gt;如果不是使用&lt;nav>标签包裹 navbar 类，而是使用 &lt;div> 标签的话，务必为导航条设置 role=”navigation” 属性，这样能够让辅助设备的用户明确知道这是一个导航区域。&lt;div class=&quot;navbar&quot; role=&quot;navigation&quot;&gt;&lt;/div&gt;]]></content>
   </entry>
   <entry>
     <title><![CDATA[Javascript 基础]]></title>
