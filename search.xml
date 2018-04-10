@@ -18,9 +18,15 @@
       </tags>
   </entry>
   <entry>
-    <title></title>
+    <title><![CDATA[Bootstrap -- navbar]]></title>
     <url>%2F2018%2F04%2F10%2Fnavbar%2F</url>
-    <content type="text"><![CDATA[title：Bootstrap–导航条 date：2018-04-10 00:00:00 tag： navbar category： Bootstrap导航条是在应用或者网站中作为导航页头的响应式基础组件。他们在移动设备上可以折叠，且在视口宽度增加时逐渐变为水平展开模式。 定义导航条导航条是一个长方形区块，其中可以包含导航或按钮，以方便用户执行导航操作。Bootstrap 3.0 使用 navbar 类定义导航条包含框。&lt;nav class=&quot;navbar&quot;&gt;&lt;/nav&gt;如果不是使用&lt;nav>标签包裹 navbar 类，而是使用 &lt;div> 标签的话，务必为导航条设置 role=”navigation” 属性，这样能够让辅助设备的用户明确知道这是一个导航区域。&lt;div class=&quot;navbar&quot; role=&quot;navigation&quot;&gt;&lt;/div&gt;123456.navbar&#123; position:relative; min-height:50px; margin-bottom:20px; border:1px solid transparent;&#125;]]></content>
+    <content type="text"><![CDATA[导航条是在应用或者网站中作为导航页头的响应式基础组件。他们在移动设备上可以折叠，且在视口宽度增加时逐渐变为水平展开模式。 定义导航条导航条是一个长方形区块，其中可以包含导航或按钮，以方便用户执行导航操作。Bootstrap 3.0 使用 navbar 类定义导航条包含框。&lt;nav class=&quot;navbar&quot;&gt;&lt;/nav&gt;如果不是使用&lt;nav>标签包裹 navbar 类，而是使用 &lt;div> 标签的话，务必为导航条设置 role=”navigation” 属性，这样能够让辅助设备的用户明确知道这是一个导航区域。&lt;div class=&quot;navbar&quot; role=&quot;navigation&quot;&gt;&lt;/div&gt;123456.navbar&#123; position:relative; min-height:50px; margin-bottom:20px; border:1px solid transparent;&#125; 导航条的颜色Bootstrap 3.0 为导航条设置了两种背景颜色，navbar-default和navbar-inverse。navbar-default1234.navbar-default &#123; background-color: #f8f8f8; border-color: #e7e7e7;&#125; navbar-inverse1234.navbar-inverse &#123; background-color: #222; border-color: #080808;&#125; 导航条的位置Bootstrap 3.0 为导航条设置了三种位置，navbar-fixed-top、navbar-fixed-bottom 和 navbar-static-top。 导航条的结构]]></content>
+      <categories>
+        <category>Bootstrap</category>
+      </categories>
+      <tags>
+        <tag>navbar</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Javascript 基础]]></title>
