@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Vue 2.0 学习之旅（一）--安装]]></title>
-    <url>%2F2018%2F09%2F29%2Fvue%20%E5%AE%89%E8%A3%85%2F</url>
-    <content type="text"><![CDATA[从今天开始学习前端框架 Vue，该系列的文章主要记录自己在 Vue 的学习过程中所了解到的一些基础知识。 兼容性Vue不支持 IE8 及以下版本。 辅助工具在使用 Vue 时推荐在浏览器上安装 Vue Devtools。它允许你在一个更友好的界面中审查和调试 Vue 应用。 Vue.js 安装教程直接下载直接下载vue.js文件，然后通过&lt;script>标签引用。&lt;script src=&quot;/地址/vue.js&quot;&gt;&lt;/script&gt; CDN 方法 BootCDN（国内） :&lt;script src=&quot;https://cdn.bootcss.com/2.5.16/vue.js&quot;&gt;&lt;/script&gt; 其它（国外）：&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js&quot;&gt;&lt;/script&gt;&lt;script src=&quot;https:/unpkg.com/vue@2.5.16/dist/vue.js&quot;&gt;&lt;/script&gt;&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js&quot;&gt;&lt;/script&gt;改变&lt;script>标签内的数字就可以手动选择 Vue.js 的不同版本。关于 Vue.js 的版本情况你可以登录 http://www.bootcdn.cn/ 或者其他网址查看。版本说明开发版本 vue.js 包含完整的警告和调试模式（建议学习过程中使用该版本）生产版本 vue.min.js 是一个更小的构建，可以获得比开发环境下更快的速度体验。（建议在实际项目中使用该版本）下面附上一张第一次成功运行的图片：]]></content>
-  </entry>
-  <entry>
     <title><![CDATA[Vue 2.0 学习之 -- Vue 实例]]></title>
     <url>%2F2018%2F09%2F29%2Fvue%E5%AE%9E%E4%BE%8B%2F</url>
     <content type="text"><![CDATA[Vue实例每个Vue应用都是通过用 Vue 函数创建一个新的 Vue 实例开始的：123var vm=new Vue(&#123; //选项&#125;) 当创建一个 Vue 实例对象之后，你可以传入一个选项对象。一个 Vue 应用由一个通过 new Vue 创建的根 Vue 实例，以及可嵌套的、可复用的组件树构成。 数据与方法当一个 Vue 实例被创建时，它向 Vue 的响应式系统中加入了其 data 对象中能找到的所有属性。当这些属性的值发生改变时，视图将会产生“响应”，即匹配更新为新的值。当这些数据改变时，视图会重新渲染。但是只有在实例被创建时 data 中存在的属性才是响应式的。也就是说如果你添加一个新的属性，随后对b的改动将不会触发任何视图的更新。如果你知道你会在晚些时候需要一个属性，但是一开始它为空或不存在，那么你可以设置一些初始值。唯一的例外是使用 object.freeze(),这会阻止修改现有的属性，也意味着响应系统无法再追踪变化。除了数据属性，Vue 实例还暴露了一些有用的实例属性与方法。它们都有前缀 $ ,以便和用户定义的属性区分开来。]]></content>
@@ -16,6 +11,27 @@
       <tags>
         <tag>Vue实例</tag>
       </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Vue 2.0 学习之旅（一）--安装]]></title>
+    <url>%2F2018%2F09%2F29%2Fvue%20%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[从今天开始学习前端框架 Vue，该系列的文章主要记录自己在 Vue 的学习过程中所了解到的一些基础知识。 兼容性Vue不支持 IE8 及以下版本。 辅助工具在使用 Vue 时推荐在浏览器上安装 Vue Devtools。它允许你在一个更友好的界面中审查和调试 Vue 应用。 Vue.js 安装教程直接下载直接下载vue.js文件，然后通过&lt;script>标签引用。&lt;script src=&quot;/地址/vue.js&quot;&gt;&lt;/script&gt; CDN 方法 BootCDN（国内） :&lt;script src=&quot;https://cdn.bootcss.com/2.5.16/vue.js&quot;&gt;&lt;/script&gt; 其它（国外）：&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js&quot;&gt;&lt;/script&gt;&lt;script src=&quot;https:/unpkg.com/vue@2.5.16/dist/vue.js&quot;&gt;&lt;/script&gt;&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js&quot;&gt;&lt;/script&gt;改变&lt;script>标签内的数字就可以手动选择 Vue.js 的不同版本。关于 Vue.js 的版本情况你可以登录 http://www.bootcdn.cn/ 或者其他网址查看。版本说明开发版本 vue.js 包含完整的警告和调试模式（建议学习过程中使用该版本）生产版本 vue.min.js 是一个更小的构建，可以获得比开发环境下更快的速度体验。（建议在实际项目中使用该版本）下面附上一张第一次成功运行的图片：]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Javascript--数据类型]]></title>
+    <url>%2F2018%2F04%2F13%2F%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%2F</url>
+    <content type="text"><![CDATA[Javascript是弱类型语言，对于数据类型的规范比较松散。 基本数据类型Javascript定义了六种基本数据类型。|数据类型|说明||-|-||null|空值。表示不存在，当为对象的属性赋值为null，表示删除该属性||undefined|未定义。当声明变量，而没有赋值时会显示该值|]]></content>
+      <categories>
+        <category>Javascript</category>
+      </categories>
+      <tags>
+        <tag>数据类型</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>%2F2018%2F04%2F12%2F%E8%BD%AE%E6%92%AD%2F</url>
+    <content type="text"><![CDATA[title： Javascript插件 – 轮播 Date： 2018-04-12 00:00:00 tag： carousel category： [Bootstrap,Bootstrap插件]轮播是灯箱广告的一种样式，也是图片展示的一种方式。轮播插件的结构比较复杂，与折叠插件一样需要多层嵌套。1.设计轮播包含框，定义carousel类样式，设计ID值。&lt;div id=&quot;box&quot; class=&quot;carousel&quot;&gt;&lt;/div&gt;.carousel {position: relative;}2.在轮播包含框内设计两个子容器，用来设计轮播标识图标框和轮播信息框。并分别添加.carousel_indicators和.carousel-inner类。1234&lt;div id=&quot;box&quot; class=&quot;carousel&quot;&gt; &lt;ol class=&quot;carousel-indicators&gt;&lt;/ol&gt; &lt;div class=&quot;carousel-inner&quot;&gt;&lt;/div&gt;&lt;/div&gt; 12345678910111213141516.carousel-indicators &#123; position: absolute; bottom: 10px; left: 50%; z-index: 15; width: 60%; padding-left: 0; margin-left: -30%; text-align: center; list-style: none;&#125;.carousel-inner &#123; position: relative; width: 100%; overflow: hidden;&#125; &lt;ol class=”carousel-indicators”>&lt;/ol>包含框用来定义指示图标，显示当前图片的播放顺序，在li标签里使用data-target指定目标包含容器，使用data-slide-to定义播放顺序的下标。123456&lt;ol class=&quot;carousel-indicators&quot;&gt; &lt;li data-target=&quot;#box&quot; data-slide-to=&quot;0&quot;&gt;&lt;/li&gt; &lt;li data-target=&quot;#box&quot; data-slide-to=&quot;1&quot;&gt;&lt;/li&gt; &lt;li data-target=&quot;#box&quot; data-slide-to=&quot;2&quot;&gt;&lt;/li&gt;&lt;/ol&gt;``` .carousel-indicators li { display: inline-block; width: 10px; height: 10px; margin: 1px; text-indent: -999px; cursor: pointer; background-color: #000 \9; background-color: rgba(0, 0, 0, 0); border: 1px solid #fff; border-radius: 10px;}.carousel-indicators .active { width: 12px; height: 12px; margin: 0; background-color: #fff;}12&lt;div class=&quot;carousel-inner&quot;\&gt;包含框准备放置要轮播的图片和说明文字。&lt;div class=&quot;carousel-inner&quot;&gt;包含框内包含&lt;div class=&quot;item&quot;&gt;子框。&lt;div class=&quot;item&quot;&gt;子框用来包含轮播项目，轮播项目可以包含两个部分：一部分是图片，一部分是图片描述(添加.carousel-caption类)。 标题 描述文本 1在轮播框的最后插入两个控制按钮，使用carousel-control类定义按钮样式，left和right定义按钮靠齐位置；使用data-slide定义按钮控制的行为方式，data-slide=“prev”表示向左滑动，data-slide=“next”表示向右滑动。 定义按钮形状 定义按钮形状`]]></content>
   </entry>
   <entry>
     <title></title>
