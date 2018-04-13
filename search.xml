@@ -18,14 +18,16 @@
     <content type="text"><![CDATA[从今天开始学习前端框架 Vue，该系列的文章主要记录自己在 Vue 的学习过程中所了解到的一些基础知识。 兼容性Vue不支持 IE8 及以下版本。 辅助工具在使用 Vue 时推荐在浏览器上安装 Vue Devtools。它允许你在一个更友好的界面中审查和调试 Vue 应用。 Vue.js 安装教程直接下载直接下载vue.js文件，然后通过&lt;script>标签引用。&lt;script src=&quot;/地址/vue.js&quot;&gt;&lt;/script&gt; CDN 方法 BootCDN（国内） :&lt;script src=&quot;https://cdn.bootcss.com/2.5.16/vue.js&quot;&gt;&lt;/script&gt; 其它（国外）：&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js&quot;&gt;&lt;/script&gt;&lt;script src=&quot;https:/unpkg.com/vue@2.5.16/dist/vue.js&quot;&gt;&lt;/script&gt;&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js&quot;&gt;&lt;/script&gt;改变&lt;script>标签内的数字就可以手动选择 Vue.js 的不同版本。关于 Vue.js 的版本情况你可以登录 http://www.bootcdn.cn/ 或者其他网址查看。版本说明开发版本 vue.js 包含完整的警告和调试模式（建议学习过程中使用该版本）生产版本 vue.min.js 是一个更小的构建，可以获得比开发环境下更快的速度体验。（建议在实际项目中使用该版本）下面附上一张第一次成功运行的图片：]]></content>
   </entry>
   <entry>
-    <title><![CDATA[Javascript--数据类型]]></title>
+    <title><![CDATA[Javascript数据类型]]></title>
     <url>%2F2018%2F04%2F13%2F%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%2F</url>
-    <content type="text"><![CDATA[Javascript是弱类型语言，对于数据类型的规范比较松散。 基本数据类型Javascript定义了六种基本数据类型。|数据类型|说明||-|-||null|空值。表示不存在，当为对象的属性赋值为null，表示删除该属性||undefined|未定义。当声明变量，而没有赋值时会显示该值|]]></content>
+    <content type="text"><![CDATA[Javascript是弱类型语言，对于数据类型的规范比较松散。 基本数据类型Javascript定义了六种基本数据类型。null：空值。表示不存在，当为对象的属性赋值为null，表示删除该属性。undefined：未定义。当声明变量，而没有赋值时会显示该值。number：数值。string：字符串。boolean：布尔值。object：对象。其中前面五种又被称为原始类型，最后一种被称为引用类型。原始类型在内存中占有固定大小的空间，它们的值直接存放在栈空间，我们可以按值访问。引用类型的值大小不确定，我们不能直接将它保存到栈内存中。我们可以在栈内存中存放地址，指向堆内存中的对象。当查询引用类型的值时，先从栈中读取内存地址，然后再通过地址找到堆中的值。原始类型和引用类型最大的区别就在于传值和传址。传值：1234var a=1;var b=a;b=2;console.log(a); //1 b获取的是a值的一份复制，b的改变不影响a。传址：1234var obj1=new Object();var obj2=obj1;obj2.name=&quot;Name2&quot;;console.log(obj1.name); //Name2 obj1赋值给obj2，实际上是将自己保存的地址复制了一份给obj2，然后两者都指向同一个堆内对象，当改变堆内对象时，对两者都会有影响。附：栈内存和堆内存：栈（stack）：由编译器自动分配和释放内存。堆（heap）：一般由程序员手动分配和释放，如果没有手动释放，在程序结束时由操作系统自动释放。 数据类型的检测使用typeof运算符可以检测数据的基本类型。12345678alert(typeof 1); // 返回字符串&quot;number&quot;alert(typeof &quot;1&quot;); // 返回字符串&quot;string&quot;alert(typeof true); // 返回字符串&quot;boolean&quot;alert(typeof &#123;&#125;); // 返回字符串&quot;object&quot;alert(typeof []); // 返回字符串&quot;object &quot;alert(typeof function()&#123;&#125;); // 返回字符串&quot;function&quot;alert(typeof null); // 返回字符串&quot;object&quot;alert(typeof undefined); // 返回字符串&quot;undefined&quot; typeof以字符串的形式返回上述六种基本类型。但是Javascript把null归为object数据类型，而function（）{}归为function类型。]]></content>
       <categories>
         <category>Javascript</category>
       </categories>
       <tags>
         <tag>数据类型</tag>
+        <tag>原始类型</tag>
+        <tag>引用类型</tag>
       </tags>
   </entry>
   <entry>
