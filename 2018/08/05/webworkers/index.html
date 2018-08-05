@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="JUN的博客">
 <meta property="og:description" content="title: 多线程处理–Web Workersdate： 2018-01-01 00:00:00tags: Web Workers category: [Javascript, HTML 5]使用Javascript执行大型计算时，经常会出现假死现象。这是因为Javascript是单线程的编程语言，运算能力比较弱。HTML5新增的Web Workers API能够创建一个不影响前台处理的后台线">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-05T15:08:20.262Z">
+<meta property="og:updated_time" content="2018-08-05T15:11:03.237Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JUN的博客">
 <meta name="twitter:description" content="title: 多线程处理–Web Workersdate： 2018-01-01 00:00:00tags: Web Workers category: [Javascript, HTML 5]使用Javascript执行大型计算时，经常会出现假死现象。这是因为Javascript是单线程的编程语言，运算能力比较弱。HTML5新增的Web Workers API能够创建一个不影响前台处理的后台线">
@@ -357,7 +357,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  6,322
+                  6,321
                 </span>
               
 
@@ -396,7 +396,7 @@
       
         <hr>
 <p>title: 多线程处理–Web Workers<br>date： 2018-01-01 00:00:00<br>tags: Web Workers</p>
-<h2 id="category-Javascript-HTML-5"><a href="#category-Javascript-HTML-5" class="headerlink" title="category: [Javascript, HTML 5]"></a>category: [Javascript, HTML 5]</h2><p>使用Javascript执行大型计算时，经常会出现假死现象。这是因为Javascript是单线程的编程语言，运算能力比较弱。HTML5新增的Web Workers API能够创建一个不影响前台处理的后台线程，并且在这个后台线程中可以创建多个子线程，以帮助Javascript实现多线程运算的能力。通过Web Workers，用户可以将耗时较长的处理交给后台线程去执行，从而解决了HTML 5 之前因为某个处理耗时过长而不得不提前结束的尴尬。<br><a id="more"></a></p>
+<h2 id="category-Javascript-HTML-5"><a href="#category-Javascript-HTML-5" class="headerlink" title="category: [Javascript, HTML 5]"></a>category: [Javascript, HTML 5]</h2><p>使用Javascript执行大型计算时，经常会出现假死现象。这是因为Javascript是单线程的编程语言，运算能力比较弱。HTML5新增的Web Workers API能够创建一个不影响前台处理的后台线程，并且在这个后台线程中可以创建多个子线程，以帮助Javascript实现多线程运算的能力。通过Web Workers，用户可以将耗时较长的处理交给后台线程去执行，从而解决了HTML5之前因为某个处理耗时过长而不得不提前结束的尴尬。<br><a id="more"></a></p>
 <h3 id="Web-Workers-基础"><a href="#Web-Workers-基础" class="headerlink" title="Web Workers 基础"></a>Web Workers 基础</h3><p>Web workers为网页脚本提供了一种能在后台进程中运行的方法。当创建Web Worker对象后，Web Workers就可以通过postMessage()方法向任务池发送任务请求，执行完之后再通过postMessage()返回消息给创建者指定的事件处理程序，然后通过onmessage捕获返回消息，实现前后台数据的交互。</p>
 <h4 id="认识Web-Workers"><a href="#认识Web-Workers" class="headerlink" title="认识Web Workers"></a>认识Web Workers</h4><p>在Web应用程序中，Web Workers是一项后台处理技术。在此之前使用Javascript创建的Web程序中，因为所有的处理都是在单线程内执行，所以如果脚本需要很长时间运行的话，程序界面会长时间处于停止响应状态。甚至当等待时间超出一定的限度，浏览器会提示脚本运行时间较长需要终端正在执行的处理。<br>为了解决这个问题，HTML5新增了一个Web Worker API。使用这个Api，用户可以很容易地创建在后台运行的线程，这个线程被称为worker，如果将可能耗费较长时间的处理交给后台去执行的话，对用户在前台页面中执行的操作就没有影响了。<br>尽管Web Worker的功能强大，但并不是万能的，有些事情它还做不到。例如，在Web Worker中执行的脚本不能访问该页面的window对象，因此Web<br>Worker不能直接访问Web页面和DOM API，虽然Web worker不会导致浏览器UI停止响应，但是仍会消耗CPU周期，导致系统反应速度变慢。<br>如果开发人员创建的Web 应用程序需要执行一些后台数据处理，但又不希望这些数据处理任务影响Web页面本身的交互性，那么可以通过Web Workers生成一个worker去处理数据任务，同时添加一个时间监听器进行监听，并与之进行数据交互。</p>
 <p>Web Workers能够为我们做什么？</p>
