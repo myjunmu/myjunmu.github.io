@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="input," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="HTML5吸纳了Web Forms 2.0标准，大幅增强了针对表单元素的功能，使关于表单的开发更快、更方便。 HTML5 input类型在Web应用开发过程中，表单是页面上非常重要的一项内容，用户可以输入的大部分内容都是在表单上完成的，客户端与服务器端的交互在大多数情况下也是通过表单完成的。 HTML5之前支持的input输入类型（name属性是用于提交给服务器来使用的，服务器不识别id属性）">
+<meta name="keywords" content="input">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML5表单">
+<meta property="og:url" content="http://myjunmu.top/2018/01/07/增强HTML5表单和页面功能/index.html">
+<meta property="og:site_name" content="JUN的博客">
+<meta property="og:description" content="HTML5吸纳了Web Forms 2.0标准，大幅增强了针对表单元素的功能，使关于表单的开发更快、更方便。 HTML5 input类型在Web应用开发过程中，表单是页面上非常重要的一项内容，用户可以输入的大部分内容都是在表单上完成的，客户端与服务器端的交互在大多数情况下也是通过表单完成的。 HTML5之前支持的input输入类型（name属性是用于提交给服务器来使用的，服务器不识别id属性）">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-08T03:10:33.091Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTML5表单">
+<meta name="twitter:description" content="HTML5吸纳了Web Forms 2.0标准，大幅增强了针对表单元素的功能，使关于表单的开发更快、更方便。 HTML5 input类型在Web应用开发过程中，表单是页面上非常重要的一项内容，用户可以输入的大部分内容都是在表单上完成的，客户端与服务器端的交互在大多数情况下也是通过表单完成的。 HTML5之前支持的input输入类型（name属性是用于提交给服务器来使用的，服务器不识别id属性）">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://myjunmu.top/2018/01/07/增强HTML5表单和页面功能/"/>
+
+
+
+
+
+  <title>HTML5表单 | JUN的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">JUN的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://myjunmu.top/2018/01/07/增强HTML5表单和页面功能/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Joe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JUN的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">HTML5表单</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-07T00:00:00+08:00">
+                2018-01-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/HTML5/" itemprop="url" rel="index">
+                    <span itemprop="name">HTML5</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  7,274
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  31
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>HTML5吸纳了Web Forms 2.0标准，大幅增强了针对表单元素的功能，使关于表单的开发更快、更方便。</p>
+<h3 id="HTML5-input类型"><a href="#HTML5-input类型" class="headerlink" title="HTML5 input类型"></a>HTML5 input类型</h3><p>在Web应用开发过程中，表单是页面上非常重要的一项内容，用户可以输入的大部分内容都是在表单上完成的，客户端与服务器端的交互在大多数情况下也是通过表单完成的。</p>
+<h4 id="HTML5之前支持的input输入类型"><a href="#HTML5之前支持的input输入类型" class="headerlink" title="HTML5之前支持的input输入类型"></a>HTML5之前支持的input输入类型</h4><p>（name属性是用于提交给服务器来使用的，服务器不识别id属性）</p>
+<ol>
+<li>&lt;input type=’text’&gt;<br>定义单行输入字段，用于在表单中输入字母、数字等内容，默认宽度为20个字符。</li>
+<li>&lt;input type=’radio’&gt;<br>定义单选按钮，一组单选按钮应该具有相同的name属性值。</li>
+<li>&lt;input type=’checkbox’&gt;<br>定义复选框，用于从给定的选择中选取一个或若干选项。一组复选框应该具有相同的name属性值。</li>
+<li>&lt;input type=’password’&gt;<br>定义密码框，输入的内容会以点或星号的形式出现。</li>
+<li>&lt;input type=submit’&gt;<br>定义提交按钮，用于将表单数据发送到服务器。</li>
+<li>&lt;input type=’reset’&gt;<br>定义重置按钮，用户可以单击重置按钮以清除表单中的所有数据。</li>
+<li>&lt;input type=’image’&gt;<br>定义图像形式的提交按钮，用户可以通过选择不同的图像来自定义这种按钮的样式。需配合src属性使用。</li>
+<li>&lt;input type=’file’&gt;<br>定义输入字段和‘浏览’按钮，用于文件上传。</li>
+<li>&lt;input type=’hidden’&gt;<br>定义隐藏的输入字段。一般需配合后台开发使用。</li>
+<li>&lt;input type=’button’&gt;<br>定义普通的可点击按钮。<h4 id="HTML5新增的表单类型"><a href="#HTML5新增的表单类型" class="headerlink" title="HTML5新增的表单类型"></a>HTML5新增的表单类型</h4></li>
+<li>&lt;input type=’email’&gt;<br>email类型的input元素是一种专门用于输入Email地址的文本框，在提交表单的时候，会自动验证Email输入框的值。如果不是一个有效的电子邮件地址，则该输入框不允许提交该表单。<br>对于不支持type= ‘email’的浏览器,会以type=’text’的形式来处理。</li>
+<li>&lt;input type=’url’&gt;<br>url类型的input元素提供用于输入url地址这类特殊文本的文本框。当提交表单时，如果所输入的内容不是url地址格式的文本，则不允许提交。<br>对于不支持type= ‘url’的浏览器,会以type=’text’的形式来处理。</li>
+<li>&lt;input type=’number’&gt;<br>number类型的input元素提供用于输入数值的文本框。用户还可以设定对所接受的数字的限制，包括规定允许的最大值和最小值、合法的数字间隔和默认值等。如果所输入的数字不在限定的范围内，则会出现错误提示。<br>属性：<br>max：规定允许的最大值<br>min：规定允许的最小值<br>step：规定合法的数字间隔（如果step=’4’,则合法的数字时-4,0,4,8等）<br>value：规定默认值</li>
+<li>&lt;input type=’range’&gt;<br>range类型的input元素提供用于输入包含一定范围内数字值的文本框，在网页中显示为滑动条。用户还可以设定对所接受的数字的限制，包括规定允许的最大值和最小值、合法的数字间隔或默认值等。如果所输入的数字不在限定范围之内，则会出现错误提示。<br>range类型的属性与number类型的属性完全相同，这两种类型的区别仅在于外观上。</li>
+<li>&lt;input type=’search’&gt;<br>search类型的input元素提供用于输入搜索关键词的文本框。在外观上来看，search类型的input元素与普通的text类型只是稍有区别，但是如果在搜索框中输入要搜索的关键词，在搜索框的右侧会出现一个’x’按钮（Firefox不支持）。</li>
+<li>&lt;input type=’tel’&gt;<br>tel类型的input元素提供专门用来输入电话号码的文本框。它并不限定只输入数字，因为很多的电话号码还包括其它字符（如：86-0536-8888888）。<br>实际上与type=’text’是一样的，但是移动端的浏览器在唤醒键盘的时候可能会改变键盘屏幕方便用户输入。</li>
+<li>&lt;input type=’color’&gt;<br>color类型的input元素提供专门用于输入颜色的文本框。当color类型的文本框获取焦点后，会自动调用系统的颜色接口。</li>
+<li>&lt;input type=’date’&gt;<br>date类型的日期选择器用于选取日、月、年，即选择一个具体的日期。</li>
+<li>&lt;input type=’month’&gt;<br>month类型的日期选择器用于选取月、年，即选择一个具体的月份。</li>
+<li>&lt;input type=’week’&gt;<br>week类型的日期选择器用于选取周和年，即选择一个具体的周。</li>
+<li>&lt;input type=’time’&gt;<br>time类型的日期选择器用于选取时间，具体到小时和分钟。</li>
+<li>&lt;input type=’datetime’&gt;<br>datetime类型的日期选择器用于选取时间、日、月、年，其中时间为UTC时间。很多浏览器已不提供对它的支持。</li>
+<li>&lt;input type=’datetime-local’&gt;<br>datetime-local类型的日期选择器用于选取时间，日，月、年，其中时间为本地时间。<h4 id="HTML5-input属性"><a href="#HTML5-input属性" class="headerlink" title="HTML5 input属性"></a>HTML5 input属性</h4></li>
+<li>autocomplete属性<br>多数浏览器都带有辅助用户完成输入的自动完成功能，只要开启了该功能，用户在下次输入相同的内容时，浏览器就会自动完成内容的输入。<br>HTML5新增的autocomplete属性可以帮助用户在input类型的输入框中自动完成内容输入。这些input类型包括：text、search、url、tel、password、date pickers、range以及color。不过在某些浏览其中可能需要首先启用浏览器的自动完成功能，才能使complete属性生效。<br>autocomplete属性同样适用于form标签，默认状态下表单的autocomplete属性是处于打开状态的，其中的输入类型继承所在表单的autocomplete状态。用户也可以单独将表单中某输入类型的autocomplete状态设置为打开状态。<br>autocomplete属性有两个值：on和off。<br>【示例1】本例将表单的autocomplete属性设置为on，而单独将其中某一输入类型的autocomplete属性值设置为off。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;form action=&quot;/formexample.asp&quot; method=&quot;get&quot; autocomplete=&quot;on&quot;&gt;</span><br><span class="line">姓名：&lt;input type=&quot;text&quot; name=&quot;name1&quot; /&gt;&lt;br /&gt;</span><br><span class="line">职业：&lt;input type=&quot;text&quot; name=&quot;career1&quot; /&gt;&lt;br /&gt;</span><br><span class="line">电子邮件地址：&lt;input type=&quot;email&quot; name=&quot;email1&quot; autocomplete=&quot;off&quot; /&gt;&lt;br /&gt;</span><br><span class="line">&lt;input type=&quot;submit&quot; value=”提交信息” /&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>【示例2】本例使用autocomplete属性、datalist标签及list属性实现自动完成。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;h2&gt;输入你最喜欢的城市名称&lt;/h2&gt;</span><br><span class="line">&lt;form autocompelete=&quot;on&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;text&quot; id=&quot;city&quot; list=&quot;cityList&quot;&gt;</span><br><span class="line">    &lt;datalist id=&quot;cityList&quot; style=&quot;display:none;&quot;&gt;</span><br><span class="line">        &lt;option value=&quot;BeiJing&quot;&gt;BeiJing&lt;/option&gt;</span><br><span class="line">        &lt;option value=&quot;QingDao&quot;&gt;QingDao&lt;/option&gt;</span><br><span class="line">        &lt;option value=&quot;QingZhou&quot;&gt;QingZhou&lt;/option&gt;</span><br><span class="line">        &lt;option value=&quot;QingHai&quot;&gt;QingHai&lt;/option&gt;</span><br><span class="line">    &lt;/datalist&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>在本例中，当用户将焦点定位到文本框中，会自动出现一个城市列表供用户选择。而当用户点击页面其它位置的时候，这个列表就会消失。<br>此外，当用户输入时，该列表会随用户的输入进行更新，例如：当输入字母q时，只列出以q开头的城市名称。</p>
+<ol start="2">
+<li><p>autofocus属性<br>HTML5 新增了autofocus属性，它可以实现在页面加载时，某表单控件自动获得焦点，这些控件可以是文本框、复选框、单选按钮、普通按钮等所有input标签的类型。<br>在同一个页面中只能指定一个autofocus属性值。<br>【示例2】如果浏览器不支持autofocus属性，则会将其忽略掉。因此要使得所有浏览器都能实现自动获得焦点，可以在Javascript脚本中加一小段脚本，以检测浏览器是否支持autofocus属性。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;form&gt;</span><br><span class="line">    &lt;p&gt;请仔细阅读许可协议：&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;</span><br><span class="line">        &lt;label for=&quot;textarea1&quot;&gt;&lt;/label&gt;</span><br><span class="line">        &lt;textarea name=&quot;textarea1&quot; id=&quot;textarea1&quot; cols=&quot;45&quot; rows=&quot;5&quot;&gt;许可协议具体内容......&lt;/textarea&gt;</span><br><span class="line">    &lt;/p&gt;</span><br><span class="line">    &lt;p&gt;</span><br><span class="line">        &lt;input id=&quot;ok&quot; type=&quot;submit&quot; value=&quot;同意&quot; autofocus&gt;</span><br><span class="line">        &lt;input type=&quot;submit&quot; value=&quot;拒绝&quot; &gt;</span><br><span class="line">    &lt;/p&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">if (!(&quot;autofocus&quot; in document.createElement(&quot;input&quot;))) &#123;</span><br><span class="line">    document.getElementById(&quot;ok&quot;).focus();</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>form属性<br>在HTML5之前，用户要提交一个表单，必须把相关的空间元素都放在表单内部。在提交表单时，form标签以外的控件都将被忽略。<br>HTML5新增了一个form属性，可以把表单内的从属元素写在页面上的任何一个位置，然后只要为这个元素指定一下form属性并为其指定属性值为该表单的id。如此一来，便规定了该表单元素属于指定的这一个表单。此外，form属性也允许规定一个表单元素从属于多个表单。form属性适用于所有input类型的输入框。<br>【示例3】下面是一个form属性的应用示例。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;form action=&quot;&quot; method=&quot;get&quot; id=&quot;form1&quot;&gt;</span><br><span class="line">请输入姓名：&lt;input type=&quot;text&quot; name=&quot;name1&quot; autofocus/&gt;</span><br><span class="line">&lt;input type=&quot;submit&quot;  value=&quot;提交&quot;/&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;p&gt;下面的输入框在form元素之外，但因为指定的form属性，并且值为表单的id，所以该输入框仍然是表单的一部分。&lt;/p&gt;</span><br><span class="line">请输入住址：&lt;input type=&quot;text&quot; name=&quot;address1&quot; form=&quot;form1&quot; /&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>如果一个form属性要引用两个或两个以上的表单，则需要使用空格将表单的id分隔开。<br><code>&lt;input type=&#39;text&#39; form=&#39;form1 form2&#39;/&gt;</code></p>
+<ol start="4">
+<li>表单重写属性<br>HTML5 新增了很多表单重写属性，用于重写form表单的某些属性设定。</li>
+</ol>
+<ul>
+<li>formaction：用于重写表单的action属性</li>
+<li>formenctype：用于重写表单的enctype属性</li>
+<li>formmethod：用于重写表单的method属性</li>
+<li>formnovalidate：用于重写表单的novalidate属性</li>
+<li>formtarget：用于重写表单的target属性。<br>表单重写属性只适用于submit和image输入类型。<br>【示例4】在HTML5之前，只能使用表单的action属性将表单内的所有元素同一提交到另一个页面。而使用formaction属性，则可以通过重写表单的action属性，实现将表单提交到不同的页面中去。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;form action=&quot;1.asp&quot; id=&quot;testform&quot;&gt;</span><br><span class="line">请输入电子邮件地址： &lt;input type=&quot;email&quot; name=&quot;userid&quot; /&gt;&lt;br /&gt;</span><br><span class="line">     &lt;input type=&quot;submit&quot; value=&quot;提交到页面1&quot; formaction=&quot;1.asp&quot; /&gt;</span><br><span class="line">     &lt;input type=&quot;submit&quot; value=&quot;提交到页面2&quot; formaction=&quot;2.asp&quot; /&gt;</span><br><span class="line">     &lt;input type=&quot;submit&quot; value=&quot;提交到页面3&quot; formaction=&quot;3.asp&quot; /&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="5">
+<li><p>height和width属性<br>height和width属性设置image类型的input标签的图像高度和宽度，这两个属性只适用于image类型的input标签。<br>【示例5】下面是height和width属性应用的示例代码。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;form action=&quot;testform.asp&quot; method=&quot;get&quot;&gt;</span><br><span class="line">请输入用户名: &lt;input type=&quot;text&quot; name=&quot;user_name&quot; /&gt;&lt;br /&gt;</span><br><span class="line">&lt;input type=&quot;image&quot; src=&quot;images/submit.png&quot; width=&quot;720&quot; height=&quot;26&quot; /&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>list属性<br>HTML5 新增了一个datalist元素，可以实现数据列表下拉效果。而list属性用于指定输入框绑定哪一个datalist元素，其值是某个datalist的id。<br>【示例6】下面是list属性的应用示例代码。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;form action=&quot;testform.asp&quot; method=&quot;get&quot;&gt;</span><br><span class="line">    请输入网址：</span><br><span class="line">    &lt;input type=&quot;url&quot; list=&quot;url_list&quot; name=&quot;weblink&quot; /&gt;</span><br><span class="line">    &lt;datalist id=&quot;url_list&quot;&gt;</span><br><span class="line">        &lt;option label=&quot;新浪&quot; value=&quot;http://www.sina.com.cn&quot; /&gt;</span><br><span class="line">        &lt;option label=&quot;搜狐&quot; value=&quot;http://www.sohu.com&quot; /&gt;</span><br><span class="line">        &lt;option label=&quot;网易&quot; value=&quot;http://www.163.com&quot; /&gt;</span><br><span class="line">    &lt;/datalist&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot; value=&quot;提交&quot; /&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>min、max和step属性<br>HTML5新增min、max和step属性，用于为包含数字或日期的input输入类型设置限值，也就是给这些类型的输入框加一个数值的约束，适用于date pickers、number和range标签。<br>min属性：设置输入框所允许的最小值<br>max属性：设置输入框所允许的最大值<br>step属性：为输入框设置合法的数字间隔，例如step=’4’，则合法的数值是-4,0,4等。<br>【示例7】本例中，显示一个数字输入框，并规定输入框接受0~12范围的值，且数字间隔为4，即合法的值为0,4,8,12。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;form action=&quot;testform.asp&quot; method=&quot;get&quot;&gt;</span><br><span class="line">    请输入数值：</span><br><span class="line">    &lt;input type=&quot;number&quot; name=&quot;number1&quot; min=&quot;0&quot; max=&quot;12&quot; step=&quot;4&quot; /&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot; value=&quot;提交&quot; /&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>multiple属性<br>在HTML5之前，input输入类型中的file类型只支持选择单个文件来上传，而新增的multiple属性支持一次性选择多个文件，并且该属性同样支持新增的email类型。<br>【示例8】下面是一个multiple属性的示例。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;form action=&quot;testform.asp&quot; method=&quot;get&quot;&gt;</span><br><span class="line">    请选择要上传的多个文件：</span><br><span class="line">    &lt;input type=&quot;file&quot; name=&quot;img&quot; multiple /&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot; value=&quot;提交&quot; /&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>pattern属性<br>pattern属性用于验证input类型输入框中用户输入的内容是否与自定义的正则表达式相匹配，该属性适用于以下类型的input标签：text、search、url、tel、email、password。<br>pattern属性允许用户自定义一个正则表达式，而用户的输入必须符合正则表达式所指定的规则。pattern属性中的正则表达式语法与Javascript中的正则表达式语法相匹配。<br>【示例9】该示例的文本框规定必须输入六位数的邮政编码。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;form action=&quot;/testform.asp&quot; method=&quot;get&quot;&gt;</span><br><span class="line">    请输入邮政编码:</span><br><span class="line">    &lt;input type=&quot;text&quot; name=&quot;zip_code&quot; pattern=&quot;[0-9]&#123;6&#125;&quot;</span><br><span class="line">title=&quot;请输入6位数的邮政编码&quot; /&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot; value=&quot;提交&quot; /&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>placeholder属性<br>placeholder属性用于为input类型的输入框提供一种提示，这些提示可以描述输入框期待用户输入何种内容，在输入框为空时显式出现，而当输入框获得焦点时则会消失。placeholder属性适用于以下了类型的input标签：text、search、url、tel、email、password。<br>【示例10】下面的例子演示placeholder的用法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;form action=&quot;/testform.asp&quot; method=&quot;get&quot;&gt;</span><br><span class="line">    请输入邮政编码:</span><br><span class="line">    &lt;input type=&quot;text&quot; name=&quot;zip_code&quot; pattern=&quot;[0-9]&#123;6&#125;&quot;</span><br><span class="line">placeholder=&quot;请输入6位数的邮政编码&quot; /&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot; value=&quot;提交&quot; /&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>required属性<br>新增的required属性用于定义输入框填写的内容不能为空，否则不允许用户提交表单。该属性适用于以下的input输入类型：text、search、url、tel、email、password、number、date pickers、number、checkbox、radio、file。<br>【示例11】下面是required属性的一个应用示例。该示例的文本框必须输入内容，否则表单不能被提交。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;form action=&quot;/testform.asp&quot; method=&quot;get&quot;&gt;</span><br><span class="line">    请输入姓名:</span><br><span class="line">    &lt;input type=&quot;text&quot; name=&quot;usr_name&quot; required=&quot;required&quot; /&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot; value=&quot;提交&quot; /&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="新表单控件"><a href="#新表单控件" class="headerlink" title="新表单控件"></a>新表单控件</h4><ol>
+<li><p>datalist元素<br>datalist元素用于为输入框提供一个可选的列表，用户可以直接选择列表中的某一预设的项，从而避免输入的麻烦。该列表由datalist中的option元素创建。如果用户不希望从列表中选择某项，也可以自行输入其它的内容。<br>在实际应用中，如果要把datalist提供的列表绑定到某输入框，则需要使用输入框的list属性来引用datalist元素的id。<br>注意：每个option元素都必须设置一个value值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;form action=&quot;testform.asp&quot; method=&quot;get&quot;&gt;</span><br><span class="line">    请输入网址：</span><br><span class="line">    &lt;input type=&quot;url&quot; list=&quot;url_list&quot; name=&quot;weblink&quot; /&gt;</span><br><span class="line">    &lt;datalist id=&quot;url_list&quot;&gt;</span><br><span class="line">        &lt;option label=&quot;新浪&quot; value=&quot;http://www.sina.com.cn&quot; /&gt;</span><br><span class="line">        &lt;option label=&quot;搜狐&quot; value=&quot;http://www.sohu.com&quot; /&gt;</span><br><span class="line">        &lt;option label=&quot;网易&quot; value=&quot;http://www.163.com&quot; /&gt;</span><br><span class="line">    &lt;/datalist&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot; value=&quot;提交&quot; /&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>keygen元素<br>keygen是秘钥对生成器，能够使得用户验证更加可靠。用户提交表单时会生成两个键：一个私钥，一个公钥。其中私钥会被存储在客户端，而公钥则会被发送到服务器。公钥可以用于之后验证用户的客户端证书。<br>【示例1】下面是一个keygen元素的应用示例。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;form action=&quot;/testform.asp&quot; method=&quot;get&quot;&gt;</span><br><span class="line">    请输入用户名:</span><br><span class="line">    &lt;input type=&quot;text&quot; name=&quot;usr_name&quot; /&gt;</span><br><span class="line">    &lt;br&gt;</span><br><span class="line">    请选择加密强度:</span><br><span class="line">    &lt;keygen name=&quot;security&quot; /&gt;</span><br><span class="line">    &lt;br&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot; value=&quot;提交&quot; /&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>不同浏览器的支持情况不一致。</p>
+<ol start="3">
+<li>output元素<br>output元素用于在浏览器中显示计算结果或脚本输出，包含完整的开始和结束标签。<br>【示例1】该示例计算用户输入的两个数字的乘积。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line"> function multi()&#123;</span><br><span class="line">	  a=parseInt(prompt(&quot;请输入第1个数字。&quot;,0));</span><br><span class="line">	  b=parseInt(prompt(&quot;请输入第2个数字。&quot;,0));</span><br><span class="line">	  document.forms[&quot;form&quot;][&quot;result&quot;].value=a*b;</span><br><span class="line"> &#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body onload=&quot;multi()&quot;&gt;</span><br><span class="line">&lt;form action=&quot;testform.asp&quot; method=&quot;get&quot; name=&quot;form&quot;&gt;</span><br><span class="line">    两数的乘积为:</span><br><span class="line">    &lt;output name=&quot;result&quot;&gt;&lt;/output&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>output元素不会出现边框效果。</p>
+<h4 id="新表单属性"><a href="#新表单属性" class="headerlink" title="新表单属性"></a>新表单属性</h4><ol>
+<li>autocomplete属性</li>
+<li><p>novalidate属性<br>form元素的novalidate属性用于在提交表单时取消整个表单的验证，即关闭对表单内所有元素的有效性检查。如果要只取消表单中较少部分的验证而不妨碍提交大部分内容，则可以将novalidate属性单独用于form中的这些元素。<br>【示例1】下面是novalidate属性的一个应用示例。该示例中取消了整个表单的验证。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;form action=&quot;testform.asp&quot; method=&quot;get&quot; novalidate&gt;</span><br><span class="line">    请输入电子邮件地址:</span><br><span class="line">    &lt;input type=&quot;email&quot; name=&quot;user_email&quot; /&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot; value=&quot;提交&quot; /&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>显式验证<br>除了为input元素新增属性，以便对输入内容进行自动验证外，HTML5为form、input、select和textarea元素都定义了一个checkValidity()方法。调用该方法，可以显示地对表单内所有元素内容或单个元素内容进行有效性验证。checkValidity()方法将返回一个布尔值，以提示是否通过验证。<br>【示例2】本示例使用checkValidity()方法，主动验证用户输入的Email地址是否有效。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">function check()&#123;</span><br><span class="line">    var email = document.getElementById(&quot;email&quot;);</span><br><span class="line">    if(email.value==&quot;&quot;)&#123;</span><br><span class="line">        alert(&quot;请输入Email地址&quot;);    </span><br><span class="line">        return false;</span><br><span class="line">    &#125;    </span><br><span class="line">    else if(!email.checkValidity())&#123;</span><br><span class="line">        alert(&quot;请输入正确的Email地址&quot;); </span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">        alert(&quot;您输入的Email地址有效&quot;);</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;form id=&apos;testform&apos; onsubmit=&quot;check();&quot; novalidate&gt;</span><br><span class="line">    &lt;label for=&apos;email&apos;&gt;Email&lt;/label&gt;</span><br><span class="line">    &lt;input name=&apos;email&apos; id=&apos;email&apos; type=&apos;email&apos; /&gt;</span><br><span class="line">    &lt;br/&gt;</span><br><span class="line">    &lt;input type=&apos;submit&apos;&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>在HTML5中，form和input元素都有一个validity属性，该属性返回一个ValidityState对象，该对象有一个valid属性，它表示表单内所有元素内容是否有效或单个input元素内容是否有效。</p>
+<h4 id="新增页面元素"><a href="#新增页面元素" class="headerlink" title="新增页面元素"></a>新增页面元素</h4><ol>
+<li>figure和figcaption元素<br>figure元素可以定义独立的流内容，如图像、图表、照片、代码等。figure元素的内容应该与主页面的内容相关，但如果被删除，则不应对文档流产生影响。<br>figure元素是一种元素的组合，带有可选标题。figcaption元素表示figure元素的标题，它从属于figure元素，必须书写在figure元素的内部，可以书写在figure元素内的其它从属元素的前面或后面。一个figure元素内最多只允许放一个figcaption元素。<br>【示例1】本例设计一个不带标题的figure元素。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;figure&gt;</span><br><span class="line">    &lt;img src=&quot;images/1.png&quot; alt=&quot;学生&quot;&gt;</span><br><span class="line">&lt;/figure&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>【示例2】本例设计一个带标题的figure元素。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;figure&gt;</span><br><span class="line">    &lt;img src=&quot;images/1.png&quot; alt=&quot;学生&quot;&gt;</span><br><span class="line">    &lt;figcaption&gt;中学生&lt;/figcaption&gt;</span><br><span class="line">&lt;/figure&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>【示例3】本例设计为多幅图片设计一个标题。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;figure&gt;</span><br><span class="line">    &lt;img src=&quot;images/1.png&quot; height=&quot;300&quot; alt=&quot;学生&quot;&gt;</span><br><span class="line">    &lt;img src=&quot;images/2.png&quot; height=&quot;300&quot; alt=&quot;学生&quot;&gt;</span><br><span class="line">    &lt;img src=&quot;images/3.png&quot; height=&quot;300&quot; alt=&quot;学生&quot;&gt;        </span><br><span class="line">    &lt;figcaption&gt;中学生&lt;/figcaption&gt;</span><br><span class="line">&lt;/figure&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>figure元素的内容通常是图片、统计图或代码示例。</p>
+<ol start="2">
+<li>details和summary元素<br>details元素用于描述文档或文档某个部分的细节，被details表示的内容可以展开、收缩显示。details元素内可以包含文字、表单、插件或表格等任何超文本信息。<br>该元素新增一个布尔类型的open属性，当该属性设置为true时，其包含的子元素应该展开显示；当该属性值为false时，其包含的子元素应该索索起来不显示。open属性的默认值为false，页面打开时，其内部的子元素默认是收缩状态的。<br>summary元素时details元素的子元素，可以为details定义标题，标题是可见的，用户点击标题时，会显示出details的详细信息。<br>【示例1】本例演示了details和summary元素配合使用，设计折叠面板的效果。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;details&gt;</span><br><span class="line">    &lt;summary&gt;学生&lt;/summary&gt;</span><br><span class="line">    &lt;p&gt;&lt;img src=&quot;images/1.png&quot; alt=&quot;学生&quot;&gt;&lt;/p&gt;</span><br><span class="line">&lt;/details&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>【示例2】如果details元素内没有summary元素，浏览器会提供默认的文字以供单击。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;details&gt;</span><br><span class="line">    &lt;p&gt;&lt;img src=&quot;images/1.png&quot; alt=&quot;学生&quot;&gt;&lt;/p&gt;</span><br><span class="line">&lt;/details&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>当details元素的状态从展开切换为收缩，或从收缩切换到展开时，会触发toggle事件。<br>【示例3】本例设计当用户切换details元素显示或隐藏显示时，取消summary元素轮廓效果，并给details元素包含的内容加一个边框。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;details id=&quot;detail&quot;&gt;</span><br><span class="line">    &lt;summary&gt;学生&lt;/summary&gt;</span><br><span class="line">    &lt;p id=&quot;p&quot;&gt;&lt;img src=&quot;images/1.png&quot; alt=&quot;学生&quot; height=&quot;200&quot;&gt;&lt;/p&gt;</span><br><span class="line">&lt;/details&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">var detail=document.getElementById(&apos;detail&apos;);</span><br><span class="line">var p=document.getElementById(&apos;p&apos;);</span><br><span class="line">var summary=detail.getElementsByTagName(&apos;summary&apos;)[0];</span><br><span class="line">detail.ontoggle = function()&#123;</span><br><span class="line"> 	if(this.open)&#123;</span><br><span class="line">		p.style.border=&quot;solid 2px red&quot;;</span><br><span class="line">		summary.style.outline=&quot;none&quot;;</span><br><span class="line">		</span><br><span class="line">	&#125;else&#123;</span><br><span class="line">		p.style.border=&quot;solid 2px #fff&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<ol start="3">
+<li>mark元素<br>mark元素用来定义带有标记的文本，它表示页面中需要突出显示或高亮显示的信息，对于当前用户具有参考意义的一段文字。通常在引用原文的时候使用mark元素，目的是引起当前用户的注意。<br>【示例1】本例使用mark元素高亮显示对’HTML’关键词的搜索结果。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;article&gt;</span><br><span class="line">    &lt;h2&gt;&lt;mark&gt;HTML5&lt;/mark&gt;中国:中国最大的&lt;mark&gt;HTML5&lt;/mark&gt;中文门户 - Powered by Discuz!官网&lt;/h2&gt;</span><br><span class="line">    &lt;p&gt;&lt;mark&gt;HTML5&lt;/mark&gt;中国,是中国最大的&lt;mark&gt;HTML5&lt;/mark&gt;中文门户。为广大&lt;mark&gt;html5&lt;/mark&gt;开发者提供&lt;mark&gt;html5&lt;/mark&gt;教程、&lt;mark&gt;html5&lt;/mark&gt;开发工具、&lt;mark&gt;html5&lt;/mark&gt;网站示例、&lt;mark&gt;html5&lt;/mark&gt;视频、js教程等多种&lt;mark&gt;html5&lt;/mark&gt;在线学习资源。&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;www.html5cn.org/  - 百度快照 - 86%好评&lt;/p&gt;</span><br><span class="line">&lt;/article&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>mark元素还可以用于表示引用原文，为了某种特殊目的而把原文作者没有重点强调的内容标识出来。<br>【示例2】本例使用mark元素将唐诗中的韵脚特意高亮显示出来。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;article&gt;</span><br><span class="line">    &lt;h2&gt;静夜思 &lt;/h2&gt;</span><br><span class="line">    &lt;h3&gt;李白&lt;/h3&gt;</span><br><span class="line">    &lt;p&gt;床前明月&lt;mark&gt;光&lt;/mark&gt;，疑是地上&lt;mark&gt;霜&lt;/mark&gt;。&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;举头望明月，低头思故&lt;mark&gt;乡&lt;/mark&gt;。&lt;/p&gt;</span><br><span class="line">&lt;/article&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>在HTML5之前，用户习惯使用em或strong元素来突出显示文字，但是mark元素的作用于这两个元素的作用是有区别的。<br>mark元素的标示目的与原文作者无关，或者说它不是被原文作者用来标示文字的，而是后来被引用时添加上去的，它的目的是吸引当前用户的注意力，供用户参考。而strong是原文作者强调一段文字的重要性的，em是作者为了突出文章重点文字而使用的，表现为斜体。</p>
+<ol start="4">
+<li>progress元素<br>progress元素定义任务的进度。这个进度可以是不确定的，表示进度正在进行，但不清楚还有多少进度没有完成，也可以用0到某个最大数字（如100）之间的数字来表示进度完成情况。<br>progress元素包含两个新增属性，表示当前任务完成情况。<br>max：定义任务一共需要多少工作量。单位随意，不用指定<br>value：定义已经完成了多少任务<br>在设置属性的时候，max和value的属性只能指定为有效的浮点数，value属性的值必须大于0、小于或等于max属性值，max属性的值必须大于0。<br>【示例1】本例演示如何使用progress元素。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;progress id=&apos;progress&apos; value=&quot;10&quot; max=&quot;100&quot;&gt;&lt;/progress&gt;</span><br><span class="line">  &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">    function move()&#123;</span><br><span class="line">      var progress=document.getElementById(&apos;progress&apos;);</span><br><span class="line">      if(progress.value&lt;=100)&#123;</span><br><span class="line">        progress.value++;</span><br><span class="line">      &#125;;</span><br><span class="line">      requestAnimationFrame(move);</span><br><span class="line">    &#125;;</span><br><span class="line">    requestAnimationFrame(move);</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>progress元素不适合用来表示度量衡，例如磁盘空间使用情况等。如需表示度量衡，可以使用meter元素。</p>
+<ol start="5">
+<li><p>meter元素<br>meter元素定义已知范围或分数值内的标量测量。meter元素不应该用于指示进度。如果标记进度值，应该使用progress元素。<br>属性：<br>value：在元素中特别标识出来的实际值<br>min：设置规定范围时，允许使用的最小值，默认为0，设定的值不能小于0<br>max：设置规定范围时，允许使用的最大值。如果设定是，该属性值小于min属性的值，那么把min属性的值视为最大值。max属性的默认值为1。<br>low:规定被视作低的值的范围<br>high：规定被视作高的值的范围<br>optimum：规定最优值<br>form：规定meter元素所属的表单值<br>当设置low和high属性时，value的值位于上下限的时候会显示不同的颜色。<br>【示例1】本例简单演示meter元素的使用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;meter value=&apos;3&apos; min=&apos;0&apos; max=&apos;10&apos;&gt;&lt;/meter&gt;</span><br><span class="line">&lt;meter value=&quot;3&quot; min=&quot;0&quot; max=&quot;10&quot; high=&quot;8&quot; optimum=&quot;5&quot; low=&apos;4&apos;&gt;&lt;/meter&gt;</span><br><span class="line">&lt;meter value=&apos;0.1&apos;&gt;&lt;/meter&gt;</span><br><span class="line">&lt;meter value=&apos;3&apos;&gt;&lt;/meter&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>dialog元素<br>dialog元素定义对话框或窗口。在默认状态下，dialog元素处于隐藏状态，可以在Javascript脚本中使用show()方法显示dialog元素，可以使用close()方法隐藏dialog元素。<br>【示例1】本例演示了一个打开的对话框。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;dialog open&gt;打开的对话框&lt;/dialog&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>【示例2】本例演示如何使用Javascript脚本控制对话框的显示或隐藏。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">#dg &#123; width: 60%; text-align: center; &#125;</span><br><span class="line">#dg  label &#123;display:block; margin:6px;&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;input id=&quot;btn&quot; type=&quot;button&quot; value=&quot;打开对话框&quot;&gt;</span><br><span class="line">&lt;dialog id=&quot;dg&quot;&gt;</span><br><span class="line">    &lt;h2&gt;用户登录&lt;/h2&gt;</span><br><span class="line">    &lt;main&gt;</span><br><span class="line">        &lt;form&gt;</span><br><span class="line">            &lt;label for=&quot;txtName&quot; value=&quot;用户名：&quot;/&gt;</span><br><span class="line">            &lt;input type=&quot;text&quot; id=&quot;txtName&quot;/&gt;</span><br><span class="line">            &lt;/label&gt;</span><br><span class="line">            &lt;label for=&quot;txtPassword&quot; value=&quot;密  码：&quot;/&gt;</span><br><span class="line">            &lt;input type=&quot;password&quot; id=&quot;txtPassword&quot;  autofocus/&gt;</span><br><span class="line">            &lt;/label&gt;</span><br><span class="line">            &lt;input type=&quot;button&quot; value=&quot;登 录&quot; /&gt;</span><br><span class="line">            &lt;input id=&quot;cls&quot; type=&quot;button&quot; value=&quot;关 闭&quot; /&gt;</span><br><span class="line">        &lt;/form&gt;</span><br><span class="line">    &lt;/main&gt;</span><br><span class="line">&lt;/dialog&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">var btn = document.getElementById(&quot;btn&quot;);</span><br><span class="line">var dg = document.getElementById(&quot;dg&quot;);</span><br><span class="line">var cls = document.getElementById(&quot;cls&quot;);</span><br><span class="line"></span><br><span class="line">btn.onclick = function()&#123;</span><br><span class="line">	dg.showModal();</span><br><span class="line">	dg.returnValue=&apos;对话框的值&apos;;</span><br><span class="line">&#125;</span><br><span class="line">cls.onclick = function()&#123;</span><br><span class="line">	dg.close();</span><br><span class="line">	console.log( dg.returnValue );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">dg.onclose = function()&#123;</span><br><span class="line">	console.log(&apos;对话框被关闭&apos;);</span><br><span class="line">&#125;</span><br><span class="line">dg.oncancel = function()&#123;</span><br><span class="line">	console.log(&apos;用户在模态窗口中按下Esc键&apos;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>dialog元素的showModal()方法以模式对话框的形式显示dialog元素；如果要在页面打开时即显示dialog元素，可以使用dialog元素的open属性；可以使用dialog元素的returnValue属性为对话框设置或返回一个返回值。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/input/" rel="tag"># input</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/06/HTML表单/" rel="next" title="HTML表单">
+                <i class="fa fa-chevron-left"></i> HTML表单
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=2160090" async = "async" ></script>
+</div>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNTI1Mi8xMTc4OA=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Joe" />
+            
+              <p class="site-author-name" itemprop="name">Joe</p>
+              <p class="site-description motion-element" itemprop="description">我想在那里最高的山峰矗立，不在乎它是不是悬崖峭壁</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML5-input类型"><span class="nav-number">1.</span> <span class="nav-text">HTML5 input类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML5之前支持的input输入类型"><span class="nav-number">1.1.</span> <span class="nav-text">HTML5之前支持的input输入类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML5新增的表单类型"><span class="nav-number">1.2.</span> <span class="nav-text">HTML5新增的表单类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML5-input属性"><span class="nav-number">1.3.</span> <span class="nav-text">HTML5 input属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#新表单控件"><span class="nav-number">1.4.</span> <span class="nav-text">新表单控件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#新表单属性"><span class="nav-number">1.5.</span> <span class="nav-text">新表单属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#新增页面元素"><span class="nav-number">1.6.</span> <span class="nav-text">新增页面元素</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Joe</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">27.2k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
