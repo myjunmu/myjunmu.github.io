@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="jQuery封装了Ajax交互过程，用户仅需要调用jQuery方法，就可以轻松实现客户端与服务器端异步通信，从而帮助开发人员从繁琐的底层技术中解脱出来，专注于业务层开发。 使用GET请求jQuery定义了get()方法，专门负责通过远程HTTP GET请求方式载入信息。该方法具有简单的GET请求功能，以取代负责的$.ajax()方法。基本用法：jQuery.get(url,[data],[call">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JUN的博客">
+<meta property="og:url" content="http://myjunmu.top/2018/08/09/jQuery中的ajax/index.html">
+<meta property="og:site_name" content="JUN的博客">
+<meta property="og:description" content="jQuery封装了Ajax交互过程，用户仅需要调用jQuery方法，就可以轻松实现客户端与服务器端异步通信，从而帮助开发人员从繁琐的底层技术中解脱出来，专注于业务层开发。 使用GET请求jQuery定义了get()方法，专门负责通过远程HTTP GET请求方式载入信息。该方法具有简单的GET请求功能，以取代负责的$.ajax()方法。基本用法：jQuery.get(url,[data],[call">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-09T14:09:00.805Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JUN的博客">
+<meta name="twitter:description" content="jQuery封装了Ajax交互过程，用户仅需要调用jQuery方法，就可以轻松实现客户端与服务器端异步通信，从而帮助开发人员从繁琐的底层技术中解脱出来，专注于业务层开发。 使用GET请求jQuery定义了get()方法，专门负责通过远程HTTP GET请求方式载入信息。该方法具有简单的GET请求功能，以取代负责的$.ajax()方法。基本用法：jQuery.get(url,[data],[call">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://myjunmu.top/2018/08/09/jQuery中的ajax/"/>
+
+
+
+
+
+  <title> | JUN的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">JUN的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://myjunmu.top/2018/08/09/jQuery中的ajax/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Joe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JUN的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-09T22:09:00+08:00">
+                2018-08-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  4,705
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  20
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>jQuery封装了Ajax交互过程，用户仅需要调用jQuery方法，就可以轻松实现客户端与服务器端异步通信，从而帮助开发人员从繁琐的底层技术中解脱出来，专注于业务层开发。</p>
+<h4 id="使用GET请求"><a href="#使用GET请求" class="headerlink" title="使用GET请求"></a>使用GET请求</h4><p>jQuery定义了get()方法，专门负责通过远程HTTP GET请求方式载入信息。该方法具有简单的GET请求功能，以取代负责的$.ajax()方法。<br>基本用法：<br><code>jQuery.get(url,[data],[callback],[type])</code><br>get()方法包含4个参数，其中第一个参数为必选项，后面三个参数为可选项。<br>第一个参数表示要请求页面的URL地址。<br>第二个参数表示一个对象结构的名/值对列表。<br>第三个参数表示异步交互成功之后的回调函数。回调函数的参数值为服务器端响应的信息。<br>第四个参数表示服务器端响应信息返回的内容格式，如XML、HTML、Script、JSON和Text，或者_default。<br>【示例1】本例使用get()方法向服务器端test2.php文件发出一个请求，然后在回调函数中读取并显示服务器端响应的消息。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;script src=&quot;jquery/jquery-3.1.1.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; &gt;</span><br><span class="line">$(function()&#123;</span><br><span class="line">    $(&quot;input&quot;).click(function()&#123;	//绑定click事件</span><br><span class="line">            $.get(&quot;test1.php&quot;,&#123;	//向test1.asp文件发出请求</span><br><span class="line">                name : &quot;css8&quot;,	//发送的请求信息</span><br><span class="line">                pass : 123456,</span><br><span class="line">                age : 1</span><br><span class="line">            &#125;,function(data)&#123;	//回调函数</span><br><span class="line">                alert(data);	//显示响应信息</span><br><span class="line">        &#125;); </span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;input type=&quot;button&quot; value=&quot;jQuery实现的异步请求&quot; /&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>test2.php<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">  $name=$_GET[&quot;name&quot;];   //$_REQUEST[&quot;name&quot;]</span><br><span class="line">  $pass=$_GET[&quot;pass&quot;];</span><br><span class="line">  $age=$_GET[&quot;age&quot;];</span><br><span class="line">  echo &quot;$name,$pass,$age&quot;;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure></p>
+<p>get()方法能够在请求成功时调用回调函数，如果需要在请求失败时执行函数，则必须使用$.ajax()方法。<br>可以把get()方法的第二个参数所传递的数据，以查询字符串的形式附加在第一个参数URL的后面。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$.get(&quot;test2.php?name=css8&amp;pass=123456&amp;age=1&quot;,function(data)&#123;	//回调函数</span><br><span class="line">                alert(data);	//显示响应信息</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure></p>
+<p>jQuery还定义了两个专用方法getJSON()和getScript()。这两个方法的功能和用法与get()是完全相同的，不过getJSON()方法能够请求载入JSON数据，getScript()方法能够请求载入Javascript文件。<br>这两个方法与get()方法的区别在于只支持前三个参数，不需要设置第四个参数，即指定响应数据的类型，因为方法本身已经说明了接受的数据类型。</p>
+<h4 id="使用POST请求"><a href="#使用POST请求" class="headerlink" title="使用POST请求"></a>使用POST请求</h4><p>jQuery定义了post()方法，专门负责通过远程HTTP POST请求方法载入信息。该方法具有一个简单的POSt请求功能，以取代复杂的$.ajax()方法。<br>基本用法：<br><code>jQuery.post(url,[data],[callback],[type])</code><br>post()方法和get()方法的参数是一样的。<br>【示例1】在本示例中，使用post()方法向服务器端test2.php文件发出一个请求，然后在回调函数中读取并显示服务器端响应的消息。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;script src=&quot;jquery/jquery-3.1.1.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; &gt;</span><br><span class="line">$(function()&#123;</span><br><span class="line">    $(&quot;input&quot;).click(function()&#123;	//绑定click事件</span><br><span class="line">            $.post(&quot;test2.php&quot;,&#123;	//向test1.asp文件发出请求</span><br><span class="line">                name : &quot;css8&quot;,	//发送的请求信息</span><br><span class="line">                pass : 123456,</span><br><span class="line">                age : 1</span><br><span class="line">            &#125;,function(data)&#123;	//回调函数</span><br><span class="line">                alert(data);	//显示响应信息</span><br><span class="line">        &#125;); </span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;input type=&quot;button&quot; value=&quot;jQuery实现的异步请求&quot; /&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>test2.php<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">  $name=$_POST[&quot;name&quot;];</span><br><span class="line">  $pass=$_POST[&quot;pass&quot;];</span><br><span class="line">  $age=$_POST[&quot;age&quot;];</span><br><span class="line">  echo &quot;$name,$pass,$age&quot;;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure></p>
+<p>get()方法和post()方法的用法是完全相同的，数据传递和接受响应的方法都相同，唯一的区别就是请求方式不同。具体选用哪个方法，主要根据客户端所需要传递的数据容量和格式确定，同时应该考虑服务端接受数据的处理方式。<br>不管是get()方法还是post()方法，都是一种简单的请求方式，对于特殊的数据请求和响应处理，应该选择$.ajax()方法，$.ajax()方法的参数比较多且复杂，能够处理各种特殊的异步交互行为。</p>
+<h4 id="使用ajax-请求"><a href="#使用ajax-请求" class="headerlink" title="使用ajax()请求"></a>使用ajax()请求</h4><p>ajax()是jQuery实现Ajax的底层方法，也就是说它是post()和get()方法的基础，使用该方法可以完成HTTP请求加载远程数据。由于aiax()方法的参数比较复杂，在没有特殊需求的情况下，使用get()和post()方法即可。<br>基本用法：<br><code>jQuery.ajax([settings])</code><br>ajax()方法只有一个参数，即一个列表结构的对象，包含各配置及回调函数信息。<br>【示例4】加载Javascript文件，可以使用下面的参数选项。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">	type:&quot;GET&quot;,</span><br><span class="line">	url:&quot;test.js&quot;,</span><br><span class="line">	dataType:&quot;script&quot;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>【示例5】如果把客户端的数据传递给服务器端，并获取服务器端的响应信息，可以使用类似于下面的参数选项。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">	type:&quot;POST&quot;,</span><br><span class="line">	url:&quot;test.php&quot;,</span><br><span class="line">	data:&quot;name=zj&amp;pwd=123456&quot;，</span><br><span class="line">	success：function(data)&#123;</span><br><span class="line">		alert(data)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>【示例6】加载HTML页面，则可以使用下面的参数选项。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">	url:&quot;test.html&quot;,</span><br><span class="line">	cache:false;</span><br><span class="line">	success：function(html)&#123;</span><br><span class="line">		$(&quot;#box&quot;).append(html);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>ajax()方法的参数选项列表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">async	布尔值，表示请求是否异步处理。默认是 true,即所有请求均为异步请求。如果需要发送同步请求，设置为false即可。注意，同步请求将锁住浏览器，用户其他操作必须等待请求完成才可以执行</span><br><span class="line">beforeSend(xhr)	发送请求前运行的函数。如添加自定义 HTTP 头。XMLHttpRequest 对象是唯一的参数。这是一个 Ajax 事件。如果返回 false 可以取消本次 ajax 请求。</span><br><span class="line">cache	布尔值，表示浏览器是否缓存被请求页面。默认是 true，当dataType为script时，默认为false。</span><br><span class="line">complete(xhr,status)	请求完成时运行的函数（在请求成功或失败之后均调用，即在 success 和 error 函数之后）。参数： XMLHttpRequest 对象和一个描述请求类型的字符串。</span><br><span class="line">contentType	发送数据到服务器时所使用的内容类型。默认是：&quot;application/x-www-form-urlencoded&quot;。</span><br><span class="line">context	为所有 AJAX 相关的回调函数规定 &quot;this&quot; 值。</span><br><span class="line">data	规定要发送到服务器的数据，将自动转换为请求字符串格式，数据类型可以是字符串或对象。</span><br><span class="line">dataFilter(data,type)	给 Ajax 返回的原始数据的进行预处理的函数。提供 data 和 type 两个参数：data 是 Ajax 返回的原始数据，type 是调用 jQuery.ajax 时提供的 dataType 参数。函数返回的值将由 jQuery 进一步处理。</span><br><span class="line">dataType	预期的服务器响应的数据类型。如果不指定，jQuery会根据HTTP包含的MIME信息返回responseXML或responseText，并作为回调函数参数传递。可用值：xml、html、json、jsonp、script、text</span><br><span class="line">error(xhr,status,error)	如果请求失败要运行的函数。该函数包括三个参数，XHR对象，错误信息，错误对象。如果发生了错误，错误信息（第二个参数）除了得到 null 之外，还可能是 &quot;timeout&quot;, &quot;error&quot;, &quot;notmodified&quot; 和 &quot;parsererror&quot;。</span><br><span class="line">global	布尔值，规定是否为请求触发全局 AJAX 事件处理程序。默认是 true。</span><br><span class="line">ifModified	布尔值，仅在服务器数据改变时获取新数据。默认是 false。</span><br><span class="line">jsonp	在一个 jsonp 中重写回调函数的名字，这个值用来替代在 &quot;callback=?&quot; 这种 GET 或 POST 请求中 URL 参数里的 &quot;callback&quot; 部分，比如 &#123;jsonp:&apos;onJsonPLoad&apos;&#125; 会导致将 &quot;onJsonPLoad=?&quot; 传给服务器。</span><br><span class="line">jsonpCallback	为 jsonp 请求指定一个回调函数名。这个值将用来取代 jQuery 自动生成的随机函数名。这主要用来让 jQuery 生成度独特的函数名，这样管理请求更容易，也能方便地提供回调函数和错误处理。你也可以在想让浏览器缓存 GET 请求的时候，指定这个回调函数名。</span><br><span class="line">password	规定在 HTTP 访问认证请求中使用的密码。</span><br><span class="line">processData	布尔值，规定通过请求发送的数据是否转换为查询字符串。默认是 true。</span><br><span class="line">scriptCharset	只有当请求时 dataType 为 &quot;jsonp&quot; 或 &quot;script&quot;，并且 type 是 &quot;GET&quot; 才会用于强制修改 charset。</span><br><span class="line">success(result,status,xhr)	当请求成功时运行的函数。参数由服务器返回，并根据 dataType 参数进行处理后的数据；描述状态的字符串；XHR对象。</span><br><span class="line">timeout	设置本地的请求超时时间（以毫秒计）。</span><br><span class="line">traditional	布尔值，规定是否使用参数序列化的传统样式。</span><br><span class="line">type	规定请求的类型（GET 或 POST），默认为GET。</span><br><span class="line">url	规定发送请求的 URL，默认是当前页面。</span><br><span class="line">username	规定在 HTTP 访问认证请求中使用的用户名。</span><br><span class="line">xhr	用于创建 XMLHttpRequest 对象的函数。</span><br></pre></td></tr></table></figure></p>
+<p>在远程请求时(不在同一个域下)，所有 POST 请求都将转为 GET 请求。（因为将使用 DOM 的 script标签来加载）</p>
+<h4 id="跟踪状态"><a href="#跟踪状态" class="headerlink" title="跟踪状态"></a>跟踪状态</h4><p>jQuery在XMLHttpRequest对象定义的readyState属性基础上，对异步交互中服务器响应状态进行封装，提供了6个响应事件，以便于进一步细化对整个请求响应过程的跟踪。<br>ajaxStart(),ajax请求开始时进行响应<br>ajaxSend()，ajax请求发送时进行响应<br>ajaxComplete()，ajax请求完成时进行响应<br>ajaxSuccess()，ajax请求成功时进行响应<br>ajaxStop()，ajax请求结束时进行响应<br>ajaxError()，ajax请求发生错误时进行响应<br>【示例1】在本示例中，为当前异步请求绑定6个jQuery定义的ajax事件，在浏览器中预览则可以看到浏览器根据请求和响应的过程，逐步提示过程进展。首先，响应的是ajaxStart和ajaxSend事件，然后是ajaxSuccess事件，最后是ajaxComplete和ajaxStop事件。(貌似没看见ajaxStart和ajaxSend事件)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;title&gt;test&lt;/title&gt;</span><br><span class="line">&lt;script src=&quot;jquery/jquery-1.3.2.js&quot; type=&quot;text/javascript&quot; &gt;&lt;/script&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; &gt;</span><br><span class="line">$(function()&#123;</span><br><span class="line">    $(&quot;input&quot;).click(function()&#123;</span><br><span class="line">        $.ajax(&#123;</span><br><span class="line">            type: &quot;POST&quot;,</span><br><span class="line">            url: &quot;test2.php&quot;,</span><br><span class="line">            data: &quot;name=css8&quot;</span><br><span class="line">        &#125;);</span><br><span class="line">        $(&quot;div&quot;).ajaxStart(function()&#123;</span><br><span class="line">            alert(&quot;Ajax请求开始&quot;); </span><br><span class="line">        &#125;)</span><br><span class="line">        $(&quot;div&quot;).ajaxSend(function()&#123;</span><br><span class="line">            alert(&quot;Ajax请求将要发送&quot;);</span><br><span class="line">        &#125;)</span><br><span class="line">        $(&quot;div&quot;).ajaxComplete(function()&#123;</span><br><span class="line">            alert(&quot;Ajax请求完成&quot;);</span><br><span class="line">        &#125;)</span><br><span class="line">        $(&quot;div&quot;).ajaxSuccess(function()&#123;</span><br><span class="line">            alert(&quot;Ajax请求成功&quot;);</span><br><span class="line">        &#125;)</span><br><span class="line">        $(&quot;div&quot;).ajaxStop(function()&#123;</span><br><span class="line">            alert(&quot;Ajax请求结束&quot;); </span><br><span class="line">        &#125;)</span><br><span class="line">        $(&quot;div&quot;).ajaxError(function()&#123;</span><br><span class="line">            alert(&quot;Ajax请求发生错误&quot;); </span><br><span class="line">        &#125;) </span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;input type=&quot;button&quot; value=&quot;jQuery实现的异步请求&quot; /&gt;</span><br><span class="line">&lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>在这些事件中，大部分都会包含几个默认参数。例如ajaxSuccess、ajaxSend、ajaxComplete都包含event、request和settings，其中event表示事件类型，request表示请求信息、settings表示设置的选项信息。<br>ajaxError事件还包含4个默认参数，event、XHR、ajaxOptions和thrownError，最后一个参数表示抛出的错误。</p>
+<h4 id="载入文件"><a href="#载入文件" class="headerlink" title="载入文件"></a>载入文件</h4><p>遵循ajax异步交互的设计原则，jQuery定义了可以加载网页文档的方法load()。该方法与getScript()方法的功能相似，都是加载外部文件，但是他们的用法完全不同。load()方法能够把加载的网页文件附加到指定的网页标签。</p>
+<ol>
+<li>新建一个简单网页。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;title&gt;&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;table width=&quot;100%&quot; border=&quot;1&quot;&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">        &lt;th&gt;name&lt;/th&gt;</span><br><span class="line">        &lt;th&gt;pass&lt;/th&gt;</span><br><span class="line">        &lt;th&gt;age&lt;/th&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">        &lt;td&gt;zhu&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;123&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;1&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">        &lt;td&gt;zhang&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;456&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;2&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">        &lt;td&gt;wang&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;789&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;3&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">&lt;/table&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>在另一网页中输入下面的脚本。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;title&gt;test&lt;/title&gt;</span><br><span class="line">&lt;script src=&quot;jquery/jquery-1.11.0.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; &gt;</span><br><span class="line">$(function()&#123;</span><br><span class="line">    $(&quot;input&quot;).click(function()&#123;</span><br><span class="line">        $(&quot;div&quot;).load(&quot;table.html&quot;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt; </span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;input type=&quot;button&quot; value=&quot;jQuery实现的异步请求&quot; /&gt;</span><br><span class="line">&lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>当单击按钮时，会把请求文件中的数据表格加载到当前页面的div元素中。<br>使用ajax方法可以替换load()方法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;title&gt;test&lt;/title&gt;</span><br><span class="line">&lt;script src=&quot;jquery/jquery-1.11.0.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; &gt;</span><br><span class="line">$(function()&#123;</span><br><span class="line">    $(&quot;input&quot;).click(function()&#123;</span><br><span class="line">        var str = ($.ajax(&#123;		//调用ajax()方法，返回XMLHttpRequest对象</span><br><span class="line">            url :  &quot;table.html&quot;,	//载入的URl</span><br><span class="line">            async: false		//禁止异步载入</span><br><span class="line">        &#125;)).responseText; 		//获取XMLHttpRequest对象中包含的服务器响应信息</span><br><span class="line">        $(&quot;div&quot;).html(str); 		//把载入的网页内容附加到div元素内</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt; </span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;input type=&quot;button&quot; value=&quot;jQuery实现的异步请求&quot; /&gt;</span><br><span class="line">&lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="设置ajax选项"><a href="#设置ajax选项" class="headerlink" title="设置ajax选项"></a>设置ajax选项</h4><p>对于频繁与服务器进行交互的页面来说，每一次交互都要设置很多的选项，这种操作是很繁琐的。jQuery定义了ajaxSetup()方法，该方法可以预设异步交互中通用选项，从而减轻频繁设置选项的繁琐。<br>ajaxSetup()方法的参数仅包含一个参数选项的列表对象，这与ajax()方法的参数选项设置是相同的。在该方法中设置的选项，可以实现全局共享，从而在具体交互中只需要设置个性化参数即可。<br>【示例1】本示例中，先使用$.ajaxSetup()方法把本页面异步交互的公共选项进行预设，包括请求的服务器端文件。禁止触发全局ajax事件、请求方式、响应数据类型和响应成功后的回调函数。这样在不同按钮上绑定异步请求时，只需要设置发送请求的消息即可。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;title&gt;test&lt;/title&gt; </span><br><span class="line">&lt;script src=&quot;jquery/jquery-1.11.0.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; &gt;</span><br><span class="line">$(function()&#123;</span><br><span class="line">    $.ajaxSetup(&#123;				//预设公共选项</span><br><span class="line">        url: &quot;test.php&quot;,			//请求的URL</span><br><span class="line">        global: false, 				//禁止触发全局Ajax事件</span><br><span class="line">        type: &quot;POST&quot;,			//请求方式</span><br><span class="line">        dataType: &quot;text&quot;,			//响应数据的类型</span><br><span class="line">        success : function(data)&#123; 	//响应成功之后的回调函数</span><br><span class="line">            alert(data);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    $(&quot;input&quot;).eq(0).click(function()&#123;	//为按钮1绑定异步请求</span><br><span class="line">        $.ajax(&#123;</span><br><span class="line">            data : &quot;name=zhu&quot;		//发送请求的信息</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">    $(&quot;input&quot;).eq(1).click(function()&#123;	//为按钮2绑定异步请求</span><br><span class="line">        $.ajax(&#123;</span><br><span class="line">            data : &quot;name=wang&quot;		//发送请求的信息</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);    </span><br><span class="line">    $(&quot;input&quot;).eq(2).click(function()&#123;	//为按钮3绑定异步请求</span><br><span class="line">        $.ajax(&#123;</span><br><span class="line">            data : &quot;name=zhang&quot;	//发送请求的信息</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);    </span><br><span class="line">&#125;)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;input type=&quot;button&quot; value=&quot;异步请求1&quot; /&gt;</span><br><span class="line">&lt;input type=&quot;button&quot; value=&quot;异步请求2&quot; /&gt;</span><br><span class="line">&lt;input type=&quot;button&quot; value=&quot;异步请求3&quot; /&gt;</span><br><span class="line">&lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>服务器端文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">  $name=$_POST[&quot;name&quot;];</span><br><span class="line">  echo &quot;$name&quot;;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="序列化字符串"><a href="#序列化字符串" class="headerlink" title="序列化字符串"></a>序列化字符串</h4><p>在ajax异步通信过程中，客户端所发送的请求字符串必须是由&amp;字符连接起来的多个名/值对。而当使用表单发送数据时，发送请求的信息并非按照此格式进行传递。用户需要手工编写发送信息的字符串格式，为了减轻开发人员不必要的劳动量，特意定义了serialize()方法，该方法可以帮助用户按名/值对的字符串格式进行快速的整理，并返回合法的请求字符串。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;title&gt;test&lt;/title&gt;</span><br><span class="line">&lt;script src=&quot;jquery/jquery-1.11.0.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; &gt;</span><br><span class="line">$(function()&#123;</span><br><span class="line">    $(&quot;#submit&quot;).click(function()&#123;</span><br><span class="line">        $(&quot;p&quot;).html($(&quot;form&quot;).serialize());	//获取和格式化表单的请求字符串信息，并显示出来</span><br><span class="line">        return false;                	//禁止提交表单</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)</span><br><span class="line">&lt;/script&gt; </span><br><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;form action=&quot;#&quot; method=&quot;post&quot;&gt;</span><br><span class="line">    姓名：&lt;input  type=&quot;text&quot; name=&quot;user&quot; /&gt;&lt;br /&gt;</span><br><span class="line">    性别：</span><br><span class="line">    &lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;man&quot; checked=&quot;checked&quot; /&gt;男</span><br><span class="line">    &lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;woman&quot; /&gt;女&lt;br /&gt; </span><br><span class="line">    年级：</span><br><span class="line">    &lt;select name=&quot;grade&quot;&gt;</span><br><span class="line">        &lt;option value=&quot;1&quot;&gt;一&lt;/option&gt;</span><br><span class="line">        &lt;option value=&quot;2&quot;&gt;二&lt;/option&gt;</span><br><span class="line">        &lt;option value=&quot;3&quot;&gt;三&lt;/option&gt;</span><br><span class="line">    &lt;/select&gt;&lt;br /&gt;</span><br><span class="line">    科目：</span><br><span class="line">    &lt;select name=&quot;subject&quot; size=&quot;6&quot; multiple=&quot;multiple&quot;&gt;</span><br><span class="line">        &lt;option value=&quot;yuwen&quot;&gt;语文&lt;/option&gt; </span><br><span class="line">        &lt;option value=&quot;shuxue&quot;&gt;数学&lt;/option&gt;</span><br><span class="line">        &lt;option value=&quot;waiyu&quot;&gt;外语&lt;/option&gt; </span><br><span class="line">        &lt;option value=&quot;wuli&quot;&gt;物理&lt;/option&gt;</span><br><span class="line">        &lt;option value=&quot;huaxue&quot;&gt;化学&lt;/option&gt; </span><br><span class="line">        &lt;option value=&quot;jisuanji&quot;&gt;计算机&lt;/option&gt; </span><br><span class="line">    &lt;/select&gt;&lt;br /&gt;</span><br><span class="line">    兴趣：</span><br><span class="line">    &lt;input type=&quot;checkbox&quot; name=&quot;love&quot; value=&quot;yundong&quot; /&gt;运动</span><br><span class="line">    &lt;input type=&quot;checkbox&quot; name=&quot;love&quot; value=&quot;wenyi&quot; /&gt;文艺</span><br><span class="line">    &lt;input type=&quot;checkbox&quot; name=&quot;love&quot; value=&quot;yinyue&quot; /&gt;音乐</span><br><span class="line">    &lt;input type=&quot;checkbox&quot; name=&quot;love&quot; value=&quot;meishu&quot; /&gt;美术</span><br><span class="line">    &lt;input type=&quot;checkbox&quot; name=&quot;love&quot; value=&quot;youxi&quot; /&gt;游戏&lt;br /&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot; value=&quot;提交&quot; id=&quot;submit&quot; /&gt;  </span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;p&gt;&lt;/p&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>除了serialize()方法外，jQuery对象还定义了aerialzieArray()方法，此方法能够返回指定表单域值的JSON结构对象。<br>此方法返回的是JSON对象，而非JSON字符串。JSON对象是有一个对象数组组成的，其中每个对象包含一个或两个名值对：name参数和value参数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;title&gt;test&lt;/title&gt;</span><br><span class="line">&lt;script src=&quot;jquery/jquery-1.11.0.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; &gt;</span><br><span class="line">$(function()&#123;</span><br><span class="line">    $(&quot;#submit&quot;).click(function()&#123;</span><br><span class="line">        //var array = $(&quot;form&quot;).serializeArray();			//注意，不能够直接在form元素上调用该方法</span><br><span class="line">        var array = $(&quot;input, select&quot;).serializeArray();	//在表单域对象上调用serializeArray()方法，</span><br><span class="line">//返回包含传递表单域和值的JSON对象</span><br><span class="line">        var str = &quot;[ &lt;br /&gt;&quot;</span><br><span class="line">        for(var i = 0; i&lt;array.length; i++)&#123;				//遍历数组格式的JSON对象</span><br><span class="line">            str += &quot;    &#123;&quot;</span><br><span class="line">            for(var name in array[i])&#123;		   			//遍历数组元素对象</span><br><span class="line">                str += name + &quot;:&quot; + array[i][name]  + &quot;,&quot;	//组合为JSON格式字符串</span><br><span class="line">            &#125;</span><br><span class="line">            str = str.substring(0,str.length-1);			//清除最后一个字符，即最后一个逗号</span><br><span class="line">            str += &quot;&#125;,&lt;br /&gt;&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">        str = str.substring(0,str.length-7);	 			//清除最后7个字符，即最后一个空行</span><br><span class="line">        str += &quot;&lt;br /&gt;]&quot;;</span><br><span class="line">        $(&quot;p&quot;).html(str);	              			//显示返回的JSON结构字符串</span><br><span class="line">        return false;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt; </span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;form action=&quot;#&quot; method=&quot;post&quot;&gt;</span><br><span class="line">    姓名：&lt;input  type=&quot;text&quot; name=&quot;user&quot; /&gt;&lt;br /&gt;</span><br><span class="line">    性别：</span><br><span class="line">    &lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;man&quot; checked=&quot;checked&quot; /&gt;男</span><br><span class="line">    &lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;men&quot; /&gt;女&lt;br /&gt; </span><br><span class="line">    年级：</span><br><span class="line">    &lt;select name=&quot;grade&quot;&gt;</span><br><span class="line">        &lt;option value=&quot;1&quot;&gt;一&lt;/option&gt;</span><br><span class="line">        &lt;option value=&quot;2&quot;&gt;二&lt;/option&gt;</span><br><span class="line">        &lt;option value=&quot;3&quot;&gt;三&lt;/option&gt;</span><br><span class="line">    &lt;/select&gt;&lt;br /&gt;</span><br><span class="line">    科目：</span><br><span class="line">    &lt;select name=&quot;kemu&quot; size=&quot;6&quot; multiple=&quot;multiple&quot;&gt;</span><br><span class="line">        &lt;option value=&quot;yuwen&quot;&gt;语文&lt;/option&gt; </span><br><span class="line">        &lt;option value=&quot;shuxue&quot;&gt;数学&lt;/option&gt;</span><br><span class="line">        &lt;option value=&quot;waiyu&quot;&gt;外语&lt;/option&gt; </span><br><span class="line">        &lt;option value=&quot;wuli&quot;&gt;物理&lt;/option&gt;</span><br><span class="line">        &lt;option value=&quot;huaxue&quot;&gt;化学&lt;/option&gt; </span><br><span class="line">        &lt;option value=&quot;jisuanji&quot;&gt;计算机&lt;/option&gt; </span><br><span class="line">    &lt;/select&gt;&lt;br /&gt;</span><br><span class="line">    兴趣：</span><br><span class="line">    &lt;input type=&quot;checkbox&quot; name=&quot;love&quot; value=&quot;yundong&quot; /&gt;运动</span><br><span class="line">    &lt;input type=&quot;checkbox&quot; name=&quot;love&quot; value=&quot;wenyi&quot; /&gt;文艺</span><br><span class="line">    &lt;input type=&quot;checkbox&quot; name=&quot;love&quot; value=&quot;yinyue&quot; /&gt;音乐</span><br><span class="line">    &lt;input type=&quot;checkbox&quot; name=&quot;love&quot; value=&quot;meishu&quot; /&gt;美术</span><br><span class="line">    &lt;input type=&quot;checkbox&quot; name=&quot;love&quot; value=&quot;youxi&quot; /&gt;游戏&lt;br /&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot; value=&quot;提交&quot; id=&quot;submit&quot; /&gt;  </span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;p&gt;&lt;/p&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/09/使用ajax/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=2160090" async = "async" ></script>
+</div>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNTI1Mi8xMTc4OA=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Joe" />
+            
+              <p class="site-author-name" itemprop="name">Joe</p>
+              <p class="site-description motion-element" itemprop="description">我想在那里最高的山峰矗立，不在乎它是不是悬崖峭壁</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用GET请求"><span class="nav-number">1.</span> <span class="nav-text">使用GET请求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用POST请求"><span class="nav-number">2.</span> <span class="nav-text">使用POST请求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用ajax-请求"><span class="nav-number">3.</span> <span class="nav-text">使用ajax()请求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#跟踪状态"><span class="nav-number">4.</span> <span class="nav-text">跟踪状态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#载入文件"><span class="nav-number">5.</span> <span class="nav-text">载入文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置ajax选项"><span class="nav-number">6.</span> <span class="nav-text">设置ajax选项</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#序列化字符串"><span class="nav-number">7.</span> <span class="nav-text">序列化字符串</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Joe</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">40.7k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
