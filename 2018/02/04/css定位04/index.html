@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="CSS定位," />
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="我想在那里最高的山峰矗立，不在乎它是不是悬崖峭壁">
-<meta property="og:type" content="website">
-<meta property="og:title" content="JUN的博客">
-<meta property="og:url" content="http://myjunmu.top/page/2/index.html">
+<meta name="description" content="CSS定位属性position取值：static：默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）relative：生成相对定位的元素，相对于其正常位置进行定位。”left:20” 会向元素的 LEFT 位置添加 20 像素。同理可得right、top和bottom的位置偏移情况。absolute：生成绝对定位的元素，相对">
+<meta name="keywords" content="CSS定位">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS属性--定位">
+<meta property="og:url" content="http://myjunmu.top/2018/02/04/css定位04/index.html">
 <meta property="og:site_name" content="JUN的博客">
-<meta property="og:description" content="我想在那里最高的山峰矗立，不在乎它是不是悬崖峭壁">
+<meta property="og:description" content="CSS定位属性position取值：static：默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）relative：生成相对定位的元素，相对于其正常位置进行定位。”left:20” 会向元素的 LEFT 位置添加 20 像素。同理可得right、top和bottom的位置偏移情况。absolute：生成绝对定位的元素，相对">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-13T12:37:37.320Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JUN的博客">
-<meta name="twitter:description" content="我想在那里最高的山峰矗立，不在乎它是不是悬崖峭壁">
+<meta name="twitter:title" content="CSS属性--定位">
+<meta name="twitter:description" content="CSS定位属性position取值：static：默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）relative：生成相对定位的元素，相对于其正常位置进行定位。”left:20” 会向元素的 LEFT 位置添加 20 像素。同理可得right、top和bottom的位置偏移情况。absolute：生成绝对定位的元素，相对">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://myjunmu.top/page/2/"/>
+  <link rel="canonical" href="http://myjunmu.top/2018/02/04/css定位04/"/>
 
 
 
 
 
-  <title>JUN的博客</title>
+  <title>CSS属性--定位 | JUN的博客</title>
   
 
 
@@ -143,8 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -281,9 +282,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -296,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://myjunmu.top/2018/02/01/CSS基础/">
+    <link itemprop="mainEntityOfPage" href="http://myjunmu.top/2018/02/04/css定位04/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Joe">
@@ -313,9 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/01/CSS基础/" itemprop="url">CSS基础</a></h1>
+          <h1 class="post-title" itemprop="name headline">CSS属性--定位</h1>
         
 
         <div class="post-meta">
@@ -327,8 +326,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-01T00:00:00+08:00">
-                2018-02-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-04T00:00:00+08:00">
+                2018-02-04
               </time>
             
 
@@ -381,184 +380,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,752
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  8
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>CSS(Cascading Style Sheet)层叠样式表，是用于控制网页样式并允许将样式代码与网页内容分离的一种标记性语言。CSS3是CSS规范的最新版本，它在CSS2.1的基础上增加了很多强大的新功能，以帮助开发人员能够解决一些实际的问题。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/01/CSS基础/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://myjunmu.top/2018/01/10/XML/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Joe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JUN的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/10/XML/" itemprop="url">XML</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-10T00:00:00+08:00">
-                2018-01-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/HTML5/" itemprop="url" rel="index">
-                    <span itemprop="name">HTML5</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  2,311
+                  2,772
                 </span>
               
 
@@ -595,16 +417,24 @@
       
 
       
-        
-          <h3 id="使用XML数据"><a href="#使用XML数据" class="headerlink" title="使用XML数据"></a>使用XML数据</h3><p>XML格式是互联网数据传输的事实标准，传统的WEB服务大都建立在XML数据上。不过XML数据结构过于繁琐、冗长，数据访问过程复杂，浏览器兼容性问题严重，导致它在Web应用开发中逐渐被JSON格式数据取代。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/01/10/XML/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <h3 id="CSS定位属性"><a href="#CSS定位属性" class="headerlink" title="CSS定位属性"></a>CSS定位属性</h3><h4 id="position"><a href="#position" class="headerlink" title="position"></a>position</h4><p>取值：<br>static：默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）<br>relative：生成相对定位的元素，相对于其正常位置进行定位。”left:20” 会向元素的 LEFT 位置添加 20 像素。同理可得right、top和bottom的位置偏移情况。<br>absolute：生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。元素的位置通过 “left”, “top”, “right” 以及 “bottom” 属性进行规定。<br>fixed：生成绝对定位的元素，相对于浏览器窗口进行定位。元素的位置通过 “left”, “top”, “right” 以及 “bottom” 属性进行规定。当出现滚动条时，对象不会随着滚动。<br>sticky：它就像是relative和fixed的合体，当在屏幕中时按常规流排版，当卷动到屏幕外时则表现如fixed。</p>
+<h4 id="left"><a href="#left" class="headerlink" title="left"></a>left</h4><p>该属性定义了定位元素左外边距边界与其包含块左边界之间的偏移。<br>取值：<br>auto：默认值，通过浏览器计算左边缘的位置。<br>%：设置以包含元素的百分比计的左边位置。可使用负值。<br>length：用 px、cm 等单位设置元素的左边位置。可使用负值。<br>计算值说明：position为relative时，如果right和left都是auto，则它们的计算值是0；如果right和left其中一个为auto，则auto相当于另一个的负值，即left = -right；如果right和left的值都不为auto，则忽略right。</p>
+<h4 id="right"><a href="#right" class="headerlink" title="right"></a>right</h4><p>该属性定义了定位元素右外边距边界与其包含块右边界之间的偏移。<br>auto：默认值。通过浏览器计算右边缘的位置。<br>%：设置以包含元素的百分比计的右边位置。可使用负值。<br>length：使用 px、cm 等单位设置元素的右边位置。可使用负值。</p>
+<h4 id="top"><a href="#top" class="headerlink" title="top"></a>top</h4><p>该属性定义了一个定位元素的上外边距边界与其包含块上边界之间的偏移。<br>auto：默认值。通过浏览器计算上边缘的位置。<br>%：设置以包含元素的百分比计的上边位置。可使用负值。<br>length：使用 px、cm 等单位设置元素的上边位置。可使用负值。<br>计算值说明：position为relative时，如果top和bottom都是auto，则它们的计算值是0；如果top和bottom其中一个为auto，则auto相当于另一个的负值，即top = -bottom；如果top和bottom的值都不为auto，则忽略bottom。</p>
+<h4 id="bottom"><a href="#bottom" class="headerlink" title="bottom"></a>bottom</h4><p>该属性定义了定位元素下外边距边界与其包含块下边界之间的偏移。<br>auto：默认值。通过浏览器计算底部的位置。<br>%：设置以包含元素的百分比计的底边位置。可使用负值。<br>length：使用 px、cm 等单位设置元素的底边位置。可使用负值。</p>
+<h4 id="z-index"><a href="#z-index" class="headerlink" title="z-index"></a>z-index</h4><p>设置元素的堆叠顺序。拥有更高堆叠顺序的元素总是会处于堆叠顺序较低的元素的前面。可以为负值，适用于非static定位的元素。</p>
+<h4 id="clip"><a href="#clip" class="headerlink" title="clip"></a>clip</h4><p>clip 这个属性用于定义一个剪裁矩形。对于一个绝对定位元素(只有设置position为absolute会fixed属性的元素才会生效)，在这个矩形内的内容才可见。出了这个剪裁区域的内容会根据 overflow 的值来处理。剪裁区域可能比元素的内容区大，也可能比内容区小。<br>取值：<br>shape：设置元素的形状。唯一合法的形状值是：rect (top, right, bottom, left)，依据上-右-下-左的顺序提供自对象左上角为(0,0)坐标计算的四个偏移数值，其中任一数值都可用auto替换，即此边不剪切。<br>相当于在x等于top和bottom的值处画两条水平线，在y等于left和right的值处画两条垂直线，然后四条线围成的区域就是可以显示出来的区域。<br>auto：默认值。不应用任何剪裁。</p>
+<h4 id="display"><a href="#display" class="headerlink" title="display"></a>display</h4><p>取值：<br>none：隐藏对象。与visibility属性的hidden值不同，其不为被隐藏的对象保留其物理空间。<br>inline：指定对象为内联元素。<br>block：指定对象为块元素。<br>inline-block：指定对象为内联块元素。<br>list-item：指定对象为列表项目。<br>table：指定对象为块元素级的表格，类似于table标签，表格前后带有换行符<br>inline-table：指定对象为内联元素级的表格，类似于table标签，表格前后没有换行符<br>table-caption：指定对象为表格标题，类似于caption标签<br>table-cell：指定对象作为表格单元格，类似于td标签<br>table-row：指定对象作为表格的行，类似于tr标签<br>table-row-group：指定对象作为表格行组，类似于tbody标签<br>table-column：指定对象作为表格列，类似于col标签<br>table-column-group：指定对象作为表格列祖，类似于colgroup标签<br>table-header-group：指定对象作为表格标题组，类似于thead标签<br>table-footer-group：指定对象作为表格脚注组，类似于tfoot标签<br>flex，inline-flex：弹性伸缩盒<br>run-in：根据上下文决定作为块级元素还是内联元素显示</p>
+<h4 id="visibility"><a href="#visibility" class="headerlink" title="visibility"></a>visibility</h4><p>定义了元素是否可见。与display属性不同，visibility会为隐藏的元素保留其占据的物理空间<br>取值：<br>visible：默认值，元素是可见的<br>hidden：元素是不可见的<br>collapse：当在表格元素中使用时，此值可删除一行或一列，但是它不会影响表格的布局。被行或列占据的空间会留给其他内容使用。如果此值被用在其他的元素上，会呈现为 “hidden”。<br>注意：表格元素使用hidden，页面不会呈现对应的表格元素，但是会占据空间；表格元素使用collapse，页面不会呈现表格元素，也不会占据空间，可以利用此特性来删除表格的行或列。</p>
+<h4 id="vertical-align"><a href="#vertical-align" class="headerlink" title="vertical-align"></a>vertical-align</h4><p>设置元素的垂直对齐方式。适用于行内元素和table-cell元素。<br>该属性定义行内元素的基线相对于该元素所在行的基线的垂直对齐。允许指定负长度值和百分比值。在单元格中，这个属性会设置单元格框中的单元格内容的对齐方式。<br>（对于行内元素而言，都会有一条基线，这条基线就是在其中放置一个x字母时，x字母最下边所占据的一条线。）<br>取值：<br>baseline，默认。把当前盒的基线与父级盒的基线对齐，如果该盒没有基线，就将底部外边距的边界和父级的基线对齐。<br>sub，把当前盒的基线降低到合适的位置作为父级盒的下标<br>super，把当前盒的基线提升到合适的位置作为父级盒的上标<br>top，把当前盒的top和行盒的top对齐<br>text-top，把当前盒的top和父级的内容区的top对齐<br>middle，把当前盒的垂直中心和父级盒的基线加上父级的搬半x-height对齐(其实就是x字母的中间位置)<br>bottom，把当前盒的bottom和行盒的bottom对齐<br>text-bottom，把当前盒的bottom和父级的内容区的bottom对齐<br>length，把当前盒提升或降低这个距离。当值为0时相当于baseline。<br>%，使用 “line-height” 属性的百分比值来排列此元素，把当前盒提升或降低这个距离。当值为0%时等同于baseline。</p>
+<p>补充：解决下面这种情况下，图片底部的空隙情况。（在HTML5文档声明下，块状元素内部的内联元素的行为表现，就好像块状元素内部还有一个（更有可能两个-前后）看不见摸不着没有宽度没有实体的空白节点，这个假想又似乎存在的空白节点，称之为“幽灵空白节点”–张鑫旭。）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;title&gt;&lt;/title&gt;</span><br><span class="line">  &lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">    p&#123;</span><br><span class="line">      border:1px solid red;</span><br><span class="line">      background-color: black;</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;p&gt;&lt;img src=&quot;1.jpg&quot;&gt;&lt;/p&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>解决方案：</p>
+<ul>
+<li>img标签设置vertical-align：bottom|top|middle|text-top|text-bottom|sub，不要是super和baseline即可</li>
+<li>img标签设置display：block</li>
+<li>p标签设置font-size：0或者line-height：0<h4 id="float"><a href="#float" class="headerlink" title="float"></a>float</h4>定义了元素向左或者向右浮动放置。<br>取值：<br>left：元素向左浮动<br>right：元素向右浮动<br>none：默认值<br>假如在一行之上只有极少的空间可供浮动元素，那么这个元素会跳至下一行，这个过程会持续到某一行拥有足够的空间为止。<br>当一个元素是绝对定位元素或者定义了display为none时，float定义不生效。<h4 id="clear"><a href="#clear" class="headerlink" title="clear"></a>clear</h4>clear 属性规定元素的哪一侧不允许其他浮动元素。<br>取值：<br>none：允许两边都可以有浮动对象<br>both：不允许有浮动对象<br>left：不允许左边有浮动对象<br>right：不允许右边有浮动对象<h4 id="cursor"><a href="#cursor" class="headerlink" title="cursor"></a>cursor</h4>cursor 属性定义了鼠标指针放在一个元素边界范围内时所用的光标形状。<br>取值：<br>default：默认光标（通常是一个箭头）<br>auto：默认。浏览器设置的光标<br>crosshair：光标呈现为十字线<br>pointer：光标呈现为指示链接的指针（一只手）<br>move：此光标指示某对象可被移动<br>e-resize：此光标指示矩形框的边缘可被向右（东）移动<br>ne-resize：此光标指示矩形框的边缘可被向上及向右移动（北/东）<br>nw-resize：此光标指示矩形框的边缘可被向上及向左移动（北/西）<br>n-resize：此光标指示矩形框的边缘可被向上（北）移动<br>se-resize：此光标指示矩形框的边缘可被向下及向右移动（南/东）<br>sw-resize：此光标指示矩形框的边缘可被向下及向左移动（南/西）<br>s-resize：此光标指示矩形框的边缘可被向下移动（南）<br>w-resize：此光标指示矩形框的边缘可被向左移动（西）<br>text：此光标指示文本<br>wait：此光标指示程序正忙（通常是一只表或沙漏）<br>help：此光标指示可用的帮助（通常是一个问号或一个气球）<h4 id="overflow"><a href="#overflow" class="headerlink" title="overflow"></a>overflow</h4>规定当内容溢出元素框时发生的事情。<br>visible，默认值。内容不会被修剪，会呈现在元素框之外。<br>hidden，内容会被修剪，并且其余内容是不可见的。<br>scroll，内容会被修剪，但是浏览器会显示滚动条以便查看其余的内容。<br>auto，如果内容被修剪，则浏览器会显示滚动条以便查看其余的内容。<br>clip：和hidden一样，clip也被用来隐藏溢出容器的内容且不出现滚动条，但是clip是一个完全禁止滚动的容器，而hidden仍然可以通过编程机制让内容可以滚动，浏览器目前不支持。</li>
+</ul>
+
       
     </div>
     
@@ -619,375 +449,40 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://myjunmu.top/2018/01/09/JSON/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Joe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JUN的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/09/JSON/" itemprop="url">JSON</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-09T00:00:00+08:00">
-                2018-01-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/HTML5/" itemprop="url" rel="index">
-                    <span itemprop="name">HTML5</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/CSS定位/" rel="tag"># CSS定位</a>
           
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  2,763
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  11
-                </span>
-              
-            </div>
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          
-          JSON是随Ajax出现而诞生的一种轻量级的数据格式，它是Javascript的一个子集，符合ECMAScript语法规范，JSON数据实际上就是一段原生的Javascript代码，因此容易阅读和编写,同时也易于机器解析和生成。
-JSON结构JSON结构可以由下面三种类型的数据组成。
-
-值：表示字符
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/01/09/JSON/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/03/css文本/" rel="next" title="CSS属性--文本、字体、颜色、尺寸、边框、表格、列表">
+                <i class="fa fa-chevron-left"></i> CSS属性--文本、字体、颜色、尺寸、边框、表格、列表
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://myjunmu.top/2018/01/08/拖放/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Joe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JUN的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/08/拖放/" itemprop="url">拖放</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-08T00:00:00+08:00">
-                2018-01-08
-              </time>
+              <a href="/2018/08/09/使用ajax/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
             
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/HTML5/" itemprop="url" rel="index">
-                    <span itemprop="name">HTML5</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  3,647
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  17
-                </span>
-              
-            </div>
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-          在HTML5之前，要实现网页对象的拖放操作，需要借助Javascript的mousedown、mousemove、mouseup等事件，通过大量的Javascript脚本来实现。HTML5引入拖放（Drag and Drop）API，这样大大简化了网页对象拖放的编程难度。HTML5拖放API除了支持
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/01/08/拖放/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -997,195 +492,17 @@ JSON结构JSON结构可以由下面三种类型的数据组成。
   </article>
 
 
-    
+
+    <div class="post-spread">
       
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=2160090" async = "async" ></script>
+</div>
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://myjunmu.top/2018/01/07/增强HTML5表单和页面功能/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Joe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JUN的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/07/增强HTML5表单和页面功能/" itemprop="url">HTML5表单</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-07T00:00:00+08:00">
-                2018-01-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/HTML5/" itemprop="url" rel="index">
-                    <span itemprop="name">HTML5</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  7,274
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  31
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          HTML5吸纳了Web Forms 2.0标准，大幅增强了针对表单元素的功能，使关于表单的开发更快、更方便。
-HTML5 input类型在Web应用开发过程中，表单是页面上非常重要的一项内容，用户可以输入的大部分内容都是在表单上完成的，客户端与服务器端的交互在大多数情况下也是通过表单完成的。
-HTM
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/01/07/增强HTML5表单和页面功能/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
 
 
           </div>
@@ -1193,6 +510,15 @@ HTM
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNTI1Mi8xMTc4OA=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -1213,8 +539,17 @@ HTM
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1278,6 +613,22 @@ HTM
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS定位属性"><span class="nav-number">1.</span> <span class="nav-text">CSS定位属性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#position"><span class="nav-number">1.1.</span> <span class="nav-text">position</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#left"><span class="nav-number">1.2.</span> <span class="nav-text">left</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#right"><span class="nav-number">1.3.</span> <span class="nav-text">right</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#top"><span class="nav-number">1.4.</span> <span class="nav-text">top</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#bottom"><span class="nav-number">1.5.</span> <span class="nav-text">bottom</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#z-index"><span class="nav-number">1.6.</span> <span class="nav-text">z-index</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#clip"><span class="nav-number">1.7.</span> <span class="nav-text">clip</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#display"><span class="nav-number">1.8.</span> <span class="nav-text">display</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#visibility"><span class="nav-number">1.9.</span> <span class="nav-text">visibility</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vertical-align"><span class="nav-number">1.10.</span> <span class="nav-text">vertical-align</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#float"><span class="nav-number">1.11.</span> <span class="nav-text">float</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#clear"><span class="nav-number">1.12.</span> <span class="nav-text">clear</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cursor"><span class="nav-number">1.13.</span> <span class="nav-text">cursor</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#overflow"><span class="nav-number">1.14.</span> <span class="nav-text">overflow</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1434,6 +785,10 @@ HTM
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -1462,6 +817,17 @@ HTM
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
