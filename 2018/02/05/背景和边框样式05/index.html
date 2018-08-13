@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="CSS属性," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="CSS背景和边框border border，简写属性，在一个声明设置所有的边框属性。 可以按顺序设置如下属性：border-widthborder-styleborder-color 如果不设置其中的某个值，也不会出问题，比如 border:solid #ff0000; 也是允许的。 border属性设置四条边框的样式，也可以使用border-top、border-right、border-bot">
+<meta name="keywords" content="CSS属性">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS属性--背景及边框样式">
+<meta property="og:url" content="http://myjunmu.top/2018/02/05/背景和边框样式05/index.html">
+<meta property="og:site_name" content="JUN的博客">
+<meta property="og:description" content="CSS背景和边框border border，简写属性，在一个声明设置所有的边框属性。 可以按顺序设置如下属性：border-widthborder-styleborder-color 如果不设置其中的某个值，也不会出问题，比如 border:solid #ff0000; 也是允许的。 border属性设置四条边框的样式，也可以使用border-top、border-right、border-bot">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-13T13:14:35.600Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS属性--背景及边框样式">
+<meta name="twitter:description" content="CSS背景和边框border border，简写属性，在一个声明设置所有的边框属性。 可以按顺序设置如下属性：border-widthborder-styleborder-color 如果不设置其中的某个值，也不会出问题，比如 border:solid #ff0000; 也是允许的。 border属性设置四条边框的样式，也可以使用border-top、border-right、border-bot">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://myjunmu.top/2018/02/05/背景和边框样式05/"/>
+
+
+
+
+
+  <title>CSS属性--背景及边框样式 | JUN的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">JUN的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://myjunmu.top/2018/02/05/背景和边框样式05/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Joe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JUN的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">CSS属性--背景及边框样式</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-05T00:00:00+08:00">
+                2018-02-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CSS3/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS3</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  0
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="CSS背景和边框"><a href="#CSS背景和边框" class="headerlink" title="CSS背景和边框"></a>CSS背景和边框</h3><h4 id="border"><a href="#border" class="headerlink" title="border"></a>border</h4><ul>
+<li>border，简写属性，在一个声明设置所有的边框属性。</li>
+<li>可以按顺序设置如下属性：<br>border-width<br>border-style<br>border-color</li>
+<li>如果不设置其中的某个值，也不会出问题，比如 border:solid #ff0000; 也是允许的。</li>
+<li>border属性设置四条边框的样式，也可以使用border-top、border-right、border-bottom和border-top来分别设置四条边框的样式。<h4 id="border-width"><a href="#border-width" class="headerlink" title="border-width"></a>border-width</h4></li>
+<li>bordr-width，设置四条边框的宽度，也可以使用border-top-width、border-right-width、border-bottom-width、border-left-width来分别设置四条边框的宽度。</li>
+<li>取值：<br>thin，定义细的边框。<br>medium，默认。定义中等的边框。<br>thick，定义粗的边框。<br>length，允许您自定义边框的宽度。<h4 id="border-style"><a href="#border-style" class="headerlink" title="border-style"></a>border-style</h4></li>
+<li>border-style，设置四条边框的样式，也可以使用border-top-style、border-right-style、border-bottom-style和border-left-style来分别设置四条边框的样式</li>
+<li>取值：<br>none，定义无边框。<br>hidden，与 “none” 相同。不过应用于表时除外，对于表，hidden 用于解决边框冲突。<br>dotted，定义点状边框。<br>dashed，定义虚线。<br>solid，定义实线。<br>double，定义双线。双线的宽度等于 border-width 的值。<br>groove，定义 3D 凹槽边框。其效果取决于 border-color 的值。<br>ridge，定义 3D 垄状边框。其效果取决于 border-color 的值。<br>inset，义 3D inset 边框。其效果取决于 border-color 的值。<br>outset，定义 3D outset 边框。其效果取决于 border-color 的值。<h4 id="border-color"><a href="#border-color" class="headerlink" title="border-color"></a>border-color</h4>border-color：定义边框颜色。此属性可设置 1 到 4 种颜色。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">border-color:red green blue pink;</span><br><span class="line">//上边框是红色、右边框是绿色、下边框是蓝色、左边框是粉色</span><br><span class="line"></span><br><span class="line">border-color:red green blue;</span><br><span class="line">//上边框是红色、右边框和左边框是绿色、下边框是蓝色</span><br><span class="line"></span><br><span class="line">border-color: red green;</span><br><span class="line">//上边框和下边框是红色、右边框和左边框是绿色</span><br><span class="line"></span><br><span class="line">border-color:red;</span><br><span class="line">//所有 4 个边框都是红色</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>请始终把 border-style 属性声明到 border-color 属性之前。元素必须在您改变其颜色之前获得边框。<br>【示例1】小技巧：利用border属性设计三角形：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;title&gt;&lt;/title&gt;</span><br><span class="line">	&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">		div&#123;</span><br><span class="line">			border-top:50px solid transparent;</span><br><span class="line">			border-right:50px solid transparent;</span><br><span class="line">			border-bottom:50px solid transparent;</span><br><span class="line">			border-left:50px solid yellow;</span><br><span class="line">			width:0;</span><br><span class="line">			height:0; </span><br><span class="line">		&#125;	</span><br><span class="line">	&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>上面的代码会设置一个向右的黄色三角，你可以利用相同的思想，设置其他方向和颜色的三角。 </p>
+<h4 id="border-radius"><a href="#border-radius" class="headerlink" title="border-radius"></a>border-radius</h4><ul>
+<li>该属性允许您为元素添加圆角边框！设置四个角的圆角边框（如果只设置一个，则其它三个默认和该值一样），你也可以使用border-top-left-radius、border-top-right-radius、border-bottom-right-radius和border-bottom-left-radius来分别设置四个方向上的圆角。</li>
+<li>取值：<br>length：用长度值设置对象的圆角半径长度。不允许负值<br>percentage：用百分比设置对象的圆角半径长度。不允许负值</li>
+<li>该属性提供两个参数，参数间以/分隔，第一个参数表示水平半径或半轴，第二个参数表示垂直半径或半轴，如果第二个参数值省略，则直接复制第一个值。<h4 id="border-image"><a href="#border-image" class="headerlink" title="border-image"></a>border-image</h4></li>
+<li>border-image 属性是一个简写属性，定义将图像应用到元素的边框上。</li>
+<li>你可以使用border-top-image、border-right-image、border-bottom-image、border-left-image、border-top-left-image、border-top-right-image、border-bottom-left-image、boder-bottom-right-image来分别定义背景图象。</li>
+<li>border-image属性生效的前提是定义了border-width和border-style。</li>
+<li>可以按顺序设置如下属性：</li>
+</ul>
+<ol>
+<li><p>border-image-source：定义元素边框背景图像，使用绝对或相对地址指或者创建渐变色来确定图像。<br>【示例1】下面演示border-image-source设置为图像的效果，如果只设置了border-image-source，那么只会在边框的四个角显示边框图像。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;title&gt;&lt;/title&gt;</span><br><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">div &#123; </span><br><span class="line">    height:160px;</span><br><span class="line">    border-width:27px;</span><br><span class="line">    border-style:solid;</span><br><span class="line">    /*设置边框背景图像*/</span><br><span class="line">    border-image: url(images/1.jpg);</span><br><span class="line">	//border-image:linear-gradient(red, yellow),使用渐变色。</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>border-image-slice：定义元素边框背景图像从什么位置开始分割。<br>可以设置一个值或者四个值。它的表现方式为：如border-image-slice：24 25 26 27；的意思是在距离图像上边框24px的位置，距离图像右边框25px的位置，距离图像下边框26px的位置，距离图像左边框27像素的位置各画一条线，然后这四条线将图像分为了九个区域，将除去中间区域的其余8个区域分别填充到边框对应的8个区域。(不要加单位)<br>可以使用百分比，垂直和水平方向的百分比分别参照图片的宽和高来换算。<br>【示例2】本示例在上面的基础上加上border-image-slice的设置。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;title&gt;&lt;/title&gt;</span><br><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">div &#123; </span><br><span class="line">    height:160px;</span><br><span class="line">    border-width:27px;</span><br><span class="line">    border-style:solid;</span><br><span class="line">    /*设置边框背景图像*/</span><br><span class="line">    border-image: url(images/1.jpg) 27;</span><br><span class="line">	//border-image:linear-gradient(red, yellow) 27,使用渐变色。</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line">```  </span><br><span class="line">3. border-image-width：定义用多厚的元素边框来承载被裁剪后的背景图像。</span><br><span class="line">* 取值：</span><br><span class="line">length：用长度值指定图像边框的厚度。</span><br><span class="line">percentage：用百分比指定图像边框的厚度。计算比较麻烦，不建议使用。</span><br><span class="line">number：用数值指定图像边框的厚度。该值表示为border-width的倍数，若值为2，则使用值为2 * border-width。不允许负值。</span><br><span class="line">auto：如果auto值被设置，则border-image-width采用与border-image-slice相同的值。</span><br><span class="line">* 当该属性省略未定义时，因为默认值是1，所以该属性的计算值会是1 * border-width，相当于会直接使用border-width的定义。</span><br><span class="line">* 建议单独使用border-image-width设置属性值，不要写在border-image的后面。</span><br><span class="line">4. border-image-outset：定义元素边框背景图像的外延尺寸。</span><br><span class="line">* 取值：</span><br><span class="line">length：用长度值指定边框图像向外偏移的距离。不允许负值。</span><br><span class="line">number：用浮点数指定边框图像向外偏移的距离。该值表示为border-width的倍数，若值为2，则使用值为2 * border-width。不允许负值。</span><br><span class="line">* 建议单独使用border-image-outset设置属性值，不要写在border-image的后面。</span><br><span class="line">* 设置该属性只是让边框的显示位置在原来的位置上发生外移，同时设置该属性不会影响页面的布局。</span><br><span class="line">【示例3】</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>&lt;!doctype html&gt;</p>
+<p><html></html></p>
+<p><head></head></p>
+<p><meta charset="utf-8"></p>
+<p><title></title></p>
+<p><style type="text/css"><br>div {<br>    height:160px;<br>    border-width:27px;<br>    border-style:solid;<br>    /<em>设置边框背景图像</em>/<br>    border-image:url(images/1.jpg) 27;<br>    border-image-width: 1;<br>    border-image-outset: 10px;<br></style><br></p>
+<p><body></body></p>
+<p><div>nihao</div></p>
+<p></p><p>niaho</p><br><br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">从本示例可以发现，当设置了border-image-outset属性之后，边框的位置显示效果较原来的位置向外移动了10px，但是实际上并没有发生移动。所以不会对布局产生影响。所以p元素显示的位置并没有因为div的边框外移而移动它本身的位置。div元素内的文字也并没有发生位置移动。</span><br><span class="line">5. border-image-repeat：定义元素边框背景图像的平铺方式。</span><br><span class="line">* 取值：</span><br><span class="line">stretch：将被分割的图像使用拉伸的方式来填充满边框图像区域。默认值</span><br><span class="line">repeat：将被分割的图像使用重复平铺的方式来填充满边框图像区域。当图像碰到边界时，如果超过则被截断。</span><br><span class="line">round：与 repeat 关键字类似。不同在于，当背景图像不能以整数次平铺时，会根据情况缩放图像。</span><br><span class="line">space：与 repeat 关键字类似。不同在于，当背景图像不能以整数次平铺时，会用空白间隙填充在图像周围。</span><br><span class="line">#### box-shadow</span><br><span class="line">box-shadow属性用于定义元素的阴影。</span><br><span class="line">基本语法：</span><br><span class="line">`box-shadow：none | &lt;shadow&gt;`</span><br><span class="line">取值：</span><br><span class="line">none，默认值，表示元素无阴影。</span><br><span class="line">shadow,用公式表示为：</span><br><span class="line">`inset? &amp;&amp; &lt;length&gt;&#123;2,4&#125; &amp;&amp; &lt;color&gt;?`</span><br><span class="line">其中inset表示设置阴影的类型为内阴影，默认为外阴影；</span><br><span class="line">length：第 1 个长度值定义元素的阴影水平偏移值。正值，阴影出现在元素右侧；负值，则阴影出现在元素左侧；第 2 个长度值定义元素的阴影垂直偏移值。正值，阴影出现在元素底部；负值，则阴影出现在元素顶部；第 3 个长度值定义元素的阴影模糊值半径（如果提供了）。该值越大阴影边缘越模糊，若该值为0，阴影边缘不出现模糊。不允许负值；第 4 个长度值定义元素的阴影外延值（如果提供了）。正值，阴影将向四面扩展；负值，则阴影向里收缩</span><br><span class="line">color：定义元素阴影的颜色。</span><br></pre></td></tr></table></figure><p></p>
+<p>&lt;!DOCTYPE html&gt;</p>
+<p><html lang="zh-cmn-Hans"></html></p>
+<p><head></head></p>
+<p><meta charset="utf-8"></p>
+<p><title>box-shadow</title></p>
+<p><style><br>.test li {<br>    margin-top: 20px;<br>    list-style: none;<br>    width: 400px;<br>    padding: 10px;<br>    background: #eee;<br>}<br>.test .outset {<br>    box-shadow: 5px 5px rgba(0, 0, 0, .6);<br>}<br>.test .outset-blur {<br>    box-shadow: 5px 5px 5px rgba(0, 0, 0, .6);<br>}<br>.test .outset-extension {<br>    box-shadow: 5px 5px 5px 10px rgba(0, 0, 0, .6);<br>}<br>.test .inset {<br>    box-shadow: inset 2px 2px 5px 1px rgba(0, 0, 0, .6);<br>}<br>.test .multiple-shadow {<br>    box-shadow:<br>        0 0 5px 3px rgba(255, 0, 0, .6),<br>        0 0 5px 6px rgba(0, 182, 0, .6),<br>        0 0 5px 10px rgba(255, 255, 0, .6);<br>}<br></style><br></p>
+<p><body></body></p>
+<p><ul class="test"><br>    <li class="outset">外阴影常规效果<br>box-shadow:5px 5px rgba(0,0,0,.6);</li><br>    <li class="outset-blur">外阴影模糊效果<br>box-shadow:5px 5px 5px rgba(0,0,0,.6);</li><br>    <li class="outset-extension">外阴影模糊外延效果<br>box-shadow:5px 5px 5px 10px rgba(0,0,0,.6);</li><br>    <li class="inset">内阴影效果<br>box-shadow:2px 2px 5px 1px rgba(0,0,0,.6) inset;</li><br>    <li class="multiple-shadow">外阴影模糊效果<br>box-shadow:5px 5px 5px rgba(0,0,0,.6);</li><br></ul><br><br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">### 设计背景样式</span><br><span class="line">#### background</span><br><span class="line">background 简写属性在一个声明中设置所有的背景属性。</span><br><span class="line">可以设置如下属性：</span><br><span class="line">background-color</span><br><span class="line">background-position</span><br><span class="line">background-size</span><br><span class="line">background-repeat</span><br><span class="line">background-origin</span><br><span class="line">background-clip</span><br><span class="line">background-attachment</span><br><span class="line">background-image</span><br><span class="line">* 如果不设置其中的某个值，也不会出问题，比如 background:#ff0000 url(&apos;smiley.gif&apos;); 也是允许的。</span><br><span class="line">#### background-image</span><br><span class="line">指定元素使用的背景图像。可以是图片路径或使用渐变创建的“背景图像”</span><br><span class="line">在同一组背景定义中，如果背景颜色和背景图像都设置了，那么背景图像会覆盖在背景颜色之上。</span><br><span class="line">如果设置了background-image，同时也建议设置background-color用于当背景图像不可见时保持与文本颜色有一定的对比度。</span><br></pre></td></tr></table></figure></p>
+<p>body<br>  {<br>  background-image: url(bgimage.gif);<br>  background-color: #000000;<br>  }<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">#### background-position</span><br><span class="line">指定背景图像在元素中出现的位置。</span><br><span class="line">取值：</span><br><span class="line">[left|center|right]和[top|center|bottom]的组合值，如果您仅规定了一个关键词，那么第二个值将是&quot;center&quot;。默认值：0% 0%，等同于left top。</span><br><span class="line">x% y%：	第一个值是水平位置，第二个值是垂直位置。左上角是 0% 0%。右下角是 100% 100%，如果您仅规定了一个值，另一个值将是 50%。</span><br><span class="line">xpos ypos，第一个值是水平位置，第二个值是垂直位置。左上角是 0 0。单位是像素 (0px 0px) 或任何其他的 CSS 单位。如果您仅规定了一个值，另一个值将是50%。您可以混合使用 % 和 position 值。</span><br><span class="line">#### background-size</span><br><span class="line">指定背景图像尺寸。</span><br><span class="line">取值：</span><br><span class="line">length：用长度值指定背景图像大小。不允许负值。</span><br><span class="line">percentage：用百分比指定背景图像大小。不允许负值。</span><br><span class="line">auto：背景图像的真实大小。默认值</span><br><span class="line">cover：将背景图像等比缩放到完全覆盖容器，背景图像有可能超出容器。</span><br><span class="line">contain：将背景图像等比缩放到宽度或高度与容器的宽度或高度相等，背景图像始终被包含在容器内。</span><br><span class="line">#### background-repeat</span><br><span class="line">指定背景图像如何填充。</span><br><span class="line">取值：</span><br><span class="line">repeat-x：背景图像在横向上平铺</span><br><span class="line">repeat-y：背景图像在纵向上平铺</span><br><span class="line">repeat：背景图像在横向和纵向平铺，默认值</span><br><span class="line">no-repeat：背景图像不平铺</span><br><span class="line">round：当背景图像不能以整数次平铺时，会根据情况缩放图像。（CSS3）</span><br><span class="line">space：当背景图像不能以整数次平铺时，会用空白间隙填充在图像周围。（CSS3）</span><br><span class="line">#### background-attachment</span><br><span class="line">设置背景图像是否固定或者随着页面的其余部分滚动。</span><br><span class="line">取值：</span><br><span class="line">fixed：背景图像相对于视口（viewport）固定。</span><br><span class="line">scroll：背景图像相对于元素固定，也就是说当元素内容滚动时背景图像不会跟着滚动，因为背景图像总是要跟着元素本身。但会随元素的祖先元素或窗体一起滚动。</span><br><span class="line">local：背景图像相对于元素内容固定，也就是说当元素随元素滚动时背景图像也会跟着滚动，因为背景图像总是要跟着内容。（CSS3）</span><br></pre></td></tr></table></figure></p>
+<p>&lt;!DOCTYPE html&gt;</p>
+<p><html></html></p>
+<p><head><br>    <title></title><br>    <meta charset="utf-8"><br>    <style type="text/css"><br>        div    {<br>            width:100px;<br>            height:100px;<br>            overflow:auto;<br>            background-image: url(1.jpg);<br>            background-repeat:no-repeat;<br>            background-size: 100px 100px;<br>            background-attachment: ;<br>        }<br>    </style><br></head></p>
+<p><body><br>    <div><p>我的眼你是我的</p><p>我的眼你是我的</p><p>我的眼你是我的</p><p>我的眼你是我的</p><p>我的眼你是我的</p><p>我的眼你是我的</p><p>我的眼你是我的</p><p>我的眼你是我的</p><p>我的眼你是我的</p></div><br>    <p>我的眼你是我的</p><br>    <p>我的眼你是我的</p><br>    <p>我的眼你是我的</p><br>    <p>我的眼你是我的</p><br>    <p>我的眼你是我的</p><br>    <p>我的眼你是我的</p><br>    <p>我的眼你是我的</p><br>    <p>我的眼你是我的</p><br>    <p>我的眼你是我的</p><br>    <p>我的眼你是我的</p><br>    <p>我的眼你是我的</p><br>    <p>我的眼你是我的</p><br>    <p>我的眼你是我的</p><br>    <p>我的眼你是我的</p><br>    <p>我的眼你是我的</p><br>    <p>我的眼你是我的</p><br>    <p>我的眼你是我的</p><br>    <p>我的眼你是我的</p><br>    <p>我的眼你是我的</p><br></body><br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">从上面的示例中可以看出，</span><br><span class="line">* 当设置background-attchment：fixed时，当拖动div元素内的滚动条时，背景图象不滚动，即它相对div元素是固定的，但是拖动body元素的滚动条时，因为div元素滚动，所以背景图象也会跟着滚动消失；</span><br><span class="line">* 当设置background-attchment：scroll时，表现效果和fixed一样，</span><br><span class="line">* 当设置background-attchment：local时，</span><br><span class="line">#### background-origin</span><br><span class="line">指定背景图像从元素的哪个区域作为显示的原点。在默认的情况下，background-position属性总是根据元素左上角为坐标原点定位背景图象。使用background-origin属性可以改变这种定位方式。</span><br><span class="line">取值：</span><br><span class="line">border-box：从边框区域开始显示背景。</span><br><span class="line">padding-box：从补白区域开始显示背景，默认值。</span><br><span class="line">content-box：仅在内容区域显示背景。</span><br><span class="line">* 设置background-repeat：no-repeat会更容易观察效果。</span><br><span class="line">#### background-clip</span><br><span class="line">指定背景图像向外裁剪的区域。</span><br><span class="line">* 建议加-webkit-前缀</span><br><span class="line">取值：</span><br><span class="line">border-box：从边框区域向外裁剪背景。</span><br><span class="line">padding-box：从补白区域向外裁剪背景。</span><br><span class="line">content-box：从内容区域向外裁剪背景。</span><br><span class="line">text：从前景内容（如文字）区域向外裁剪背景。</span><br><span class="line">【示例】background-clip：text配合color：transparent可以设置一些比较漂亮的效果。</span><br></pre></td></tr></table></figure></p>
+<p>&lt;!DOCTYPE html&gt;</p>
+<p><html></html></p>
+<p><head><br>    <title></title><br>    <meta charset="utf-8"><br>    <style type="text/css"><br>        div{<br>            width:100px;<br>            height:100px;<br>            padding:10px;<br>            border:10px dotted #ddd;<br>            -webkit-background-clip:text;<br>            background-clip:text;<br>            color:transparent;<br>        }<br>    </style><br></head></p>
+<p><body><br>    <div>你是我的眼你是我的眼你是我的眼你是我的眼你是我的眼你是我的眼你是我的眼</div><br></body><br><br><code>`</code></p>
+<h4 id="background-color"><a href="#background-color" class="headerlink" title="background-color"></a>background-color</h4><p>指定背景颜色。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS属性/" rel="tag"># CSS属性</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/04/css定位04/" rel="next" title="CSS属性--定位">
+                <i class="fa fa-chevron-left"></i> CSS属性--定位
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/09/使用ajax/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=2160090" async = "async" ></script>
+</div>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNTI1Mi8xMTc4OA=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Joe" />
+            
+              <p class="site-author-name" itemprop="name">Joe</p>
+              <p class="site-description motion-element" itemprop="description">我想在那里最高的山峰矗立，不在乎它是不是悬崖峭壁</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS背景和边框"><span class="nav-number">1.</span> <span class="nav-text">CSS背景和边框</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#border"><span class="nav-number">1.1.</span> <span class="nav-text">border</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#border-width"><span class="nav-number">1.2.</span> <span class="nav-text">border-width</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#border-style"><span class="nav-number">1.3.</span> <span class="nav-text">border-style</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#border-color"><span class="nav-number">1.4.</span> <span class="nav-text">border-color</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#border-radius"><span class="nav-number">1.5.</span> <span class="nav-text">border-radius</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#border-image"><span class="nav-number">1.6.</span> <span class="nav-text">border-image</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#background-color"><span class="nav-number">1.7.</span> <span class="nav-text">background-color</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Joe</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">53.8k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
