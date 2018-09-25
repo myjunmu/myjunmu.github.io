@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="JUN的博客">
 <meta property="og:description" content="根据所获取页面元素的不同，可以把CSS选择器分为五大类，即基本选择器、组合选择器、伪类选择器、伪元素选择器和属性选择器。 基础选择器 * 通用元素选择器，匹配任何元素 E 标签选择器，匹配所有使用E标签的元素 .info/E.info  Class选择器，匹配所有class属性包含info的元素/匹配所有class属性包含info的E元素 #info/E#info ID选择器，匹配所有id属性为i">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-25T03:01:11.548Z">
+<meta property="og:updated_time" content="2018-09-25T03:06:09.983Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS选择器">
 <meta name="twitter:description" content="根据所获取页面元素的不同，可以把CSS选择器分为五大类，即基本选择器、组合选择器、伪类选择器、伪元素选择器和属性选择器。 基础选择器 * 通用元素选择器，匹配任何元素 E 标签选择器，匹配所有使用E标签的元素 .info/E.info  Class选择器，匹配所有class属性包含info的元素/匹配所有class属性包含info的E元素 #info/E#info ID选择器，匹配所有id属性为i">
@@ -471,8 +471,8 @@
 </li>
 </ol>
 <ul>
-<li>匹配第一个li元素，li：first-child或者li:nth-child(1)，注意不是ul：first-child或者ul:nth-child(1);</li>
-<li>匹配最后一个li元素，li：last-child或者li:nth-child(5)，注意不是ul：last-child或者ul:nth-child(5)；</li>
+<li>匹配第一个li元素，li:first-child或者li:nth-child(1)，注意不是ul:first-child或者ul:nth-child(1);</li>
+<li>匹配最后一个li元素，li:last-child或者li:nth-child(5)，注意不是ul:last-child或者ul:nth-child(5)；</li>
 <li>li:nth-child(0)不匹配任何li元素，li:nth-child(n)，匹配所有的li元素，只能用n，不能用其它字母</li>
 <li>li:nth-child(2n)，匹配第二个和第四个li元素，也可以用li:nth-child(even)</li>
 <li>li:nth-child(2n+1),匹配第一个、第三个和第五个li元素，也可以用li:nth-child(2n-1)或者li:nth-child(odd)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">li:nth-child(n)的实现过程：</span><br><span class="line">当n=0时，未选择任何元素；</span><br><span class="line">当n=1时，选择第一个li；</span><br><span class="line">当n=2时，选择第二个li；</span><br><span class="line">依次类推，其它出现n 的情况类似这种推导</span><br></pre></td></tr></table></figure>
